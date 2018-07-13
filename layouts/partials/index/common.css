@@ -1,0 +1,33 @@
+/* shared elements */
+.done {
+	text-decoration: line-through;
+}
+#main section {
+	padding: 4em 1.5em;
+}
+@media screen and (min-width: 736px) {
+	#main section {
+		padding: 6em 8em;
+	}
+}
+#main section .button {
+	background-color: #655e7a;
+	color: #fff;
+	border-color: #655e7a;
+}
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3,
+.dark-bg h4,
+.dark-bg h5,
+.dark-bg h6 {
+	color: #b3a3b3;
+}
+.dark-bg {
+	color: #e3e3e3;
+}
+#main section.dark-bg .button {
+	background-color: #e3e3e3;
+	color: #3b3b3b;
+	border-color: #e3e3e3;
+}

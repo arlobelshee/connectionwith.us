@@ -1,0 +1,87 @@
+---
+longtitle: "Llewellyn Falco"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T16:09:09+00:00
+author: Llewellyn
+layout: page
+guid: http://arlobelshee.com/?page_id=100
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565886856605696
+tt_tweeted_date:
+  - 2012-07-15 18:07:33
+---
+
+[Llewellyn Falco](http://llewellynfalco.blogspot.com/ "Llewellyn's blog.") is a long-time XP practitioner who specializes in the technical practices. He's also a long-time trainer, teaching both adults and [kids](http://www.teachingkidsprogramming.org/ "Teach programming to 11-year old girls") to pair program, TDD, and refactor.
+
+Llewellyn has his own style of pairing, which I have taken to calling "Llewellyn's strong-style pairing." If you haven't tried it, I recommend you look him (or me) up and ask to pair in his style. Just know that you're in for a different pairing experience from what you're used to. Perhaps I'll even write up something about it at some point.
+
+He also does a lot of work with [legacy code](http://llewellynfalco.blogspot.com/p/legacy-code.html). This caused him to create the [Approval Test](http://blog.approvaltests.com/) libraries. They turn out to also be useful for TDD in some other cases, but are really handy for writing pinning tests while working with legacy.
+
+A conversation with Llewellyn started this whole series. So he didn't get the question in exactly the same form as everyone else. He got:
+
+> &#8230;Doesn't seem mandatory for this one. Is fishbowl pair with strongly encouraged booting of the navigator. Mad wife swapping chaos ensues.
+>
+> Btw, what would you hold to be the characteristics of a good test suite?
+
+# Llewellyn's Answer
+
+of course, you don't ask the simple question, do you 🙂
+
+I see test suites in a ROI fashion, so it's good break this down for green field & legacy. Also It's worth going over the 4 benifits, because I will be referring back to them.
+
+1.  specification
+2.  feedback
+3.  regression
+4.  granularity
+
+## Green Field
+
+green field should be strong in all of the above, but a little light in regression.
+
+1.  Spec: The tests should be READABLE, and show the intention of the customer behavior clearly. Ideally, I should be able to complete redesign my implementation, and still have my tests pass. This means they are also a form of documentation. There is also a form of decoupling & abstraction here. For example, if testing a chain of responsibility, I might do
+
+```csharp
+var a = new TestClient(works:false);
+var b = new TestClient(works:true);
+var c = new TestClient(works:true);
+new Chain(a,b,c).Call();
+AssertFalse(a.Called);
+AssertTrue(b.Called);
+AssertFalse(c.Called);
+```
+
+I shouldn't have to go into some front door. Likewise, my test suite should have convenience methods. ie.
+
+```csharp
+var starting = @"
+O__
+_X_
+X__";
+Board b = createTicTacToeBoard(starting);
+```
+
+Increases my tests' readability and clarity. But `CreateTicTacToeBoard(string)` has no place in my production code.
+
+2.  Feedback: speed is important < 10 seconds is very important. < 5 is good (doesn't seem to be possible to get much less than that in c#, because the runner overhead is around 4 seconds). Also, I find that a good test suite empowers me to use the debugger more. If something is confusing me, it's easy to place a breakpoint and get a bunch more info.
+
+3.  regression. I follow the &#8216;test till bored' here. 1-2 examples. Edge cases only if they require extra code to complete. So the regression tends to be a bit light for me in green field. However, a good test suite makes it easy for me to create an additional use case if a bug report does occur.
+
+4.  Granularity. A good test suite will not make me scratch my head when it fails. It should either make me say "Oh, yeah, need to fix that" or "Yeah, I expected that to change". The failure should be like a bread crumb to bring me back to scenario that made me write the feature in the first place.
+
+5.  Malleability: This is a bit about spec. Tests lock things, a good test suite locks the things that I don't want to change, but frees me to change the other things. A bad test suite will actually prevent me from being able to make changes ( I often find this with heavy mocking) Likewise, a good test suite will add separations in the code that allow me to easily write more tests. I often find that my time writing tests decreases as I write more and more in a code base. This also means "very little setup".
+
+I am not quite sure of the correlation yet, but there is something with more functional pieces == better test suite.
+
+## Legacy Code
+
+In legacy code, spec is extremely hard, and sometimes misleading&#8230;.(this isn't suppose to do this edge case, but turns out other parts of the system are depending on it.) as such I tend to not pay as much attention to it. I will add NEW features with spec, but not worry about it for existing. As such, the main feature I want in legacy code is: Regression. I want CRAZY regression in legacy code, and will use CombinationApprovals a lot. I want to make sure I don't accidentally change anything.
+
+Feedback: it's still important that I get some relative speed, but I am more willing to take slower tests for high regression. I am also willing to do more round trip tests, higher setup, database rollbacks, etc&#8230;
+
+Granularity: if something breaks in legacy I want to know what it is. However, I no longer expect it to show me the original feature request.
+
+Longevity: In green field, a good test suite will have high longevity, it will exist for years and years. But that is TOO costly for legacy code. In legacy code, I' looking for more disposable tests. Tests that will take me to the next level. Eventually, they will regrown into green tests, and the cycle of code continues, but a good test suite in legacy will get me safe, fast & cheap.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

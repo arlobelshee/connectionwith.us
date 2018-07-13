@@ -1,0 +1,38 @@
+---
+longtitle: "Lisa Crispin"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T15:42:04+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=98
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565816702664704
+tt_tweeted_date:
+  - 2012-07-15 18:07:16
+---
+
+[Lisa Crispin](http://lisacrispin.com/) is a trainer, author, and practitioner of agile testing. She gets well beyond the automated stuff that developers call "tests." Yet she describes testing in a way that everyone on the agile team can understand and value.
+
+I asked Lisa the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Lisa's Answer
+
+I don't understand your question. An automated test suite? Functional testing? Performance testing? At what level --- unit, API, service, GUI? We have many different automated test suites, some are at different levels, some are just split up and run in parallel so the tests finish faster so we get quick feedback.
+
+If you really mean to say what are the characteristics of good automated functional regression tests, no matter how they happen to be divided into suites (since it could be arbitrary for time purposes), I would say, that they give you quick feedback on anything that has a failure after a new check-in (production code or test code). That failure may actually be a regression failure, or it might just be something changed in the functionality or the GUI or database and the test code needs updating.
+
+If you're talking more about ATDD / Spec by example, I would say the resulting automated tests are almost irrelevant. The biggest value is from having had the customers, testers, programmers and other team members collaborate to get a shared understanding of each feature, know what code to write, and when you are done.
+
+# My response
+
+> Thanks for the answer. My question was intentionally open ended. Part of the interest is in seeing where people take it.
+
+# Lisa's Follow-up
+
+I had a feeling that might be the case, which is why I kept typing instead of just saying, "What?" :->
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

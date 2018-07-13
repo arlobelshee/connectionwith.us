@@ -1,0 +1,88 @@
+body {
+	font-family: "Body", monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+#contact-box .block h2,
+#service .service-item h4 {
+	font-family: "Headers-A", monospace;
+	color: #888;
+}
+ul {
+	list-style: disc inside;
+}
+#testimonial ul.counter-box {
+	list-style: none;
+}
+svg {
+	fill: currentColor;
+}
+.block blockquote {
+	border-left: 5px solid #d3d3d3;
+	margin-left: 20px;
+}
+p,
+.block li,
+.block p,
+.block blockquote,
+.section-title p,
+#service .service-item p,
+#call-to-action p,
+#feature .block p,
+#testimonial .testimonial-carousel p,
+#testimonial .testimonial-carousel .user p,
+#testimonial .counter-box li span,
+#intro .block p {
+	font-size: 15pt;
+	line-height: 1.6;
+	color: #000;
+	font-weight: 400;
+}
+#call-to-action p {
+	color: #e3e3e3;
+}
+header .outer {
+	margin: 0 15px;
+}
+#contact-form .block button {
+	font-family: "Body", monospace;
+}
+#contact-box .block h2 {
+	font-weight: 400;
+}
+#slider {
+	background: url("../img/slider-bg.jpg") no-repeat;
+	background-size: cover;
+}
+#slider:before {
+	background: linear-gradient(to left, #8b86a3, #322e40);
+	opacity: 0.8;
+}
+#slider .block h1,
+#global-header .block h1 {
+	font-family: "Display", monospace;
+	font-weight: 400;
+	font-size: 42pt;
+	color: #e3e3e3;
+}
+#slider .block p,
+#global-header .block p {
+	font-family: "Body", monospace;
+	font-weight: 400;
+	font-size: 18pt;
+	color: #e3e3e3;
+}
+.section-title p {
+	font-family: "Body", monospace;
+	font-style: italic;
+}

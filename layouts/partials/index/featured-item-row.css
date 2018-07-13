@@ -1,0 +1,13 @@
+/* Featured item row */
+.feature {
+	background: linear-gradient(to left, #8b86a3cc, #322e40cc),
+		url("../img/check-copyright-before-using/chemistry.png") fixed
+			no-repeat center center;
+	background-size: cover;
+}
+@media screen and (min-width: 736px) {
+	.feature .feature-content {
+		width: 50%;
+		margin-left: 50%;
+	}
+}

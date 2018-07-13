@@ -1,0 +1,39 @@
+---
+longtitle: "Steve Freeman"
+subtitle: "What makes a good test suite?"
+date: 2012-07-14T11:22:08+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=107
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224566000325107712
+tt_tweeted_date:
+  - 2012-07-15 18:08:00
+---
+
+Steve Freeman has been involved in automated unit testing basically as long as it has existed (not quite, but close). He was one of the inventers of mocking. He and I have had a number of discussions about mocks and when and how to use them.
+
+Although we disagree, we each respect the other's positions. In the context of the design approaches that Steve follows, mocks are a great tool and aren't dangerous. In the design approaches I follow, they are unnecessary and inhibit feedback. So don't just learn mocking and testing from Steve; also learn about his approaches to designing systems.
+
+I asked Steve the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Steve's Answer
+
+1.  Expressiveness. I can read any test and understand what point about the code I was trying to make at the time. That also includes being able easily to find the relevant test that answers whatever question I have.
+2.  Confidence. I don't expect perfect coverage but I do need to feel confident that if the tests pass, the system is pretty much good enough to ship. Otherwise, I have none of the benefits with the downside of all that extra code.
+3.  Fast. Dan Bodart has been doing some interesting work recently on making full, top-to-bottom tests suites for a real application run in seconds. It's a game changer.
+4.  Separation of concerns. Obviously there will be some overlap between tests, but I shouldn't have to change too many tests for new features, unless it's a huge change. Higher-level tests assume that lower-level code works, and don't try to reproduce all their checking.
+5.  Good diagnostics. When a test fails, the output tells me what went wrong. I don't have to spend a week with the debugger to figure out what happened.
+6.  Well-tended. I don't just keeping adding tests, but I regularly review what I have and maintain them to reduce duplication and uncover a domain language. When I'm really doing well, concepts from the tests will move into the production code.
+
+I'm sure I'm missing something screamingly obvious, but that'll do for now.
+
+# Steve's Unsolicited Follow-up
+
+Damn. I should have just written "[what Ward said](http://arlobelshee.com/what-makes-a-good-test-suite/ward-cunningham "Ward Cunningham – What makes a good test suite?")."
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

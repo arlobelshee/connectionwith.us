@@ -1,0 +1,8 @@
+/* Home Page CSS */
+{{ $ctx := . }}
+{{if and .Site.Params.homepage.shared_css (not (eq .Site.Params.homepage.shared_css "")) }}
+	{{- partial .Site.Params.homepage.shared_css $ctx -}}
+{{ end }}
+{{ range $section := .Site.Params.homepage.sections }}
+	{{- partial $section.css $ctx -}}
+{{ end }}

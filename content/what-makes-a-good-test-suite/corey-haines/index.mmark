@@ -1,0 +1,46 @@
+---
+longtitle: "Corey Haines"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T12:01:10+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=84
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565456516808706
+tt_tweeted_date:
+  - 2012-07-15 18:05:50
+---
+
+[Corey Haines](http://coreyhaines.com/ "Corey's site and blog") is a self-described Software Journeyman. One of the instigators of the Software Craftsmanship movement, Corey spends a tremendous amount of time honing his craft: the production of quality software in the real world.
+
+Best of all, he takes his role of Journeyman to heart. He travels from hall to hall, learning from all the practitioners he encounters. Corey serves the community by collecting techniques from everywhere, blending them, and spreading them to other practitioners.
+
+I asked Corey the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Corey's Answer
+
+I like to talk about the 3 F's: Fast, Focused and Full.
+
+## Fast
+
+There are two measures of speed for a test suite: during TDD and during integration/release. They have different uses, but it is important they both be fast.
+
+For the TDD cycle, it is important that the tests being run take less than a second, preferably even faster. If the second-by-second test cycle is too slow, then it inhibits the ability to use tests to drive the design effectively.
+
+For the integration/release cycle, it is important to receive feedback soon enough that your changes have not negatively effected the existing codebase.
+
+## Focused
+
+Ideally each test should cover one thing, and each possible issue should trigger one test to break. One major value of regression tests lies in the ability to rapidly narrow in on the piece of code which is the cause of the issue. The goal would be that making a small change to your code should break one and only one test. In practice, I find that a number less than 3 is acceptable. If more than 1 test breaks, though, I pause to inspect whether the tests are redundant.
+
+If a change to your code regularly breaks a large number of tests, then the maintenance of the tests becomes an issue and an argument "these tests are slowing me down" can arise.
+
+## Full
+
+The test suite is most valuable when it covers your whole system.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

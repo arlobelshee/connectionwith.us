@@ -1,0 +1,37 @@
+---
+longtitle: "Ward Cunningham"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T14:50:07+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=94
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224566437145100289
+tt_tweeted_date:
+  - 2012-07-15 18:09:44
+---
+
+[Ward Cunningham](http://c2.com/) is one of the great innovators of our time. He invented the wiki. He was on the first Extreme Programming team. He was instrumental in the early days of the Patterns movement. He hosted the Portland Patterns Repository, which also became the de facto home of XP (where the ideas came together). He plays with robots. He is inventing a federated wiki.
+
+Ward also introduced me to one of the most important phrases in pair programming. "I have an alternate idea. But let's keep following yours. I want to see how it turns out. We can always come back to mine if you're interested or we run into trouble."
+
+Of course, when Ward says that, my idea is usually within a couple of minutes of running into trouble.
+
+I asked Ward the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Ward's Answer
+
+A test suite should provide a return on the investment required to create it. The return can be in the form of insurance (protection from losses) or productivity (accelerated development). The return on investment can be improved by lowering the cost of testing through improved methods, tools and frameworks. With integrated tests it is possible to simultaneously reduce the costs of test and increase development productivity.
+
+As a developer, I am most interested in test suites that improve my development productivity. The characteristics I admire include:
+
+- Straightforward &#8212; Tests are easy to create, easy to understand when they fail, and easy to assess assumptions present in the tests.
+- Reliable &#8212; A suite has a high probability of detecting mistakes and a low probability of raising false alarms
+- Fast &#8212; Testing fits easily into an interactive development workflow with alerts returned before development activity advances to the next task.
+- Durable &#8212; Tests remain valuable throughout the product lifetime and serve the development of replacement products.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

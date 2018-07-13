@@ -1,0 +1,68 @@
+---
+longtitle: "James Shore"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T13:43:08+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=91
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565735979106304
+tt_tweeted_date:
+  - 2012-07-15 18:06:57
+---
+
+[James Shore](http://jamesshore.com/ "James's blog and online book") is in XP immersion coach. He spends months with each team which lets him get well beyond the basics. Jim believes strongly doing things right. He isn't willing to half-ass, and he isn't willing to work with a client who wants to half-ass.
+
+Jim's background includes both technical and people practices. When he coaches an agile transition, he brings in a full suite of practices and values.
+
+I asked Jim the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+James replied and then expanded his answer to a full [blog entry](http://jamesshore.com/Blog/What-Does-a-Good-Test-Suite-Look-Like.html). This page shows just his initial reply.
+
+# James's Answer
+
+A good automated test suite runs fast, provides a safety net for refactoring, documents the intent of the code, and alerts the team to regressions. It doesn't prevent bugs on its own, but if bugs are escaping the team, that's a sign that there's a flaw in the team's development approach---which includes the team's approach to design, technical debt, requirements, and overall defect prevention _as well as_ its approach to automated tests.
+
+The test suite needs to run fast because a slow test suite leads to broken builds. When the test suite is too slow, people don't run all the tests before integrating, and integration failures aren't always fixed right away because the person or pair who made the mistake isn't always available to fix it. This often compounds so that one build failure hides a second, and you end up with the team letting the build remain broken for hours or even days. This violates a fundamental principle of continuous integration, which is that the code in the repository _always builds and passes its tests._
+
+Further reading:
+
+- [Continuous Integration is an Attitude, Not a Tool](http://jamesshore.com/Blog/Continuous-Integration-is-an-Attitude.html)
+- The Art of Agile Development: [Ten-Minute Build](http://jamesshore.com/Agile-Book/ten_minute_build.html)
+- The Art of Agile Development: [Continuous Integration](http://jamesshore.com/Agile-Book/continuous_integration.html)
+
+The test suite needs to provide a safety net for refactoring so that the team is able to improve the design and pay down technical debt. Without refactoring, technical debt steadily increases, leading to degraded design quality, which leads to defects.
+
+Further Reading:
+
+- The Art of Agile Development: [Refactoring](http://jamesshore.com/Agile-Book/refactoring.html)
+- The Art of Agile Development: [Simple Design](http://jamesshore.com/Agile-Book/simple_design.html)
+- The Art of Agile Development: [Incremental Design and Architecture](http://jamesshore.com/Agile-Book/incremental_design.html)
+
+The test suite also acts as living documentation. This is necessary because comments and requirements documents go out of date. Tests can document both programmer intent (at the class and method level) and business intent (at the business rules level). Although people often write end-to-end tests to document business intent, this isn't necessary; it's actually more effective to write "customer unit tests" that focus on specific business rules.
+
+Further Reading:
+
+- The Art of Agile Development: [Documentation](http://jamesshore.com/Agile-Book/documentation.html)
+- [mumble test business rules mumble](http://jamesshore.com/Blog/mumble-test-business-rules-mumble.html)
+
+The test suite needs to be comprehensive enough to alert the team to regressions. This is important because manual regression testing is too slow and expensive to do every iteration, and this is a burden that steadily increases as the application gets bigger. I typically want to see unit tests for every class and method, focused integration tests for every interaction with outside processes, files, and systems, and a small number of end-to-end tests for smoke testing. (This assumes your design doesn't require end-to-end tests to ensure everything hangs together, which is also necessary to make your build run fast.)
+
+Further Reading:
+
+- The Art of Agile Development: [Test-Driven Development](http://jamesshore.com/Agile-Book/test_driven_development.html)
+- [Let's Play: Test-Driven Development](http://jamesshore.com/Blog/Lets-Play/) video series
+
+Finally, an automated test suite is just part of an overall strategy of defect prevention. It's an important part, but automated tests on their own aren't enough to prevent defects. You also need to focus on refactoring and technical debt control, close interaction with business experts and other requirements donors, and finding and fixing gaps in the team's thought process.
+
+Further Reading:
+
+- The Art of Agile Development: [No Bugs](http://jamesshore.com/Agile-Book/no_bugs.html)
+- [Alternatives to Acceptance Testing](http://jamesshore.com/Blog/Alternatives-to-Acceptance-Testing.html)
+- [The Problems with Acceptance Testing](http://jamesshore.com/Blog/The-Problems-With-Acceptance-Testing.html)
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

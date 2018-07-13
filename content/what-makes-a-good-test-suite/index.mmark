@@ -1,0 +1,32 @@
+---
+title: What makes a good test suite?
+date: 2012-07-07T11:46:56+00:00
+author: Arlo
+layout: page
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224745636975747072
+tt_tweeted_date:
+  - 2012-07-16 06:01:48
+---
+I was talking with Llewellyn Falco the other day (now many days back) about test suites. At some point, I asked him for his opinion to a not-so-simple question:
+
+> What are the characteristics of a good test suite?
+
+He gave me a good answer. And that made me curious --- how would other people answer this question? What commonalities and differences would emerge?
+
+So I asked the same question to a bunch of people that I thought would give interesting answers. Here's what they had to say.
+
+  * [Corey Haines](http://arlobelshee.com/what-makes-a-good-test-suite/corey-haines "Corey Haines – What makes a good test suite?") --- Software Journeyman. Developer background.
+  * [J.B. Rainsberger](http://arlobelshee.com/what-makes-a-good-test-suite/j-b-rainsberger "J.B. Rainsberger – What makes a good test suite?") --- XP coach and practitioner. Developer background.
+  * [Elisabeth Hendrickson](http://arlobelshee.com/what-makes-a-good-test-suite/elisabeth-hendrickson "Elisabeth Hendrickson – What makes a good test suite?") --- test obsessed empiricist. Tester background.
+  * [Arlo Belshee](http://arlobelshee.com/what-makes-a-good-test-suite/arlo-belshee "Arlo Belshee – What makes a good test suite?") --- XP refiner. Developer background.
+  * [Ron Jeffries](http://arlobelshee.com/what-makes-a-good-test-suite/ron-jeffries "Ron Jeffries – What makes a good test suite?") --- XP Curmudgeon. Developer background.
+  * [Lisa Crispin](http://arlobelshee.com/what-makes-a-good-test-suite/lisa-crispin "Lisa Crispin – What makes a good test suite?") --- defines agile tester. Tester background.
+  * [James Shore](http://arlobelshee.com/what-makes-a-good-test-suite/james-shore "James Shore – What makes a good test suite?") --- XP immersion coach. Developer background.
+  * [Ward Cunningham](http://arlobelshee.com/what-makes-a-good-test-suite/ward-cunningham "Ward Cunningham – What makes a good test suite?") --- great innovator. Developer background.
+  * [Brian Marick](http://arlobelshee.com/what-makes-a-good-test-suite/brian-marick "Brian Marick – What makes a good test suite?") --- challenges our thinking. Tester background.
+  * [Llewellyn Falco](http://arlobelshee.com/what-makes-a-good-test-suite/llewellyn-falco "Llewellyn Falco – What makes a good test suite?") --- teaches XP to kids & does legacy code saves. Developer background.
+  * [Steve Freeman](http://arlobelshee.com/what-makes-a-good-test-suite/steve-freeman-what-makes-a-good-test-suite "Steve Freeman – What makes a good test suite?") --- mocker extrordinaire. Developer background.
+  * [Markus Gärtner](http://arlobelshee.com/what-makes-a-good-test-suite/markus-gaertner "Markus Gärtner – What makes a good test suite?") --- agile testing coach. Tester background.
+
+Is there someone who you wish was on this list? Email or tweet me with suggestions.

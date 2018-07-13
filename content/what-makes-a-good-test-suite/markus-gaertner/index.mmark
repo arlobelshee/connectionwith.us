@@ -1,0 +1,54 @@
+---
+longtitle: "Markus Gärtner"
+subtitle: "What makes a good test suite?"
+date: 2012-07-15T14:17:26+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=115
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224614153686487040
+tt_tweeted_date:
+  - 2012-07-15 21:19:20
+---
+
+[Markus Gärtner](http://www.shino.de/ "Markus's blog") is a European Agile testing evangelist. He teaches, mentors and coaches companies on Agile testing, test-driven and acceptance test-driven development, exploratory testing, and software craftsmanship. His background includes testing and programming.
+
+I ran across Markus via this blog series. I have not yet had the opportunity to really get to know him. But from what I've read, I like the way he thinks about testing.
+
+I asked Markus the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Markus's Answer
+
+I consider a test suite could mean a suite of tests that is executed automatically and/or manually. Let me take a closer look on each of these two aspects, and what makes a test suite good in either case.
+
+## Good Automated Suites
+
+An automated test suite shall execute a lot of tests in a short period of time. Most companies going for test automation want to reduce their "testing costs" by bringing in test automation --- and too often that is also a marketing claim of the tool vendors. So, a good automated test suite should execute the tests quickly.
+
+Personally, I see most teams abandon unit testing if the test suite takes more than 15 minutes to run, and they abandon functional acceptance test automation once the test suite takes more than three hours to run. Ideally I would like to have a suite of unit tests that provides me feedback in less than 10 minutes, and a suite of acceptance or functional tests that provides me feedback in less than 90 minutes. There seem to be two magic thresholds.
+
+But with fast tests, you can execute a high number of tests at the touch of a button. This is an advantage only if you set up yourself so that you can deal with this high number of tests. There is no purpose for a test suite of 20,000 tests if you cannot immediately make sense of the results or find the right spot for the test that you would like to write now for that upcoming feature. So, a good test suite of automated tests produces digestible results.
+
+Ideally I want to find out in seconds what the problem is, and where the problem currently is. I worked with test suites where you needed to dive in for two days in order to find the origin of the failing test. Such a test suite produces a lot of results which cost a human more effort to pin-point the problem. Such a test suite is not helping at all. Your test names should express what should happen. Your tests should be isolated from each other. You should organize your tests so that similar functionality goes in the same place. These characteristics of a good test suite derive from the friendliness of the reports.
+
+Regarding test organization there are two aspects. When writing a test for the first time, you might express it in a certain way. Over time though, as your understanding of the domain and the application grows and evolves, a shared language should evolve in parallel in your code base and your test suite. Finding the right spot for your new feature will become easier over time.
+
+You should also take into account any future test reader when automating a test. Someone—who might not be not you—will revisit your test in the future. If she is unable at that point to find out quickly what your test is doing, she will become frustrated, and may write a duplicate test. The next person visiting that test will have an even harder time with two approaches to test this particular class or piece functionality. A good automated test suite consists of tests that are a pleasure to read.
+
+One final aspect for automated tests. Since test automation actually is software development, all characteristics for good code also apply. Clean Code, SOLID principles, the four rules of simple design, oh, and please do yourself the favor to test your test suite. For more complex test helpers I usually write unit tests as well.
+
+## Good Manual Suites
+
+That brings us to manual test suites. A good manual test suite challenges the tester's mind. The main difference between automated and manual tests actually lie in the fact that you have a real human available who thinks about what she is doing. A good manual test suite takes note of this.
+
+That means that a manual test suite consists mostly of test ideas, and engages the ability of the human to find the right thing to do on a granular enough level. Personally, I find elaborate test suites with detailed scripted information intimidating for my work. If I can derive a mind map from a chat with you, I will have plenty of ideas to get started with, and can find my way to explore all the facets that we talked about.
+
+Of course this also means that a good manual test suite is adapted to the humans who are going to work with it to some extent. Over time testers will learn how to do certain vague things, but they will also refine other ideas so that everyone on the team is able to work with the test suite.
+
+One final thought for a good manual test suite: It should help start discussions in the team if the team does not have a shared understanding. In that case a good manual test suite is provocative, and helpful to end up in the conversations that help grow the team's understanding.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

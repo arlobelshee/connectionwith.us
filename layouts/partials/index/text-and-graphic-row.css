@@ -1,0 +1,25 @@
+/* Simple rows of basic text */
+.text-and-graphic-row {
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+.text-and-graphic-row .block {
+	flex-grow: 1;
+	min-width: 300px;
+	max-width: 60%;
+}
+.text-and-graphic-row .attention-graphic {
+	flex-grow: 0;
+}
+.text-and-graphic-row .block h2 {
+  margin: 0;
+}
+.text-and-graphic-row h3 {
+	font: 1.0em italic "Body";
+}
+.text-and-graphic-row .attention-graphic img {
+  width: 100%;
+}

@@ -1,0 +1,41 @@
+---
+longtitle: "Ron Jeffries"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T12:16:49+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=88
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565963373289472
+tt_tweeted_date:
+  - 2012-07-15 18:07:51
+---
+
+[Ron Jeffries](http://xprogramming.com/ "Ron's site about all things XP.") is one of the fathers of Extreme Programming. He's also one of the most prolific emailers in the community, always ready to help a novice get started and tell a master where they're screwing up.
+
+The experts know when Ron thinks they're screwing up. Ron is our community curmudgeon. When he tells me to change my ways, he's usually right.
+
+I asked Ron the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Ron's Answer
+
+You're right, not easy. I am assuming "automated test suite" here, recognizing that there is a need for exploratory testing, and perhaps even a suite of exploratory testing, as well. Some characteristics that come to mind:
+
+- Fast to run
+- Two levels, programmer tests and customer tests. Serve as a double net and also as a strong communication technique between customer / devs.
+- Customer tests point to stories working and not;
+- Programmer tests point to objects / code / abstractions working or not;
+- Programmer tests are not unit tests. They test clusters of objects too.
+- Each test tells a story of how the system should work
+- Tests in order tell a story of how the system evolved into being
+- Tests tend to be pointed at a single issue
+- Tests are integrated with build release process to serve as gateways to going forward
+- Test running is automatic. Release / checkin etc depend on passing.
+
+Just some random thoughts. I'd like to see what all you come up with, and will try to think of more if my brain opens up.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

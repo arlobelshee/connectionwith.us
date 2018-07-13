@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!--
+    Arcanum by Arlo Belshee
+-->
+<html>
+<head>
+{{ partial "page-head" . }}
+	<link rel="stylesheet" href='{{ "css/index.css" | relURL }}'>
+</head>
+<body>
+			<!-- Wrapper -->
+			<div id="wrapper">
+    {{ $.Scratch.Set "shareNav" true }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+			{{ $ctx := . }}
+			{{ range $section := .Site.Params.homepage.sections }}
+				{{ partial $section.partial $ctx }}
+			{{ end }}
+    </div>
+    <!-- {{ partial "sidebar" . }} -->
+		</div>
+		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+{{ partial "closing-scripts" . }}
+	</body>
+	</html>

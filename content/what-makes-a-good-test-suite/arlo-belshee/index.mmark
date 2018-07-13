@@ -1,0 +1,240 @@
+---
+longtitle: "Arlo Belshee"
+subtitle: "What makes a good test suite?"
+date: 2012-07-12T08:52:31+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=104
+---
+
+Being Arlo, I asked myself the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Arlo's Answer
+
+When I asked the question, I was originally thinking of the full set of automated tests. After I got the answers, I saw that the question really should contain the full set of "everything that gives me confidence that my customers will likely love my product." However, I didn't let anyone else see each others' answers, so I'll answer with my original (limited) understanding of the question.
+
+Even if the other answer is more interesting. Perhaps I'll blog about it later.
+
+In my mind, everything comes down to one goal statement:
+
+- It makes my team faster.
+
+## That's not helpful
+
+No, that isn't really a helpful answer. It isn't actionable. Given a current state, it doesn't tell you one change to make to have a "better" test suite. However, it does work extremely well as the long-term measure of success.
+
+I'll use a more refined rubric to find potential improvements. And I'll execute those changes. But they remain "potential improvements" until I can fully judge their success by this metric.
+
+For example, all else being equal, lack of duplication is a good thing. And I'll use it to guide some changes to my test suite. Hoewver, I sometimes find that the duplication elimination created a single abstraction where the business domain actually has two. I then build on this error.
+
+When I finally find the need for two abstractions, I've got a lot of tests potentially depending on this. I need to update all of them to distinguish which abstraction they really mean. So a small insight becomes a cheap refactoring in the product code but a major change to the tests. The tests did not speed me up in this case, so the duplication elimination was counterproductive _in this case_.
+
+I think it's important to define a couple of terms if I'm going to use this as my goal statement.
+
+**&#8230;my team**
+
+It doesn't matter what the suite would do for the effectiveness of your team. It doesn't really matter what it does to the speed of any one person on my team. All that matters is the context-sensitive, holistic effect. What does it do for my team, both now and forever forward (I didn't claim this was a predictive or measurable metric, just that it was the essential goal).
+
+**&#8230;faster**
+
+I mean cycle time. Actually, I mean total cycle time delta across all work executed with that test suite operating. Again, not measurable at the point of change. But when we are working, we can often notice a significant impact to the cycle time of one cycle (positive or negative). It is harder to notice a small improvement to the cycle time of many cycles. So I have to consciously take that into account. But still, most people on the team agree about which attributes of the code and its tests are speeding up our cycles and which are slowing them down.
+
+So how can I get this to be more actionable? I want something more forward-looking. And I want it to suggest specific, actionable, single changes. Here's the restatement that I use.
+
+- A good test suite makes changes less scary and more fun.
+
+## Why the emotional terms?
+
+Because they are the way we humans are built to judge things. Because if we listen to them, then we can include all sorts of holistic thinkiing and heuristics that our pre-conscious mind refuses to share with our conscious one. So rather than try to construct an algorithm for identifying good suites (don't worry rationalists, I'll do that too, later), I start with the essence.
+
+**&#8230;less scary**
+
+My sense of fear is a highly-tuned risk analysis engine. If I am afraid to change something, it's because there's risk there. It may be schedule risk, risk of bugs, risk of not doing what the customer wants, risk of looking foolish, surprises, or any number of other things. But many of these can be addressed by a good suite of automated tests.
+
+So I want my suite to legitimately reduce my fear, by reducing the risks that my subconscious is noticing.
+
+Also, every time the test suite does someting surprising, that scares me. So less of those.
+
+This means things like:
+
+- No duplication (I fear bugs that show up with one way of doing something and not with another).
+- Locks down important behaviors (I fear bugs).
+- Reduces variance and variation (I fear schedule variation, because it is unpredictable).
+- Lots more, but we don't need an exhaustive list.
+
+**&#8230;more fun**
+
+More fun also means less un-fun. I enjoy working with code. I really enjoy when I can dance with my IDE, working at the speed of thought. I don't enjoy when things slow me down. I don't enjoy when I have to do the same thing multiple times. I enjoy delighting my customers. I enjoy learning about the business domain.
+
+I want my test suite to let me spend more of my time doing things that I enjoy.
+
+This means things like:
+
+- No duplication (not fun to do things multiple times).
+- No overlapping tests (not fun to debug 200 failing tests and try to find common cause).
+- Must speed up refactorings, not slow them down (fun to dance at the speed of thought).
+- Again, not an exhaustive list.
+
+## OK, so how do we do that?
+
+I find a set of traits seem to correlate well with suites that reduce fear and increase fun. All of these are traits of the entire system, not of each given test. In roughly decreasing order of priority, these are:
+
+1.  Speed.
+2.  Makes good behaviors easier than bad.
+3.  Excellent names.
+4.  Written for programmers.
+5.  Independence.
+6.  Flexibility.
+7.  Granularity.
+8.  Sensitivity (a.k.a. bug coverage).
+
+I'll hit these in order, then close.
+
+## Speed
+
+This is the single most important aspect of the test suite.
+
+If it completes in < 1 sec and doesn't require manual triggering (e.g., continuous test runners with good tests) then test failures become a part of my IDE. I never think about them; I just fix and flow past. I see each mistake the instant I make it.
+
+If I have to trigger them manually, or in any case when they take [1, 15) seconds, then they run fast enough that I don't feel any pain. I run them a lot and get feedback quickly. The run finishes before my current task has dropped from my working memory, so I can fully incorporate the results in my learning.
+
+This is the real boundary. These two speed categories are fundamentally different from the ones that follow, due to the way the human brain works.
+
+We keep things in working memory for around 15 seconds (highly variable). If we get feedback within that time, it gets automatically associated with the whole thought pattern. If we get feedback after that time, then it does not. We can (and do) consciously associate it by actively recalling what we think we were thinking at the time, but these associations are far weaker. It plain takes us many more repetitions --- thus more time --- to learn something if the feedback takes longer to arrive than the decay time for our working memory.
+
+Other run time boundaries matter. The main ones are 2 minutes and 10 minutes. Again, it's human behavior.
+
+2 minutes applies if you are pairing. This is the duration of a very short conversation about your current work item. So you get the feedback before you move on. And that means that you'll run the tests while you talk.
+
+10 minutes is the amount of time that people seem willing to block the current task. They'll go do something else (email, bother someone, get a drink, Hacker News), but they won't go on to a new programming task. They'll only run the tests once or twice per commit, and those commits will be only 1-3 times per day. But at least they won't multitask.
+
+Above 10 minutes and you get multitasking, really large work batches, and other anti-patterns.
+
+So everyone says 10 minutes. I say 15 seconds. And I now feel the pain when it transitions from <1 sec and automatic to 15 seconds. So i mostly keep my suites in the <1 sec category.
+
+## Makes good behaviors easier
+
+Let's face it: every one of us is working in partially indebted code. If we're diligent, then we have cleaned up some of it. But there are still high debt parts.
+
+A good test suite provides guidance. It makes future work more likely to pay down the existing debt and write new code at low-debt levels. There are many ways this can happen.
+
+For example, some teams have test suites with eligibility requirements. They have judgemental names (I've seen Foo.Tests.Good and Foo.Tests.Sloppy). You can only add to the good tests if you meet the requirements (for example, test run time + either true unit or short-span integration + no mocks + written in our ubiquitous language).
+
+Such suites only exist in the parts of the system that we are actively working on fixing. They tell us which legacy code pattern we are using (strangler, lakes and beaches, or something else), and where the boundaries are. They help us see progress towards implementing that strategy.
+
+There are lots of other ways that tests can make good behaviors easier. They can form the breeding ground for little internal DSLs that develop into the ubiquitous language and eventually move from test code to product code. Their naming conventions can make it obvious where to put new functionality. They can provide requirements traceability (again, depending on naming conventions or test implementation approach), making it easier for the team to audit itself. They can provide feedback on design quality.
+
+In any case, a good suite guides the whole team towards whatever behaviors that team values.
+
+## Excellent names
+
+I hold naming to be half of design. I replace the old design = low coupling + high cohesion with the more specific design = no duplication + excellent names.
+
+The importance of names is that they guide thinking. They create concepts to which things can apply. They are only possible when code has a single clear responsibility and no other code has almost the same responsibility. And this matters at least as much in tests as it does in product code.
+
+This is why I don't follow the guidance of "one test class per class, named after the class, with one set of test methods per method, named in a pattern that includes the method." Instead, I follow these rules:
+
+- Test class and namespace names are based on what matters when understanding the system. This might be MMFs & stories, it might be a central business model, it might be common business practices (operations), or it might be something else.
+- Test methods are always named to include the word should. The method name states what should be the case; it is affirmation of system behavior.
+
+I can then judge the design of the code by examining how close my test class organization is to my code class organization.
+
+- Do I have a nearly 1:1 relationship between test classes and real classes? If so, then my real classes also hold close to the domain.
+- Do I have dozens of tests for a particular method? If so, I need dozens of affirmations to describe its responsibilities, which means that it is probably too big.
+- Are there sets of real classes that always show up together, but are used (as a set) in multiple test classes? There's a smell!
+- Are there any test classes or methods that I can't name easily? If so, then I don't understand the business well enough; there's a gap in my ubiquitous language. Alternatively, I might be trying to TDD a method but can't state its value to a user. So should I be writing it at all?
+
+The tests are an opportunity to associate an entire new set of names with the product code. Let's take advantage of that! Use these names to help people understand the product code from a different direction.
+
+There are several directions to choose from; pick whichever one makes most sense for your product.
+
+## Written for programmers
+
+Another dirty little fact that we have to face: tests are not the best mode of communication between us an our customers. Sure, examples help the discussion. And we should capture the results of the discussion into tests. But we have better things to do with our customers than to have them read our tests, verify their accuracy and completeness, and the like.
+
+The only reason to have customers read the tests directly is so that we can blame them if we miss some important aspect of the domain.
+
+I prefer to take responsibility for my own success (and failure). This means that I have lots of conversations with my customers. I give them lots of demos (including of work in progress). I may even run through a list of some test names to ask whether those match up with what they think of as the most important business criteria. But it is my responsibility to translate rom their domain-specific understanding of the domain to the domain of formal reasoning in a general-purpose language.
+
+Therefore, my tests will be read by programmers.
+
+So I like the tests to be written in the language that the programmers know. I want it to be strict, formal, and easy to read by anyone who knows the ubiquitous language _from the developer's point of view_. I don't try to write them in some spec / behave / cucumber / free-text way. When I do, that just makes it harder&mdash;not easier&mdash;for the core audience to understand.
+
+## Independence
+
+Stated simply: one test should fail at a time. More specifically, for each thing that the system does differently than expected, no more than one test should fail.
+
+This is helpful for finding the source of the failure, but that's not really the point. The main point is about refactoring. Remember that I said a test suite's main goal is to speed you up? Well, one of the main ways it can slow you down is by failing independence.
+
+Intentional changes happen more often than errors. All feature changes and some refactorings are changes to assumptions. They will cause tests to fail. But each should cause no more than one test to fail. If so, it is easy to check that test to ensure that we changed the behavior in the way we intended, then alter the test.
+
+The problem arises when many tests fail due to a single change in assumption. It's even worse when this change is a refactoring, and there really is no substantive change in system behavior. When this happens, we have several options. All are bad.
+
+- Take a couple of hours to update all the tests impacted by a 15-second change to product code.
+- Just delete whole swaths of unit tests because they are "probably no longer valid."
+- Take even more time to find the duplicate test coverage and eliminate it.
+- Just revert the refactoring and remember forevermore that this part of the code is "unrefactorable."
+
+Most people choose the last, though I've seen all 4. All of these are bad. Instead, make sure the suite is independent and you won't get into this problem.
+
+And yes, I put independence above sensitivity. I am more willing to have missing coverage than duplicate coverage. Duplication impairs refactoring more than no tests at all (assuming the product code is invariant). Thus, I have often deleted a bunch of tests, and lost test coverage, in order to fix test duplication in core areas. I prefer other solutions, but I find deleting the tests to be better than leaving the duplication.
+
+## Flexibility
+
+When assumptions change, altering the involved tests should be quick.
+
+This usually means that the tests are written at the right level of abstraction (typically the same level of abstraction as the code they test). Sometimes this is very high; other times it is very low and narrowly focused.
+
+I've seen several test suites where the test authors were too zealous at removing duplicate code in the tests. Each test was just a single call to a "do something" method with different inputs. This makes it very difficult to change these tests later: every test is coupled, whether it is related in the business domain or not.
+
+There are also other things that can be done to make tests hard to change. Not extracting enough helpers can be a problem. It can mean that a simple API change requires updating dozens of tests to even get things to compile. Or a change in requirements can mean updating hundreds of low-level assertions, rather than adding a new validation method and changing 3 callsites to use it.
+
+In any case, when witing a set of tests, think about how easy they would be to change to mean something totally different and unexpected. Don't add in points of flexibility and don't tie things together simply because they have duplicate code.
+
+Product code is DRY (don't repeat yourself); test code is WET (write explicit tests). This means that you should be able to read each test method and understand it _at exactly the right level of detail_ without looking at the definitions of any methods that it calls. So many tests will end up being a sequence of 3-5 method calls.
+
+## Granularity
+
+This means _when a test fails, it should be obvious why it failed_. In particular, each test should depend only on what it intends to depend on. This is very similar to the idea of independence.
+
+However, I break it out because I can achieve either of these goals without the other (mostly through pathological attempts to do evil). Most testing approahces will either get both or neither of these attributes.
+
+Tests in a granular suite tend to be short and only use the part of the API that they are intending to test. When a suite is granular, we rarely have to use the debugger. Even when a test fails and we don't know what product code changed recently, the test name and a quick reading of its body (not reading into any helper methods) is enough to tell us what the problem is. Often all we need is the name and the assertion failure message.
+
+Granular tests speed up bug fixes.
+
+## Sensitivity
+
+Finally, at the bottom of the list, is the item related to code / path coverage. But sensitivity is a little different than code coverage.
+
+Sensitivity means that _of all mistakes that actually happen when writing your system, a high percentage are caught by the test suite, and a high percentage of those are caught early in the run_.
+
+This isn't about code coverage. It's about bug coverage. It's about the mistakes that actually get made. And it includes not just that an error is caught, but when it is caught. Errors should not be uniformly distributed through your test run time. There should be diminishing returns. Most of the mistakes that your team actually makes should be caught in the first very few seconds. The rest of the tests are there for less common mistakes.
+
+One corollary of this definition: if your team doesn't make a certain type of mistake, then you don't need to test for it. Some examples of things that my teams have not needed to test for:
+
+- Legacy code that we could prove we weren't changing. The users liked the current behavior; we don't need any tests as long as we can ensure through other mechanisms (such as data flow analysis) that our changes are independent.
+- Race conditions. On one team, we created a C++ template library for handling variable access and method calls in threaded code. The templates wouldn't compile if the code could have a race condition. Deadlocks and starvation could still happen; we had to test for those. But the compiler verified there were no races, so we didn't need to test for them.
+- Lots of stuff in a compiled language. The compiler is your first tens of thousands of unit tests. Without one, you have to test what happens when methods get funny arguments and other such things. With one, you don't.
+- Nulls. Use static analysis instead. E.g., Resharper allows you to specify [NotNull] and [CanBeNull] attributes on values. It then performs in-IDE static analysis to make sure that you don't screw anything up. It knows what an null assertion looks like and it recognizes null condition checks. It does full static analysis to make sure that you use nulls only correctly. Thus, if you use this and you set R# to do solution-wide analysis and require that it always check green, then you don't need to unit test for nulls.
+- Nulls. Or use a language, like Haskel, that doesn't make the "everything can be nullable" mistake. Default to non-nullable, and provide a way to make nullability explicit. Then the compiler does null validation just as part of type checking.
+
+There are lots of other examples.
+
+The main point in sensitivity is that your tests should find the errors that you and your team make. But this is well below speed, so they can't take long in doing so.
+
+## Summary
+
+So there's my diatribe on good test suites.
+
+Really, it all comes down to the points stated at the beginning. I use tests because they make me faster, they eliminate frustration, and they enhance joy. I have not found any metrics that fully predict the suite's ability to achieve this primary mission. So I use constant qualitative assessment.
+
+There are further guidelines, but each of them can easily lead you in the wrong direction. Use them for inspiration, but don't substitute them for the real thing.
+
+Good test suites bring my team speed, ease, and joy.
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

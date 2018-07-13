@@ -1,0 +1,56 @@
+---
+longtitle: "Elisabeth Hendrickson"
+subtitle: "What makes a good test suite?"
+date: 2012-07-07T12:46:42+00:00
+author: Arlo
+layout: page
+guid: http://arlobelshee.com/?page_id=90
+tt_tweeted:
+  - http://twitter.com/arlobelshee/status/224565495716790272
+tt_tweeted_date:
+  - 2012-07-15 18:05:59
+---
+
+[Elisabeth Hendrickson](http://www.testobsessed.com/ "Elixabeth's blog") is test obsessed (and [@testobsessed](https://twitter.com/testobsessed "Elisabeth on Twitter")). She believes that empirical evidence trumps speculation. Every. Single. Time.
+
+Elisabeth has been actively advancing the state of the art in Agile, Testing, and Agile testing for as long as I've been in the community.
+
+I asked Elisabeth the same question that I asked [everyone else](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?"):
+
+> What are the characteristics of a good test suite?
+
+# Elisabeth's First Answer
+
+Before I reply it would help me to know how you intend to use the compiled list...
+
+# My Response
+
+> Mostly for my own thinking. Also to post on arlobelshee.com and show around to people. All audiences, all skill levels, all business roles. So nothing that can help you determine the exit criteria for your response.
+
+> The question is intentionally open ended, subject to interpretation, and ill-specified.
+
+# Elisabeth's Second Answer
+
+Grin. Nothing like an open ended question!
+
+Here's a quick pass for now:
+
+First, I assume that a test suite refers to a set of pre-defined tests to be executed repeatably and at regular intervals, either by a human executing tests by following a script, or through automation. I do not consider exploratory testing to be part of the "suite." Therefore the suite is a set of tests, but not a comprehensive view of all testing to be done.
+
+That said, characteristics of a good test suite include:
+
+- It is automated, kicked off automatically as part of the automated build process, and reports back a boolean PASS or FAIL.
+- It is reliable. That is, when the tests report FAIL there really is something interesting that failed. And when they report PASS we trust them.
+- It is maintainable and resilient to change. That is, given inevitable changes in the implementation and requirements, the tests are designed such that those changes need to be reflected in a minimum number of places.
+- It provides fast feedback. Yes, "fast" is subject to interpretation and ill-specified. Fast does not have to mean that the whole suite runs in a particular short period of time. It might mean that the tests are structured such that they provide a little feedback sooner, and more later. (This can be accomplished in a variety of ways including classic fast test / slow test suite division, or run the most recently failing tests first.)
+- If the tests fail there are good diagnostics information available to speed up the process of pinpointing the problem that caused the failure. "Something went wrong" is not acceptable. Stack traces, screen shots, details on the environment configuration, and other diagnostic information should be just a click away.
+- The tests run independently of one another such that we can switch the order of the tests with no ill effects.
+- The tests either do not pollute the data, or clean up after themselves, or otherwise ensure that they do not leave behind traces that can trip up other tests.
+- The tests express the essence of the expectation without any extraneous details. (See Dale Emery's marvelous work on this topic: [http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf](http://dhemery.com/pdf/writing_maintainable_automated_acceptance_tests.pdf))
+- The underlying helper code is well factored, exhibiting all the nice properties we expect of good code.
+
+I think that's enough for now. Hope this was helpful&#8230;
+
+---
+
+Love (or hate) that answer? Want to see [other answers](http://arlobelshee.com/what-makes-a-good-test-suite "What makes a good test suite?")?

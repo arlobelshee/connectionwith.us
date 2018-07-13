@@ -1,0 +1,172 @@
+baseurl = "https://arlo.belshee.com/"
+languageCode = "en-us"
+title = "Arlo Belshee"
+theme = "arcanum"
+preserveTaxonomyNames = true
+paginate = 15
+disqusShortname = "shortname"
+googleAnalytics = ""
+pluralizeListTitles = false
+enableRobotsTXT = true
+canonifyURLs = true
+
+[params]
+  # Sets the meta tag description
+  description          = "Arlo can help your organization master its legacy code. Get to code complete faster, and be bug-free when you get there."
+  navbarTitle          = "Arlo Belshee"
+	date_format = "2 January 2006"
+  # Sets where "View More Posts" links
+  viewMorePostLink     = "/techies"
+
+# Optional Params
+  # Sets navbarTitle to match the section of the website
+  dynamicTitles        = false
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
+  socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = false
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
+  socialShare          = true
+  # Sets specific share to appear on posts (default behavior is to appear)
+  socialShareTwitter   = true
+  socialShareGoogleplus = true
+  socialShareFacebook  = true
+  socialShareReddit    = true
+  socialShareLinkedin  = true
+  socialShareStumbleupon = true
+  socialSharePinterest = true
+  socialShareEmail     = true
+
+  # Load custom CSS or JavaScript files. The variable is an array so that you
+  # can load multiple files if necessary. You can also load the standard theme
+  # files by adding the value, "default".
+  customCSS            = ["default"]
+  customJS             = ["default"]
+
+[params.homepage]
+  shared_css = "index/common.css"
+
+# Extend with the sections that you want on the home page. Each is loaded from a partial.
+[[params.homepage.sections]]
+partial = "index/hero.html"
+css = "index/hero.css"
+
+[[params.homepage.sections]]
+partial = "index/about.html"
+css = "index/text-and-graphic-row.css"
+
+[[params.homepage.sections]]
+partial = "index/feature.html"
+css = "index/featured-item-row.css"
+
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
+[[menu.main]]
+  name = "About"
+  url = "/about"
+  identifier = "far fa-id-card"
+  weight = 1
+
+[[menu.main]]
+  name = "Past Work"
+  url = "/work"
+  identifier = "far fa-id-card"
+  weight = 2
+
+[[menu.main]]
+  name = "Technical Articles"
+  url = "/techies"
+  identifier = "far fa-newspaper"
+  weight = 3
+
+[[menu.main]]
+  name = "Services"
+  url = "/services"
+  identifier = "far fa-list-alt"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact"
+  identifier = "far fa-envelope"
+  weight = 6
+
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted. These are the icons affected by socialAppearAtTop
+# and socialAppearAtBottom.
+[social]
+  # Coding Communities
+  github           = "arlobelshee"
+  gitlab           = ""
+  stackoverflow    = "" # User Number
+  bitbucket        = ""
+  jsfiddle         = ""
+  codepen          = ""
+  # Visual Art Communities
+  deviantart       = ""
+  flickr           = ""
+  behance          = ""
+  dribbble         = ""
+  # Publishing Communities
+  wordpress        = ""
+  medium           = ""
+  # Professional/Business Oriented Communities
+  linkedin         = "arlobelshee"
+  linkedin_company = ""
+  foursquare       = ""
+  xing             = ""
+  slideshare       = ""
+  # Social Networks
+  facebook         = ""
+  googleplus       = ""
+  reddit           = ""
+  quora            = ""
+  youtube          = ""
+  vimeo            = ""
+  whatsapp         = "" # WhatsApp Number
+  # WeChat and QQ need testing.
+  wechat         = ""
+  qq             = "" # User ID Number
+  instagram        = ""
+  tumblr           = ""
+  twitter          = "arlobelshee"
+  skype            = ""
+  snapchat         = ""
+  pinterest        = ""
+  telegram         = ""
+  vine             = ""
+  googlescholar    = ""
+  orcid            = ""
+  researchgate     = ""
+  # Email
+  email            = "arlo@belshee.com"
+
+# To get the index.css. Don't modify.
+[outputs]
+	home = ["HTML", "RSS", "CSS"]
+
+[mediaTypes]
+[mediaTypes."text/css"]
+suffix = "css"
+
+[outputFormats]
+[outputFormats.css]
+name = "CSS"
+mediaType = "text/css"
+path = "css"
+baseName = "index"
+isPlainText = true
+isHTML = false
+notAlternative = true

@@ -1,0 +1,111 @@
+<!-- Navbar -->
+<header id="header">
+	<h1><a class="navbar-brand" href="{{ " / " | relURL }}">{{ partial "logo.svg" . }}<span>
+		{{ if or .IsHome (not .Site.Params.DynamicTitles) }}
+			{{ .Site.Params.navbarTitle }}
+		{{ else if ne .Section "" }}
+			{{ .Section }}
+		{{ else }}
+			{{ .Title }}
+		{{ end }}
+	</span></a></h1>
+
+	<div class="all-menus">
+	<nav class="links">
+		<ul>
+			{{ range .Site.Menus.main }}
+				<li>
+					<a href="{{ .URL }}">
+							<i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	</nav>
+	<nav class="main">
+		<ul>
+			{{ if $.Scratch.Get "shareNav" }}
+			<li id="share-nav" class="share-menu" style="display:none;">
+				<a class="fas fa-share-alt" href="#share-menu">Share</a>
+			</li>
+			{{ end }}
+			<li class="search">
+				<a class="fas fa-search" href="#search">Search</a>
+				<form id="search" method="get" action="//google.com/search">
+					<input type="text" name="q" placeholder="Search" />
+					<input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
+				</form>
+			</li>
+			<li class="menu">
+				<a class="fas fa-bars" href="#menu">Menu</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</header>
+
+<!-- Menu -->
+<section id="menu">
+
+	<!-- Search -->
+		<section>
+			<form class="search" method="get" action="//google.com/search">
+				<input type="text" name="q" placeholder="Search" />
+				<input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
+			</form>
+		</section>
+
+	<!-- Links -->
+		<section>
+			<ul class="links">
+				{{ range .Site.Menus.main }}
+					<li>
+						<a href="{{ .URL }}">
+							<h3>
+								<i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
+							</h3>
+						</a>
+					</li>
+				{{ end }}
+			</ul>
+		</section>
+
+	<!-- Posts List -->
+		<section class="recent-posts">
+			<div class="mini-posts">
+				<header>
+					<h3>Recent Posts</h3>
+				</header>
+				{{ $.Scratch.Set "recentPosts" .Site.Pages }}
+
+				{{ with .Site.Params.postAmount.sidebar }}
+					{{ $.Scratch.Set "postLimit" . }}
+				{{ else }}
+					{{ $.Scratch.Set "postLimit" 5 }}
+				{{ end }}
+
+				{{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+						<article class="mini-post">
+							<header>
+								<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+								{{ $.Scratch.Set "dateType" .Date }}
+								<time class="published" datetime=
+									'{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+									{{ ($.Scratch.Get "dateType").Format .Site.Params.date_format }}</time>
+							</header>
+							{{ .Render "featured" }}
+						</article>
+				{{ end }}
+
+				{{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+					<a href=
+						{{ with .Site.Params.viewMorePostLink }}
+							{{ . }}
+						{{ else }}
+							"/techies"
+						{{ end }}
+						class="button">View more posts</a>
+				{{ end }}
+			</div>
+		</section>
+</section>
