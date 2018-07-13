@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <header id="header">
-	<h1><a class="navbar-brand" href="{{ " / " | relURL }}">{{ partial "logo.svg" . }}<span>
+	<h1><a class="navbar-brand" href='{{ " / " | relURL }}'>{{ partial "logo.svg" . }}<span>
 		{{ if or .IsHome (not .Site.Params.DynamicTitles) }}
 			{{ .Site.Params.navbarTitle }}
 		{{ else if ne .Section "" }}

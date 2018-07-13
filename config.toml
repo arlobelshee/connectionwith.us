@@ -1,6 +1,6 @@
-baseurl = "https://arlo.belshee.com/"
+baseurl = "https://connectionwith.us/"
 languageCode = "en-us"
-title = "Arlo Belshee"
+title = "Marrying off Arlo Belshee and Heather Willeke"
 theme = "arcanum"
 preserveTaxonomyNames = true
 paginate = 15
@@ -12,15 +12,15 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "Arlo can help your organization master its legacy code. Get to code complete faster, and be bug-free when you get there."
-  navbarTitle          = "Arlo Belshee"
+  description          = "Arlo and Heather are getting married. Connect with our journey before, during, and after the event. We love you!"
+  navbarTitle          = "Arlo & Heather"
 	date_format = "2 January 2006"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/techies"
 
 # Optional Params
   # Sets navbarTitle to match the section of the website
-  dynamicTitles        = false
+  dynamicTitles        = true
   # Sets RSS icons to appear on the sidebar with the social media buttons
   rssAppearAtTop       = true
   rssAppearAtBottom    = true
@@ -41,12 +41,12 @@ canonifyURLs = true
   socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
   socialShareTwitter   = true
-  socialShareGoogleplus = true
+  socialShareGoogleplus = false
   socialShareFacebook  = true
-  socialShareReddit    = true
-  socialShareLinkedin  = true
-  socialShareStumbleupon = true
-  socialSharePinterest = true
+  socialShareReddit    = false
+  socialShareLinkedin  = false
+  socialShareStumbleupon = false
+  socialSharePinterest = false
   socialShareEmail     = true
 
   # Load custom CSS or JavaScript files. The variable is an array so that you
@@ -74,84 +74,34 @@ css = "index/featured-item-row.css"
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]
-  name = "About"
-  url = "/about"
-  identifier = "far fa-id-card"
-  weight = 1
-
-[[menu.main]]
-  name = "Past Work"
-  url = "/work"
-  identifier = "far fa-id-card"
+  name = "Photos"
+  url = "/photos"
+  identifier = "far fa-camera"
   weight = 2
 
 [[menu.main]]
-  name = "Technical Articles"
-  url = "/techies"
-  identifier = "far fa-newspaper"
+  name = "Wedding Weekend Logistics"
+  url = "/logistics"
+  identifier = "far fa-car"
   weight = 3
 
 [[menu.main]]
-  name = "Services"
-  url = "/services"
-  identifier = "far fa-list-alt"
+  name = "Conversation"
+  url = "/conversation"
+  identifier = "far fa-phone"
   weight = 4
-
-[[menu.main]]
-  name = "Contact"
-  url = "/contact"
-  identifier = "far fa-envelope"
-  weight = 6
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.
 [social]
-  # Coding Communities
-  github           = "arlobelshee"
-  gitlab           = ""
-  stackoverflow    = "" # User Number
-  bitbucket        = ""
-  jsfiddle         = ""
-  codepen          = ""
-  # Visual Art Communities
-  deviantart       = ""
   flickr           = ""
-  behance          = ""
-  dribbble         = ""
-  # Publishing Communities
-  wordpress        = ""
-  medium           = ""
-  # Professional/Business Oriented Communities
-  linkedin         = "arlobelshee"
-  linkedin_company = ""
-  foursquare       = ""
-  xing             = ""
   slideshare       = ""
-  # Social Networks
   facebook         = ""
-  googleplus       = ""
-  reddit           = ""
-  quora            = ""
   youtube          = ""
   vimeo            = ""
-  whatsapp         = "" # WhatsApp Number
-  # WeChat and QQ need testing.
-  wechat         = ""
-  qq             = "" # User ID Number
   instagram        = ""
-  tumblr           = ""
-  twitter          = "arlobelshee"
-  skype            = ""
-  snapchat         = ""
-  pinterest        = ""
   telegram         = ""
-  vine             = ""
-  googlescholar    = ""
-  orcid            = ""
-  researchgate     = ""
-  # Email
-  email            = "arlo@belshee.com"
 
 # To get the index.css. Don't modify.
 [outputs]
