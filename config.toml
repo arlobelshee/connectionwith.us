@@ -64,12 +64,16 @@ partial = "index/hero.html"
 css = "index/hero.css"
 
 [[params.homepage.sections]]
-partial = "index/about.html"
-css = "index/text-and-graphic-row.css"
+partial = "index/news.html"
+css = "index/news-row.css"
 
 [[params.homepage.sections]]
-partial = "index/feature.html"
-css = "index/featured-item-row.css"
+partial = "index/photos.html"
+css = "index/photos-row.css"
+
+[[params.homepage.sections]]
+partial = "index/key-logistics.html"
+css = "index/logistics-row.css"
 
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
