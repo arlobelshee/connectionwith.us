@@ -73,7 +73,11 @@ css = "index/photos-row.css"
 
 [[params.homepage.sections]]
 partial = "index/key-logistics.html"
-css = "index/logistics-row.css"
+css = ""
+
+[[params.homepage.sections]]
+partial = "index/site-todo.html"
+css = ""
 
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item

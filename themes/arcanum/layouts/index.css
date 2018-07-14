@@ -4,5 +4,7 @@
 	{{- partial .Site.Params.homepage.shared_css $ctx -}}
 {{ end }}
 {{ range $section := .Site.Params.homepage.sections }}
-	{{- partial $section.css $ctx -}}
+	{{ if (not (eq ($section.css | default "") "")) }}
+		{{- partial $section.css $ctx -}}
+	{{ end }}
 {{ end }}
