@@ -84,19 +84,19 @@ css = ""
 [[menu.main]]
   name = "Photos"
   url = "/photos"
-  identifier = "far fa-camera"
+  identifier = "fas fa-camera-retro"
   weight = 2
 
 [[menu.main]]
   name = "Wedding Weekend Logistics"
   url = "/logistics"
-  identifier = "far fa-car"
+  identifier = "fas fa-cocktail"
   weight = 3
 
 [[menu.main]]
   name = "Conversation"
   url = "/conversation"
-  identifier = "far fa-phone"
+  identifier = "far fa-comments"
   weight = 4
 
 # Sets Social Media icons to appear and link to your account. Value should be your
