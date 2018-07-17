@@ -67,3 +67,7 @@
 .text-and-graphic-row .attention-graphic img {
   width: 100%;
 }
+.grid-2 {
+	display: grid;
+	grid-column: 1 1;
+}
