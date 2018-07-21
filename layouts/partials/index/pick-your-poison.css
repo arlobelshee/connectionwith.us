@@ -1,0 +1,25 @@
+/* Pick your poison */
+#pick-you .drink-option {
+	display: block;
+}
+
+#pick-you .drink-option label,
+#pick-you .drink-option input{
+	display: inline-block;
+}
+
+#pick-you .drink-option span.meaning {
+	display: none;
+}
+
+#pick-you .drink-option input[value=0] ~ span.meaning.no {
+	display: inline-block;
+}
+
+#pick-you .drink-option input[value=1] ~ span.meaning.some {
+	display: inline-block;
+}
+
+#pick-you .drink-option input[value=2] ~ span.meaning.yes {
+	display: inline-block;
+}

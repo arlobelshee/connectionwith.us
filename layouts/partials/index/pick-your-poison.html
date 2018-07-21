@@ -1,0 +1,30 @@
+<section class="" id="pick-you">
+	<div class="block">
+		<h2>Some really important info we need from you!</h2>
+		<p>First, who is this? If this is multiple people, then come back multiple times! We needs personal info from each of you!
+			<input name="name" type="text" placeholder="Your actual name">
+			<input name="moniker" type="text" placeholder="Whatever silly and misleading thing you were going to say">
+		</p>
+		<p>To you, what is the most important way you know us?
+			<select name="how_known">
+				<option value="conf">Conferences and (un-)professional</option>
+				<option value="childhood">I totally grew up with you</option>
+				<option value="loves">We've made a "special bond" as adults</option>
+				<option value="family">Parents and siblings and stuff</option>
+				<option value="hanging">We hang out and fun shit happens</option>
+			</select>
+		</p>
+		<p>We've got 2 days of festivities! "They" tell us it's important to keep evryone hydrated, and each event has a different
+			ambiance. Thus many different forms of hydration. So what do you like to drink?
+			{{ range .Site.Data.drinks.options }}
+			<div class="drink-option">
+				<label for="drink_{{ .id }}">{{ .drink }}</label>
+				<input type="range" name="drink_{{ .id }}" min="0" max="2" value="{{ .initial_value | default 0 }}">
+				<span class="meaning no">{{ .meaning_0 }}</span>
+				<span class="meaning some">{{ .meaning_1 }}</span>
+				<span class="meaning yes">{{ .meaning_2 }}</span>
+			</div>
+			{{ end }}
+		</p>
+	</div>
+</section>

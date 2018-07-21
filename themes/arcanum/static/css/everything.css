@@ -665,7 +665,8 @@ button {
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-.button:hover {
+.button:hover,
+button:hover {
 	border: solid 1px #2ebaae;
 	color: #2ebaae !important;
 }
@@ -673,7 +674,8 @@ input[type="button"]:hover,
 input[type="submit"]:hover:active,
 input[type="reset"]:hover:active,
 input[type="button"]:hover:active,
-.button:hover:active {
+.button:hover:active,
+button:hover:active {
 	background-color: rgba(46, 186, 174, 0.05);
 }
 
@@ -684,7 +686,9 @@ input[type="reset"]:after,
 input[type="button"]:before,
 input[type="button"]:after,
 .button:before,
-.button:after {
+.button:after,
+button:before,
+button:after {
 	color: #aaaaaa;
 	position: relative;
 }
@@ -692,7 +696,8 @@ input[type="button"]:after,
 input[type="submit"]:before,
 input[type="reset"]:before,
 input[type="button"]:before,
-.button:before {
+.button:before,
+button:before {
 	left: -1em;
 	padding: 0 0 0 0.75em;
 }
@@ -700,7 +705,8 @@ input[type="button"]:before,
 input[type="submit"]:after,
 input[type="reset"]:after,
 input[type="button"]:after,
-.button:after {
+.button:after,
+button:after {
 	left: 1em;
 	padding: 0 0.75em 0 0;
 }
@@ -708,7 +714,8 @@ input[type="button"]:after,
 input[type="submit"].fit,
 input[type="reset"].fit,
 input[type="button"].fit,
-.button.fit {
+.button.fit,
+button.fit {
 	display: block;
 	margin: 0 0 1em 0;
 	width: 100%;
@@ -717,7 +724,8 @@ input[type="button"].fit,
 input[type="submit"].big,
 input[type="reset"].big,
 input[type="button"].big,
-.button.big {
+.button.big,
+button.big {
 	font-size: 0.7em;
 	padding: 0 3em;
 }
@@ -725,7 +733,8 @@ input[type="button"].big,
 input[type="submit"].small,
 input[type="reset"].small,
 input[type="button"].small,
-.button.small {
+.button.small,
+button.small {
 	font-size: 0.5em;
 }
 
@@ -736,7 +745,9 @@ input[type="reset"]:disabled,
 input[type="button"].disabled,
 input[type="button"]:disabled,
 .button.disabled,
-.button:disabled {
+.button:disabled,
+button.disabled,
+button:disabled {
 	pointer-events: none;
 	color: rgba(160, 160, 160, 0.3) !important;
 }
@@ -748,7 +759,9 @@ input[type="reset"]:disabled:before,
 input[type="button"].disabled:before,
 input[type="button"]:disabled:before,
 .button.disabled:before,
-.button:disabled:before {
+.button:disabled:before,
+button.disabled:before,
+button:disabled:before {
 	color: rgba(160, 160, 160, 0.3) !important;
 }
 
