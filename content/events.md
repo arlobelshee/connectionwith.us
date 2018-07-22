@@ -20,7 +20,8 @@ This is going to be awesome! For days and weeks! Here are some of the ways you c
 
 Let's get this party started!
 
-Meet us at **Rembrandt Yard**	 in downtown Boulder at 18:00.
+Meet us at **Rembrandt Yard**	 in downtown Boulder\
+at 18:00.
 {{% /flow-item %}}
 
 {{< teaser url="img/cocktail-hour.jpg" title="Cocktail Hour" description="Let's start off with a cocktail hour so you all have time to show up and we can all get in the right form to start this thing!" >}}
