@@ -4,8 +4,15 @@
 }
 
 #pick-you .drink-option label,
-#pick-you .drink-option input{
+#pick-you .drink-option input,
+#pick-you .drink-option span.meaning {
 	display: inline-block;
+	vertical-align: baseline;
+}
+
+#pick-you .drink-option label {
+	font-weight: normal;
+	text-transform: capitalize;
 }
 
 #pick-you .drink-option span.meaning {
