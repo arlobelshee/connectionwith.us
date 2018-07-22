@@ -1,6 +1,6 @@
 /* Hero graphic */
 #main section#hero {
-	background: linear-gradient(to left, #8b86a3cc, #322e40cc), url("../img/hero-bg.jpg") fixed no-repeat 10% 0%;
+	background: linear-gradient(to left, #8b86a3cc, #322e40cc), url("../img/hero-bg.jpg") fixed no-repeat 45% 0%;
 	background-size: cover;
 	padding: 10em 1.5em;
 }
