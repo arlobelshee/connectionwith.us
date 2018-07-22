@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
-		"js-prod": "npx babel src --out-dir assets --presets react-app/prod",
-		"serve": ".\\bin\\hugo.exe server",
-		"build": ".\\bin\\hugo.exe"
-	},
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
+    "js-prod": "npx babel src --out-dir assets --presets react-app/prod",
+    "serve": ".\\bin\\hugo.exe server",
+    "build": ".\\bin\\hugo.exe"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arlobelshee/connectionwith.us.git"
