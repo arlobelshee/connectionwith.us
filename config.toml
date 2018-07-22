@@ -1,10 +1,10 @@
 baseurl = "https://www.connectionwith.us/"
 languageCode = "en-us"
-title = "Bringing together Arlo and Heather"
+title = "Bringing Together Arlo and Heather"
 theme = "arcanum"
 preserveTaxonomyNames = true
-paginate = 15
-disqusShortname = "shortname"
+paginate = 30
+disqusShortname = "connectionwith-us"
 googleAnalytics = "UA-122715474-1"
 pluralizeListTitles = false
 enableRobotsTXT = true
@@ -12,17 +12,17 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "Arlo and Heather are getting married. Connect with our journey before, during, and after the event. We love you!"
+  description          = "Arlo and Heather should be committed! So we are doing that. Connect with our journey before, during, and after the event. We love you!"
   navbarTitle          = "Arlo & Heather"
 	date_format = "2 January 2006"
   # Sets where "View More Posts" links
-  viewMorePostLink     = "/techies"
+  viewMorePostLink     = "/conversation"
 
 # Optional Params
   # Sets navbarTitle to match the section of the website
   dynamicTitles        = true
   # Sets RSS icons to appear on the sidebar with the social media buttons
-  rssAppearAtTop       = true
+  rssAppearAtTop       = false
   rssAppearAtBottom    = true
   # Sets Social Media icons to appear on the sidebar
   socialAppearAtTop    = true
@@ -118,11 +118,12 @@ partial = "index/react-scripts.html"
 [social]
   flickr           = ""
   slideshare       = ""
-  facebook         = ""
+  facebook         = "arlo.belshee"
   youtube          = ""
   vimeo            = ""
   instagram        = ""
   telegram         = ""
+	twitter = "arlobelshee"
 
 # To get the index.css. Don't modify.
 [outputs]
