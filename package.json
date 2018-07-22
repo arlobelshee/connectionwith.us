@@ -6,9 +6,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
-		"serve": ".\\bin\\hugo.exe server",
+		"serve": ".\\bin\\hugo.exe server --cleanDestinationDir",
 		"prebuild": "npx babel src --out-dir assets --presets react-app/prod",
-		"build": ".\\bin\\hugo.exe"
+		"build": ".\\bin\\hugo.exe --cleanDestinationDir --forceSyncStatic"
 	},
 	"repository": {
 		"type": "git",

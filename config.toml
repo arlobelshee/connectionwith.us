@@ -2,13 +2,41 @@ baseurl = "https://www.connectionwith.us/"
 languageCode = "en-us"
 title = "Bringing Together Arlo and Heather"
 theme = "arcanum"
-preserveTaxonomyNames = true
-paginate = 30
 disqusShortname = "connectionwith-us"
 googleAnalytics = "UA-122715474-1"
+preserveTaxonomyNames = true
+paginate = 30
 pluralizeListTitles = false
 enableRobotsTXT = true
 canonifyURLs = true
+relativeURLs = true
+enableEmoji = true
+enableGitInfo = true
+footnoteAnchorPrefix = "fn-"
+footnoteReturnLinkContents = "back to text"
+noChmod = true
+
+[taxonomies]
+	tag = "tags"
+
+[related]
+	threshold = 70
+	includeNewer = true
+	toLower = true
+
+[[related.indices]]
+	name = "keywords"
+	weight = 150
+[[related.indices]]
+	name  = "author"
+	weight = 30
+[[related.indices]]
+	name  = "tags"
+	weight = 100
+[[related.indices]]
+	name  = "date"
+	weight = 10
+	pattern = "2006"
 
 [params]
   # Sets the meta tag description
