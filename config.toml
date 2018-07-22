@@ -121,7 +121,7 @@ css = ""
 
 [mediaTypes]
 [mediaTypes."text/css"]
-suffix = "css"
+suffixes = ["css"]
 
 [outputFormats]
 [outputFormats.css]
