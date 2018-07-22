@@ -34,7 +34,7 @@ figure.teaser p.desc {
 figure.teaser p.logistics {
 	font-style: italic;
 	font-size: 1em;
-	text-align: right;
+	text-align: center;
 }
 
 figure.teaser button,
