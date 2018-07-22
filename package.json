@@ -1,28 +1,28 @@
 {
-  "name": "connectionwith.us",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
-    "js-prod": "npx babel src --out-dir assets --presets react-app/prod",
-    "serve": ".\\bin\\hugo.exe server",
-    "build": ".\\bin\\hugo.exe"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arlobelshee/connectionwith.us.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/arlobelshee/connectionwith.us/issues"
-  },
-  "homepage": "https://github.com/arlobelshee/connectionwith.us#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
-  }
+	"name": "connectionwith.us",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
+		"js-prod": "npx babel src --out-dir assets --presets react-app/prod",
+		"serve": ".\\bin\\hugo.exe server",
+		"build": ".\\bin\\hugo.exe"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/arlobelshee/connectionwith.us.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/arlobelshee/connectionwith.us/issues"
+	},
+	"homepage": "https://github.com/arlobelshee/connectionwith.us#readme",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-react-app": "^3.1.2"
+	}
 }
