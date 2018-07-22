@@ -89,22 +89,28 @@ partial = "index/react-scripts.html"
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]
-  name = "Photos"
-  url = "/photos"
-  identifier = "fas fa-camera-retro"
+  name = "Home"
+  url = "/"
+  identifier = "fab fa-fort-awesome"
   weight = 2
 
 [[menu.main]]
-  name = "Wedding Weekend Logistics"
-  url = "/logistics"
-  identifier = "fas fa-cocktail"
+  name = "Photos"
+  url = "/photos"
+  identifier = "fas fa-camera-retro"
   weight = 3
+
+[[menu.main]]
+  name = "Wedding Weekend Events"
+  url = "/events"
+  identifier = "fas fa-cocktail"
+  weight = 4
 
 [[menu.main]]
   name = "Conversation"
   url = "/conversation"
   identifier = "far fa-comments"
-  weight = 4
+  weight = 5
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
