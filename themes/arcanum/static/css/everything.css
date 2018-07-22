@@ -1287,4 +1287,5 @@ body.is-menu-visible #menu {
 
 .flowing {
 	display: flex;
+	flex-wrap: wrap;
 }
