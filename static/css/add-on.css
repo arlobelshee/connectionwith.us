@@ -69,3 +69,8 @@ figure.teaser .button {
 	color: #3b3b3b;
 	border-color: #e3e3e3;
 }
+
+.flowing {
+	max-width: 80em;
+	margin: 0 auto;
+}

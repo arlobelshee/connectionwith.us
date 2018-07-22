@@ -11,7 +11,7 @@ This is going to be awesome! For days and weeks! Here are some of the ways you c
 
 {{% flowing %}}
 
-{{< teaser url="img/broken.jpg" title="Connecting Together" description="Let's start off with a cocktail hour so you all have time to show up and we can all get in the right form to start this thing!" >}}
+{{< teaser url="img/broken.jpg" title="Connecting Together" description="An amazing thing for the morning." >}}
 
 * Open connection something in the morning
 * High tea (totally without gin)
