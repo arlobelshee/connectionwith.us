@@ -7,7 +7,7 @@
 	display: grid;
 	grid-template-columns: auto auto auto;
 	justify-content: start;
-	column-gap: 1.0em;
+	column-gap: 1em;
 }
 
 #pick-you #drinks label {
@@ -21,10 +21,18 @@
 	grid-column: 2;
 }
 
-#pick-you #drinks div {
-	display: content;
+#pick-you #drinks .meaning {
+	grid-column: 3;
 }
 
-#pick-you #drinks span.meaning {
-	grid-column: 3;
+@media screen and (max-width: 736px) {
+	#pick-you #drinks {
+		grid-template-columns: 1fr 1fr;
+		justify-content: stretch;
+	}
+
+	#pick-you #drinks .meaning {
+		grid-column: 1 / 3;
+		margin: 0 0 1.5em;
+	}
 }
