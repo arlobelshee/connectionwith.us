@@ -21,7 +21,10 @@
 	grid-column: 2;
 }
 
+#pick-you #drinks div {
+	display: content;
+}
+
 #pick-you #drinks span.meaning {
-	display: none;
 	grid-column: 3;
 }

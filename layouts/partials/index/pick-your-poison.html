@@ -5,7 +5,7 @@
 			<input name="name" type="text" placeholder="Your actual name">
 			<input name="moniker" type="text" placeholder="Whatever silly and misleading thing you were going to say">
 		</p>
-		<p>We've got 2 days of festivities! "They" tell us it's important to keep evryone hydrated, and each event has a different
+		<p>We've got 2 days of festivities! "They" tell us it's important to keep everyone hydrated, and each event has a different
 			ambiance. Thus many different forms of hydration. So what do you like to drink?
 			<div id="drinks">
 				{{ range .Site.Data.drinks.options }}
@@ -15,10 +15,10 @@
 					{{- $drink_data := dict "input_name" (print "drink_" .id) "0" .meaning_0 "1" .meaning_1 "2" .meaning_2 -}}
 					{{- $drink_data | jsonify -}}
 				</script>
-				<div class="meanings">
-					<span class="meaning no">{{ .meaning_0 }}</span>
+				<div class="meanings" data-fieldname="drink_{{ .id }}" data-no="{{ .meaning_0 }}" data-some="{{ .meaning_1 }}" data-yes="{{ .meaning_2 }}" data-initialvalue="{{ .initial_value | default 0 }}">
+					<!-- <span class="meaning no">{{ .meaning_0 }}</span>
 					<span class="meaning some">{{ .meaning_1 }}</span>
-					<span class="meaning yes">{{ .meaning_2 }}</span>
+					<span class="meaning yes">{{ .meaning_2 }}</span> -->
 				</div>
 				{{ end }}
 			</div>
