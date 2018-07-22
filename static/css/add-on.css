@@ -2,3 +2,56 @@
   This css file is for individual users to restyle items for their personal site,
   or for the implementation of features specifically for their site.
 */
+
+figure.teaser {
+	display: block;
+	width: 24em;
+	margin: 1em;
+}
+
+figure.teaser img {
+	display: block;
+	width: 24em;
+	height: 24em;
+}
+
+figure.teaser h3 {
+	margin: 1.0em 0 0;
+	font-size: 1.6em;
+	text-align: center;
+}
+
+figure.teaser p {
+	margin: 0;
+	font-size: 1.4em;
+}
+
+figure.teaser p.desc {
+	font-size: 1.4em;
+	text-align: justify;
+}
+
+figure.teaser p.logistics {
+	font-style: italic;
+	font-size: 1em;
+	text-align: right;
+}
+
+figure.teaser button,
+figure.teaser .button {
+	margin: 0.4em auto 0;
+	display: block;
+}
+
+/* Buttons */
+#main section .button,
+#main section button {
+	background-color: #655e7a;
+	color: #fff;
+	border-color: #655e7a;
+}
+#main section.dark-bg .button {
+	background-color: #e3e3e3;
+	color: #3b3b3b;
+	border-color: #e3e3e3;
+}

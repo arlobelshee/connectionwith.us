@@ -11,11 +11,6 @@
 		padding: 6em 8em;
 	}
 }
-#main section .button {
-	background-color: #655e7a;
-	color: #fff;
-	border-color: #655e7a;
-}
 .dark-bg h1,
 .dark-bg h2,
 .dark-bg h3,
@@ -29,11 +24,6 @@
 }
 #main section.dark-bg {
 	background-color: #333;
-}
-#main section.dark-bg .button {
-	background-color: #e3e3e3;
-	color: #3b3b3b;
-	border-color: #e3e3e3;
 }
 /* Featured-item rows */
 @media screen and (min-width: 736px) {
