@@ -83,6 +83,9 @@ css = ""
 partial = "index/site-todo.html"
 css = ""
 
+[[params.homepage.sections]]
+partial = "index/react-scripts.html"
+
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]

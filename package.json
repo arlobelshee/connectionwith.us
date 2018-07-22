@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "npx babel --watch src --out-dir public --presets react-app/prod"
-  },
+		"watch": "npx babel --watch src --out-dir assets --presets react-app/prod",
+		"serve": ".\\bin\\hugo.exe server"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arlobelshee/connectionwith.us.git"
