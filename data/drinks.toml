@@ -4,23 +4,23 @@ description = "Drinks list"
 id = "water"
 drink = "water"
 initial_value = 1
-meaning_0 = "never touch the stuff. Fish pee in it."
-meaning_1 = "it's potable"
-meaning_2 = "I'm trying to get my body to 80% water"
+meaning_0 = "Never touch the stuff. Fish pee in it."
+meaning_1 = "It's potable."
+meaning_2 = "I'm trying to get my body to 80%."
 
 [[options]]
 id ="irish"
 drink = "whiskey, Irish (and Welsh)"
 initial_value = 0
-meaning_0 = "well, at least it's sweet...but still, no."
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Well, at least it's sweet...but still, no."
+meaning_1 = "I'll have a wee dram."
+meaning_2 = "Kiss me; I'm Irish!"
 
 [[options]]
 id = "rye"
-drink = "whiskey, rye"
+drink = "whiskey, rye (or sour)"
 initial_value = 0
-meaning_0 = "sour and nasty. Who even likes this stuff?"
+meaning_0 = "Sour and nasty. Who even likes this stuff?"
 meaning_1 = ""
 meaning_2 = ""
 
@@ -28,22 +28,22 @@ meaning_2 = ""
 id = "bourbon"
 drink = "whiskey, Bourbon"
 initial_value = 0
-meaning_0 = "oh god, it burns!"
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Oh god, it burns!"
+meaning_1 = "Made in 'merica! Yet still oddly drinkable..."
+meaning_2 = "I run my own still..."
 
 [[options]]
 id = "highland"
 drink = "whisky, Scotch - smokies"
 initial_value = 0
-meaning_0 = "eeew. Like kissing a smoker."
-meaning_1 = "at least it's scotch."
+meaning_0 = "Eeew. Like kissing a smoker."
+meaning_1 = "At least it's scotch."
 meaning_2 = "Yum. Like making out while sharing a fine cigar."
 
 [[options]]
 id = "lowland"
 drink = "whisky, Scotch - florals"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = "at least it's scotch."
+meaning_0 = "You burninated the countryside. And you want me to drink it?"
+meaning_1 = "At least it's scotch."
 meaning_2 = "Such a delicious melding of flavor profiles, smoke with complex sweets and herbs."

@@ -7,15 +7,17 @@
 		</p>
 		<p>We've got 2 days of festivities! "They" tell us it's important to keep evryone hydrated, and each event has a different
 			ambiance. Thus many different forms of hydration. So what do you like to drink?
-			{{ range .Site.Data.drinks.options }}
-			<div class="drink-option">
+			<div id="drinks">
+				{{ range .Site.Data.drinks.options }}
 				<label for="drink_{{ .id }}">{{ .drink }}</label>
 				<input type="range" name="drink_{{ .id }}" min="0" max="2" value="{{ .initial_value | default 0 }}">
-				<span class="meaning no">{{ .meaning_0 }}</span>
-				<span class="meaning some">{{ .meaning_1 }}</span>
-				<span class="meaning yes">{{ .meaning_2 }}</span>
+				<div>
+					<span class="meaning no">{{ .meaning_0 }}</span>
+					<span class="meaning some">{{ .meaning_1 }}</span>
+					<span class="meaning yes">{{ .meaning_2 }}</span>
+				</div>
+				{{ end }}
 			</div>
-			{{ end }}
 		</p>
 	</div>
 </section>

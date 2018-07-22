@@ -3,30 +3,24 @@
 	display: block;
 }
 
-#pick-you .drink-option label,
-#pick-you .drink-option input,
-#pick-you .drink-option span.meaning {
-	display: inline-block;
-	vertical-align: baseline;
+#pick-you #drinks {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: start;
+	column-gap: 1.0em;
 }
 
-#pick-you .drink-option label {
+#pick-you #drinks label {
 	font-weight: normal;
 	text-transform: capitalize;
+	grid-column: 1;
 }
 
-#pick-you .drink-option span.meaning {
+#pick-you #drinks input {
+	grid-column: 2;
+}
+
+#pick-you #drinks span.meaning {
 	display: none;
-}
-
-#pick-you .drink-option input[value=0] ~ span.meaning.no {
-	display: inline-block;
-}
-
-#pick-you .drink-option input[value=1] ~ span.meaning.some {
-	display: inline-block;
-}
-
-#pick-you .drink-option input[value=2] ~ span.meaning.yes {
-	display: inline-block;
+	grid-column: 3;
 }
