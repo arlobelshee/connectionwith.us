@@ -1,0 +1,18 @@
+{{ $when := .when | default ":none" }}
+{{ $where := .where | default ":none" }}
+{{ $button := .button | default ":none" }}
+{{ $button_data := .button_data | default ":none" }}
+
+<figure class="teaser">
+	<img src="{{ .url | relURL }}" title="{{ .title }}">
+	<figcaption>
+		<h3>{{ .title }}</h3>
+		<p class="desc">{{ .description }}</p>
+		 {{ if (not (or (eq $when ":none") (eq $where ":none"))) }}
+		<p class="logistics"><b>When:</b> {{ $when }}<br><b>Where:</b> {{ $where }}</p>
+		{{ end }}
+		{{ if (not (or (eq $button ":none") (eq $button_data ":none"))) }}
+		<button data-column="{{ $button_data }}">{{ $button }}</button>
+		{{ end }}
+	</figcaption>
+</figure>

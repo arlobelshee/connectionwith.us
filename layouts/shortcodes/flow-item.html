@@ -1,0 +1,4 @@
+{{ $image := (.Get "bg_image") }}
+<div class='item-with-bg {{.Get "css_class" | default ""}}' style="background-image: url({{ $image | relURL }})">
+	{{ .Inner }}
+</div>

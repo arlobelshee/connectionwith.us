@@ -15,13 +15,15 @@ figure.teaser img {
 	height: 24em;
 }
 
-figure.teaser h3 {
+figure.teaser h3,
+.scroll h3 {
 	margin: 1.0em 0 0;
 	font-size: 1.6em;
 	text-align: center;
 }
 
-figure.teaser p {
+figure.teaser p,
+.scroll p {
 	margin: 0;
 	font-size: 1.4em;
 }
@@ -43,6 +45,17 @@ figure.teaser .button {
 	display: block;
 }
 
+.item-with-bg {
+	margin: 1em;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 24em;
+}
+
+.scroll {
+	padding: 7em 4.8em 7em 8.2em;
+}
+
 /* Buttons */
 #main section .button,
 #main section button {
@@ -50,6 +63,7 @@ figure.teaser .button {
 	color: #fff;
 	border-color: #655e7a;
 }
+
 #main section.dark-bg .button {
 	background-color: #e3e3e3;
 	color: #3b3b3b;

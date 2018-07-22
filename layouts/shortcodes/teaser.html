@@ -8,17 +8,9 @@
 {{ $url := (.Get "url") }}
 {{ $title := (.Get "title") }}
 {{ $description := (.Get "description") }}
-{{ $when := (.Get "when") }}
-{{ $where := (.Get "where") }}
+{{ $when := (.Get "when") | default ":none" }}
+{{ $where := (.Get "where") | default ":none" }}
 {{ $button := (.Get "button") | default ":none" }}
 {{ $button_data := (.Get "button-data") | default ":none" }}
 
-	<figure class="teaser">
-		<img src="{{ $url | relURL }}" title="{{ $title }}">
-		<h3>{{ $title }}</h3>
-		<p class="desc">{{ $description }}</p>
-		<p class="logistics">{{ $when }}, {{ $where }}</p>
-		{{ if (not (or (eq $button ":none") (eq $button_data ":none"))) }}
-			<button data-column="{{ $button_data }}">{{ $button }}</button>
-		{{ end }}
-	</figure>
+{{partial "teaser-impl" (dict "url" $url "title" $title "description" $description "when" $when "where" $where "button" $button "button_data" $button_data) }}

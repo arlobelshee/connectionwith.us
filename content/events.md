@@ -7,30 +7,30 @@ subtitle = "Come hang out and do things!"
 
 This is going to be awesome! For days and weeks! Here are some of the ways you can join us.
 
-## November:
-
-**this section moves out of this page; put it on the index in its band**
-
-<div class="flowing">
-
-{{< teaser url="img/heather-shower.jpg" title="Heather's Shower" description="Heather defaults to formal. And then put Ellen in charge. Which means chickens are likely. No freaking idea what'll happen here..." when="90 min in November" where="Virtual" button="I'm in!" button-data="heather-shower" >}}
-
-{{< teaser url="img/arlo-shower.jpg" title="Arlo's Shower" description="Arlo defaults to gooey. But bachelor parties...don't. Can we crack him out of his shell or will he drag us to the soft side?" when="90 min in November" where="Virtual" button="I'm in!" button-data="arlo-shower" >}}
-
-</div>
-
 ## Jan 11---Coming Together Day
 
 * Open connection something in the morning
 * High tea (totally without gin)
-* "Rehearsal" dinner (gin)
 
 ## Jan 12---The Date Arlo is Supposed to Remember Forever
 
-* Get ready with Heather in the morning party
-* Goof off with Arlo in Boulder
+{{% flowing %}}
+{{% flow-item bg_image="img/scroll-bg.jpg" css_class="scroll" %}}
+### The big day...
+
+Let's get this party started!
+
+Meet us at Rembrandt Yard in downtown Boulder at 18:00.
+{{% /flow-item %}}
+
+{{< teaser url="img/cocktail-hour.jpg" title="Cocktail Hour" description="Let's start off with a cocktail hour so you all have time to show up and we can all get in the right form to start this thing!" >}}
+
+{{< teaser url="img/bubbles-story.jpg" title="The Story of Bubbles" description="Cava is a big deal for us. We will toast you and tell the story. Around 1930." >}}
+
+{{% /flowing %}}
+
 * 6:00pm Cocktail hour at Rembrandt Yard
-* 7:00pm Ceremony
+* 7:00pm Ceremony There's a ceremony at 1900 that you really don't want to miss. It's kind of the thing.
 * 7:30pm Bubbles tales!
 * 8:00pm No-prep conference
 * 9:00pm Mad Hatter Tea Party
