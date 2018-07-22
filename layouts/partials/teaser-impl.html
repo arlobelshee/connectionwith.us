@@ -7,7 +7,7 @@
 	<img src="{{ .url | relURL }}" title="{{ .title }}">
 	<figcaption>
 		<h3>{{ .title }}</h3>
-		<p class="desc">{{ .description }}</p>
+		<p class="desc">{{ .description | markdownify }}</p>
 		 {{ if (not (or (eq $when ":none") (eq $where ":none"))) }}
 		<p class="logistics"><b>When:</b> {{ $when }}<br><b>Where:</b> {{ $where }}</p>
 		{{ end }}

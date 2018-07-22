@@ -34,11 +34,11 @@ at 18:00.
 
 {{< teaser url="img/love-sign.jpg" title="The Ceremony" description="There's a ceremony at 19:00 that you really don't want to miss. It's kind of the thing." >}}
 
-{{< teaser url="img/bubbles-story.jpg" title="The Story of Bubbles" description="Cava is a big deal for us. We will toast you and tell the story. Around 19:30." >}}
+{{< teaser url="img/bubbles-story.jpg" title="The Story of Bubbles" description="Cava is a big deal for us. We will toast you and tell the story. Around 19:30. There will be drinking (of cava)." >}}
 
-{{< teaser url="img/no-prep-conf-tiny.jpg" title="Conference Speakers Time!" description="So many of you know us from the conference speakers context. And you can speak. So talk about us. We'll watch." >}}
+{{< teaser url="img/no-prep-conf-tiny.jpg" title="Share Magic" description="We honestly have no idea what this will be. Our facilitators will...make magic. Tell stories! Share awesome! Laugh a whole lot at whatever happens.">}}
 
-{{< teaser url="img/mad-hatter.jpg" title="Mad Hatter Tea Party!" description="Clean cup, clean cup, move down. " >}}
+{{< teaser url="img/mad-hatter.jpg" title="Mad Hatter Tea Party!" description="[*Clean cup, clean cup, move down...*](http://www.alice-in-wonderland.net/resources/chapters-script/alices-adventures-in-wonderland/chapter-7/) There will be so many small snacks, collectively weighing down our poor servers who will need the help of your comsumption." >}}
 
 {{% /flowing %}}
 
