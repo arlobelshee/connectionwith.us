@@ -11,10 +11,9 @@ This is going to be awesome! For days and weeks! Here are some of the ways you c
 
 {{% flowing %}}
 
-{{< teaser url="img/broken.jpg" title="Connecting Together" description="An amazing thing for the morning." >}}
+{{< teaser url="img/broken.jpg" title="Connecting Together" description="A space for gooey yumminess. Open and connected. If this terrifies you...enjoy brunch!" when="10:00" where="TBD" button="Invite me!" button-data="connection-day">}}
 
-* Open connection something in the morning
-* High tea (totally without gin)
+{{< teaser url="img/high-tea.jpg" title="High Tea" description="Totally tea. Not gin. Really. Don't ask Heather. She said formal, so here it is!" when="14:00" where="TBD" button="Invite me!" button-data="high-tea" >}}
 
 {{% /flowing %}}
 
@@ -44,7 +43,11 @@ at 18:00.
 
 ## Jan 13---The Interregnum
 
-* Ski all day with us at Loveland!
+{{% flowing %}}
+
+{{< teaser url="img/ski-day.jpg" title="Skiing Interregnum" description="Cabin on the low slopes. Ski. Beer and chili." when="09:00" where="Loveland ski resort" button="Invite me!" button-data="ski-day" >}}
+
+{{% /flowing %}}
 
 ## Jan 14+---Honeymoon
 
