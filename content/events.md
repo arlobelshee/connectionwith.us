@@ -5,9 +5,7 @@ longtitle = "What's Happening When"
 subtitle = "Come hang out and do things!"
 +++
 
-This is going to be awesome! For days and weeks! Here are some of the ways you can join us.
-
-## Jan 11---Coming Together Day
+## Jan 11 --- Coming Together Day
 
 {{% flowing %}}
 
@@ -17,7 +15,7 @@ This is going to be awesome! For days and weeks! Here are some of the ways you c
 
 {{% /flowing %}}
 
-## Jan 12---The Date Arlo is Supposed to Remember Forever
+## Jan 12 --- The Date Arlo is Supposed to Remember Forever
 
 {{% flowing %}}
 {{% flow-item bg_image="img/scroll-bg.jpg" css_class="scroll" %}}
@@ -41,7 +39,7 @@ at 18:00.
 
 {{% /flowing %}}
 
-## Jan 13---The Interregnum
+## Jan 13 --- The Interregnum
 
 {{% flowing %}}
 
@@ -49,6 +47,6 @@ at 18:00.
 
 {{% /flowing %}}
 
-## Jan 14+---Honeymoon
+## Jan 14+ --- Honeymoon
 
 You go home now. We go islands. Totally fix the fact that Arlo has never been to a tropical island.
