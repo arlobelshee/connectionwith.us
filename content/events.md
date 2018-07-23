@@ -9,7 +9,7 @@ subtitle = "Come hang out and do things!"
 
 {{% flowing %}}
 
-{{< teaser url="img/broken.jpg" title="Connecting Together" description="A space for gooey yumminess. Open and connected. If this terrifies you...enjoy brunch!" when="10:00" where="TBD" button="Invite me!" button-data="connection-day">}}
+{{< teaser url="img/loving-feet.jpg" title="Connecting Together" description="A space for gooey yumminess. Open and connected. If this terrifies you...enjoy brunch!" when="10:00" where="TBD" button="Invite me!" button-data="connection-day">}}
 
 {{< teaser url="img/high-tea.jpg" title="High Tea" description="Totally tea. Not gin. Really. Don't ask Heather. She said formal, so here it is!" when="14:00" where="TBD" button="Invite me!" button-data="high-tea" >}}
 
