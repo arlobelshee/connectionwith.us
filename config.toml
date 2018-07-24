@@ -46,7 +46,7 @@ noChmod = true
   navbarTitle          = "Arlo & Heather"
 	date_format = "2 January 2006"
   # Sets where "View More Posts" links
-  viewMorePostLink     = "/conversation"
+  viewMorePostLink     = "/journey"
 
 # Optional Params
   # Sets navbarTitle to match the section of the website
@@ -124,8 +124,8 @@ partial = "index/react-scripts.html"
   weight = 2
 
 [[menu.main]]
-  name = "Photos"
-  url = "/photos"
+  name = "Our Journey"
+  url = "/journey"
   identifier = "fas fa-camera-retro"
   weight = 3
 
