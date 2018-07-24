@@ -55,8 +55,16 @@ at 18:00.
 
 ## Jan 13 --- The Interregnum
 
-{{% flowing %}}
+{{% band bg-photo="img/ski-day.jpg" bg="dark" id="ski-day" %}}
 
-{{< teaser url="img/ski-day.jpg" title="Skiing Interregnum" description="Cabin on the low slopes. Ski. Beer and chili." when="09:00" where="Loveland ski resort" button="Invite me!" button-data="ski-day" >}}
+### Skiing!
 
-{{% /flowing %}}
+Before our honeymoon starts, we want to take a day skiing. You are all welcome to join us on the slopes at Loveland.
+
+We will rent a cabin low on the slopes. Beer and chili.
+
+We are checking on cabin access for non-skiiers.
+
+<button data-column="ski-day">Invite me!</button>
+
+{{% /band %}}

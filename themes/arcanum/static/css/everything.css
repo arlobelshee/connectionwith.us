@@ -1289,3 +1289,7 @@ body.is-menu-visible #menu {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+section.band {
+	padding: 15em 0;
+}
