@@ -8,9 +8,9 @@
 {{ $url := (.Get "url") }}
 {{ $title := (.Get "title") }}
 {{ $description := (.Get "description") }}
-{{ $when := (.Get "when") | default ":none" }}
-{{ $where := (.Get "where") | default ":none" }}
-{{ $button := (.Get "button") | default ":none" }}
-{{ $button_data := (.Get "button-data") | default ":none" }}
+{{ $when := (.Get "when") }}
+{{ $where := (.Get "where") }}
+{{ $button := (.Get "button") }}
+{{ $button_data := (.Get "button-data") }}
 
 {{partial "teaser-impl" (dict "url" $url "title" $title "description" $description "when" $when "where" $where "button" $button "button_data" $button_data) }}
