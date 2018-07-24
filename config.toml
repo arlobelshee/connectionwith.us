@@ -93,12 +93,15 @@ partial = "index/hero.html"
 css = "index/hero.css"
 
 [[params.homepage.sections]]
-partial = "index/pick-your-poison.html"
-css = "index/pick-your-poison.css"
+partial = "index/conversation.html"
 
 [[params.homepage.sections]]
 partial = "index/news.html"
 css = "index/news-row.css"
+
+[[params.homepage.sections]]
+partial = "index/pick-your-poison.html"
+css = "index/pick-your-poison.css"
 
 [[params.homepage.sections]]
 partial = "index/photos.html"
