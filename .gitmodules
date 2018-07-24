@@ -1,4 +1,0 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/arlobelshee/connectionwith.us.git
-	branch = gh-pages
