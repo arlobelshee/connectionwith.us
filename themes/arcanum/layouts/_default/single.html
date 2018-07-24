@@ -9,21 +9,19 @@
 {{ partial "page-head" . }}
 		</head>
 		<body>
-			<!-- Wrapper -->
-			<div id="wrapper">
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
         <article class="post">
+					{{if (.Site.Params.includeHeaderOnMarkdownPages | default true) }}
             {{ $.Scratch.Set "h1" true }}
-            {{ .Render "header" }}
+						{{ .Render "header" }}
+						{{ end }}
             <section id="content">
                 {{ .Content }}
             </section>
         </article>
     </div>
-    {{ partial "sidebar" . }}
-		</div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 {{ partial "closing-scripts" . }}
 	</body>

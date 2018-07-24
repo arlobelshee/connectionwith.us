@@ -8,8 +8,6 @@
 	<link rel="stylesheet" href='{{ "css/index.css" | relURL }}'>
 </head>
 <body>
-			<!-- Wrapper -->
-			<div id="wrapper">
     {{ $.Scratch.Set "shareNav" (.Site.Params.shareMenuInNav | default true) }}
     {{ partial "navbar" . }}
     <!-- Main -->
@@ -19,7 +17,6 @@
 				{{ partial $section.partial $ctx }}
 			{{ end }}
     </div>
-		</div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 {{ partial "closing-scripts" . }}
 	</body>
