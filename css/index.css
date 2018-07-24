@@ -13,20 +13,6 @@
 		padding: 6em 8em;
 	}
 }
-.dark-bg h1,
-.dark-bg h2,
-.dark-bg h3,
-.dark-bg h4,
-.dark-bg h5,
-.dark-bg h6 {
-	color: #b3a3b3;
-}
-.dark-bg {
-	color: #e3e3e3;
-}
-#main section.dark-bg {
-	background-color: #333;
-}
 /* Featured-item rows */
 @media screen and (min-width: 736px) {
 	.feature .feature-content {
