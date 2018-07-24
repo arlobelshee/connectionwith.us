@@ -5,8 +5,56 @@ id = "water"
 drink = "water"
 initial_value = 1
 meaning_0 = "Never touch the stuff. Fish pee in it."
-meaning_1 = "It's potable."
+meaning_1 = "It's called hydration for a reason."
 meaning_2 = "I'm trying to get my body to 80%."
+
+[[options]]
+id = "gin"
+drink = "gin, botanical"
+initial_value = 0
+meaning_0 = "Like being hit in the face with a toilet-bowl cleaner."
+meaning_1 = "Good...as long as you cover it up with a mixer."
+meaning_2 = "It's water, right?"
+
+[[options]]
+id = "black-tea"
+drink = "tea, black"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "green-tea"
+drink = "tea, green"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "mocktails"
+drink = "mocktails, fruffy"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "classic-cocktails"
+drink = "cocktails, classic"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "craft-cocktails"
+drink = "cocktails, crafty"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
 
 [[options]]
 id ="irish"
@@ -21,8 +69,8 @@ id = "rye"
 drink = "whiskey, rye (or sour)"
 initial_value = 0
 meaning_0 = "Sour and nasty. Who even likes this stuff?"
-meaning_1 = ""
-meaning_2 = ""
+meaning_1 = "One of many fine ways to make whiskey."
+meaning_2 = "Barley and corn are for weirdos."
 
 [[options]]
 id = "bourbon"
@@ -47,3 +95,35 @@ initial_value = 0
 meaning_0 = "You burninated the countryside. And you want me to drink it?"
 meaning_1 = "At least it's scotch."
 meaning_2 = "Such a delicious melding of flavor profiles, smoke with complex sweets and herbs."
+
+[[options]]
+id = "wine"
+drink = "wine, normal"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "sweet-wine"
+drink = "wine, sweet"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "dark-beer"
+drink = "beer, dark"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "hoppy-beer"
+drink = "beer, hoppy"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
