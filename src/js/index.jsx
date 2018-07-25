@@ -15,9 +15,7 @@ class ShowMeaning extends React.Component {
 	}
 
 	render() {
-		return (
-				<span>{this.props.meanings[this.state.value]}</span>
-		);
+		return <span>{this.props.meanings[this.state.value]}</span>;
 	}
 }
 
