@@ -115,3 +115,52 @@
 	font-size: 1.4em;
 	margin: 0.6em 0 1.0em;
 }
+
+/* special one-offs */
+
+#logistics-icons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 1.8em;
+	width: fit-content;
+	color: #655e7a;
+	margin: 0 0 0 5em;
+}
+
+#logistics-icons * {
+	font-size: 8em;
+}
+
+#logistics-icons i.dual-icon:hover {
+	font-family:"Font Awesome 5 Brands";
+	font-weight: 400;
+}
+
+#logistics-icons i.fa-bus-alt.dual-icon:hover:before {
+	content: "\f50e";
+}
+
+#logistics-icons i.fa-hotel.dual-icon:hover:before {
+	content: "\f510";
+}
+
+#logistics-icons i.fa-plane.dual-icon:hover:before {
+	content: "\f511";
+}
+
+#logistics-icons i.fa-car.dual-icon:hover:before {
+	content: "\f2b0";
+}
+
+.fa-d-and-d {
+	color: #a0a0a0;
+	font-size: 0.7em;
+}
+
+footer {
+	display: block;
+	width: 100%;
+	background-color: #ccc;
+	color: #999;
+	padding: 0.8em 10em 0.2em;
+}
