@@ -4,7 +4,8 @@ $(function () {
 	Galleria.run("#galleria", {
 		flickr: "search:galleria",
 		flickrOptions: {
-			sort: "interestingness-desc"
+			sort: "interestingness-desc",
+			backlink: true
 		}
 	});
 });
