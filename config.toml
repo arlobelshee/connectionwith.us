@@ -82,8 +82,8 @@ noChmod = true
   # Load custom CSS or JavaScript files. The variable is an array so that you
   # can load multiple files if necessary. You can also load the standard theme
   # files by adding the value, "default".
-  customCSS            = ["default", "/css/add-on.css"]
-  customJS             = ["default", "/vendor/galleria/galleria-1.5.7.min.js", "/vendor/galleria/plugins/flickr/galleria.flickr.min.js", "js/galleria.js"]
+  customCSS            = ["default", "/css/add-on.css", "/vendor/jquery.modal.min.css", "/vendor/flickr-gallery/css/js-flickr-gallery.css"]
+  customJS             = ["default", "/vendor/galleria/galleria-1.5.7.min.js", "/vendor/galleria/plugins/flickr/galleria.flickr.min.js", "js/galleria.js", "/vendor/jquery.modal.min.js", "/vendor/flickr-gallery/js/js-flickr-gallery.min.js"]
 
 [params.homepage]
   shared_css = "index/common.css"
