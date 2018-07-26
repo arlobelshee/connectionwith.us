@@ -8,4 +8,12 @@ $(function () {
 			backlink: true
 		}
 	});
+
+	Galleria.run("#galleria2", {
+		flickr: "search:dog",
+		flickrOptions: {
+			sort: "interestingness-desc",
+			backlink: true
+		}
+	});
 });
