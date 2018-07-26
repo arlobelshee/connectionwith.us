@@ -1,5 +1,7 @@
 "use strict";
 
+import "./flickr/src/index.js";
+
 class ShowMeaning extends React.Component {
 	constructor(props) {
 		props.meanings = [props.no, props.some, props.yes];
