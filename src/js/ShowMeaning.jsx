@@ -2,10 +2,15 @@ import React from "react";
 
 ("use strict");
 
+function htmlDecode(input) {
+	var doc = new DOMParser().parseFromString(input, "text/html");
+	return doc.documentElement.textContent;
+}
+
 export default class ShowMeaning extends React.Component {
 	constructor(props) {
 		super(props);
-		this.meanings = [props.no, props.some, props.yes];
+		this.meanings = [htmlDecode(props.no), htmlDecode(props.some), htmlDecode(props.yes)];
 		this.state = { value: props.initialvalue };
 		document.querySelector(
 			"input[name=" + props.fieldname + "]"
@@ -22,6 +27,6 @@ export default class ShowMeaning extends React.Component {
 	}
 
 	render() {
-		return <span>{this.currentMeaning()}</span>;
+		return <span dangerouslySetInnerHTML={{ __html: this.currentMeaning() }} />;
 	}
 }

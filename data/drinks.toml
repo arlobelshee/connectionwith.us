@@ -20,25 +20,33 @@ meaning_2 = "It's water, right?"
 id = "black-tea"
 drink = "tea, black"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Eeeeew. It's got caffeine in it! And bitterness!"
+meaning_1 = "Just my morning cuppa, thank you."
+meaning_2 = "Earthy, rich, bitter: so many flavors. Take me on a journey."
 
 [[options]]
 id = "green-tea"
 drink = "tea, green"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Yeah...still tea. No."
+meaning_1 = "Simple, plesant, easy to hand."
+meaning_2 = "Herbacious and warm. Like tea and gin in one!"
+
+[[options]]
+id = "floral-tea"
+drink = "tea, white or floral/fruity"
+initial_value = 0
+meaning_0 = "What? That's not tea!"
+meaning_1 = "Tisanes let me join tea drinkers without actually consuming tea."
+meaning_2 = "Mmmmm. Delicious sweet fruit with some complexity, and so much better than hot juice!"
 
 [[options]]
 id = "mocktails"
 drink = "mocktails, fruffy"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Death by sweetness! It needs proper rotting."
+meaning_1 = "A good drink for my off-hand."
+meaning_2 = "So many delicious flavors. **And** I can still stand at the end of the night."
 
 [[options]]
 id = "classic-cocktails"
@@ -115,6 +123,14 @@ meaning_2 = ""
 [[options]]
 id = "dark-beer"
 drink = "beer, dark"
+initial_value = 0
+meaning_0 = ""
+meaning_1 = ""
+meaning_2 = ""
+
+[[options]]
+id = "brown-beer"
+drink = "beer, brown ales and the like"
 initial_value = 0
 meaning_0 = ""
 meaning_1 = ""
