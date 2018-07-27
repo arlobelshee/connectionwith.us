@@ -2,7 +2,7 @@ import * as url from 'url';
 import { jsonp, createUniqueCallbackName, urlKeys, getSizes } from './utils';
 
 const API_HOST = url.parse(process.env.REACT_APP_FLICKR_HOST || 'https://api.flickr.com/services/rest/');
-const API_KEY = process.env.REACT_APP_FLICKR_API_KEY;
+const API_KEY = "d83ffd233cfd6a4987b386c230238a66";
 
 if (API_KEY === undefined) {
   console.warn('No Flickr API key specified! Requests will not work!');

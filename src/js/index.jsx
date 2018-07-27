@@ -1,6 +1,18 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ResizableBox } from "react-resizable";
+import FlickrGallery from "./flickr/src/FlickrGallery";
+import "./flickr/src/index.css";
+import "react-resizable/css/styles.css";
+
 "use strict";
 
-import "./flickr/src/index.js";
+ReactDOM.render(
+	<ResizableBox width={640} height={320}>
+		<FlickrGallery />
+	</ResizableBox>,
+	document.getElementById('root')
+);
 
 class ShowMeaning extends React.Component {
 	constructor(props) {

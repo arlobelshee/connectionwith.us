@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "npx babel --watch src --out-dir assets --presets react-app/dev",
+		"watch": "npx webpack --watch --run-dev",
 		"serve": ".\\bin\\hugo.exe server --cleanDestinationDir",
-		"prebuild": "npx babel src --out-dir assets --presets react-app/prod",
+		"prebuild": "npx webpack --run-prod",
 		"build": ".\\bin\\hugo.exe --cleanDestinationDir --forceSyncStatic"
 	},
 	"repository": {
@@ -23,6 +23,27 @@
 	"homepage": "https://github.com/arlobelshee/connectionwith.us#readme",
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
-		"babel-preset-react-app": "^3.1.2"
+		"babel-loader": "^7.1.5",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react-app": "^3.1.2",
+		"css-loader": "^1.0.0",
+		"image-webpack-loader": "^4.3.1",
+		"style-loader": "^0.21.0",
+		"svg-url-loader": "^2.3.2",
+		"url-loader": "^1.0.1",
+		"webpack": "^4.16.2",
+		"webpack-command": "^0.4.1",
+		"webpack-dev-server": "^3.1.5"
+	},
+	"dependencies": {
+		"element-resize-detector": "^1.1.14",
+		"little-loader": "^0.2.0",
+		"lodash.debounce": "^4.0.8",
+		"prop-types": "^15.5.8",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1",
+		"react-photoswipe": "^1.2.0",
+		"react-resizable": "^1.7.5",
+		"react-spinner": "^0.2.7"
 	}
 }

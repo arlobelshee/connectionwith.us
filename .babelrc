@@ -1,0 +1,13 @@
+{
+	"presets": [
+		"react-app/dev",
+		// [
+		// 	"env",
+		// 	{
+		// 		"targets": {
+		// 			"browsers": [">0.25%"]
+		// 		}
+		// 	}
+		// ]
+	]
+}
