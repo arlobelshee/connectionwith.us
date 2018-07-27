@@ -8,7 +8,7 @@
 			ambiance. Thus many different forms of hydration. So what do you like to drink?
 			<div id="drinks">
 				{{ range .Site.Data.drinks.options }}
-				<label for="drink_{{ .id }}">{{ .drink }}</label>
+				<label for="drink_{{ .id }}">{{ .drink | markdownify }}</label>
 				<input type="range" name="drink_{{ .id }}" min="0" max="2" value="{{ .initial_value | default 0 }}">
 				<span class="meaning" data-fieldname="drink_{{ .id }}" data-no="{{ .meaning_0 }}" data-some="{{ .meaning_1 }}" data-yes="{{ .meaning_2 }}"
 				 data-initialvalue="{{ .initial_value | default 0 }}"></span>

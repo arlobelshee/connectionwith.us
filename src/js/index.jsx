@@ -7,29 +7,37 @@ import "react-resizable/css/styles.css";
 
 "use strict";
 
-ReactDOM.render(
-	<ResizableBox width={640} height={320}>
-		<FlickrGallery />
-	</ResizableBox>,
-	document.getElementById('root')
+
+document.querySelectorAll(".photo-gallery").forEach(domContainer =>
+	ReactDOM.render(
+		<ResizableBox width={640} height={320}>
+			<FlickrGallery {...domContainer.dataset} />
+		</ResizableBox>,
+		domContainer
+	)
 );
 
 class ShowMeaning extends React.Component {
 	constructor(props) {
-		props.meanings = [props.no, props.some, props.yes];
 		super(props);
+		this.meanings = [props.no, props.some, props.yes];
 		this.state = { value: props.initialvalue };
 		document.querySelector(
 			"input[name=" + props.fieldname + "]"
 		).oninput = this.onChange.bind(this);
+		this.currentMeaning = this.currentMeaning.bind(this);
 	}
 
 	onChange(evt) {
 		this.setState({ value: evt.target.value });
 	}
 
+	currentMeaning() {
+		return this.meanings[this.state.value];
+	}
+
 	render() {
-		return <span>{this.props.meanings[this.state.value]}</span>;
+		return <span>{this.currentMeaning()}</span>;
 	}
 }
 

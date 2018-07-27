@@ -1,4 +1,0 @@
-{{ $components := resources.Get "js/index.js" | fingerprint }}
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-<script src="{{ $components.RelPermalink }}" integrity="{{ $components.Data.Integrity }}"></script>

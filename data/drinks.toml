@@ -82,7 +82,7 @@ meaning_2 = "I run my own still..."
 
 [[options]]
 id = "highland"
-drink = "whisky, Scotch - smokies"
+drink = "whisky, Scotch --- smokies"
 initial_value = 0
 meaning_0 = "Eeew. Like kissing a smoker."
 meaning_1 = "At least it's scotch."
@@ -90,7 +90,7 @@ meaning_2 = "Yum. Like making out while sharing a fine cigar."
 
 [[options]]
 id = "lowland"
-drink = "whisky, Scotch - florals"
+drink = "whisky, Scotch --- florals"
 initial_value = 0
 meaning_0 = "You burninated the countryside. And you want me to drink it?"
 meaning_1 = "At least it's scotch."
