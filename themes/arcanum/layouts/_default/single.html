@@ -12,7 +12,7 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
-        <article class="post">
+        <article id="{{ .Params.id }}" class="post">
 					{{if (.Site.Params.includeHeaderOnMarkdownPages | default true) }}
             {{ $.Scratch.Set "h1" true }}
 						{{ .Render "header" }}
