@@ -6,7 +6,7 @@
 {{ if (eq $bg "dark" ) }}
 {{ $.Scratch.Set "style" (print "background:linear-gradient(to left, #8b86a3cc, #322e40cc), url('" (. | relURL) "') fixed no-repeat center center;background-size:cover;") }}
 {{ else }}
-{{ $.Scratch.Set "style" (print "background:linear-gradient(to left, #8b86a3cc, #322e40cc), url('" (. | relURL) "') fixed no-repeat center center;background-size:cover;") }}
+{{ $.Scratch.Set "style" (print "background:linear-gradient(to left, #9ea386cc, #ecf0c5cc), url('" (. | relURL) "') fixed no-repeat center center;background-size:cover;") }}
 {{ end }}
 {{ $.Scratch.Set "style" (printf "style=%q" ($.Scratch.Get "style") | safeHTMLAttr ) }}
 {{ end }}
