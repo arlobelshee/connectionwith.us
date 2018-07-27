@@ -599,25 +599,6 @@ article {
 	}
 }
 
-/* Markdown output text */
-
-.post {
-	width: 100%;
-	min-height: 150px;
-	background-color: white;
-	border-bottom: 1px dotted #ddd;
-}
-
-.post a:link,
-.post a:visited {
-	font-size: 30px;
-	color: #333;
-}
-
-.post a:hover {
-	color: #0d0017;
-}
-
 /* Box */
 
 .box {
