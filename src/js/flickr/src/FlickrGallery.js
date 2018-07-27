@@ -7,13 +7,17 @@ import * as API from './api';
 import './FlickrGallery.css';
 
 export default class FlickrGallery extends PureComponent {
-  state = {
-    query: '',
-    photos: [],
-    loading: false,
-    done: true,
-    online: navigator.onLine
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      query: props.tags,
+      photos: [],
+      loading: false,
+      done: true,
+      online: navigator.onLine
+    };
+    this.fetchPhotos();
+  }
 
   currentQuery = null;
   currentStream = null;
