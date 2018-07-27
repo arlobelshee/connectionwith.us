@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import FlickrGallery from "./flickr/src/FlickrGallery";
-import "./flickr/src/index.css";
-import "react-resizable/css/styles.css";
+import FlickrGallery from "./flickr/FlickrGallery";
+import "./flickr/index.css";
 
 ("use strict");
 
