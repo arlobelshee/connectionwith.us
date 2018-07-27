@@ -1,7 +1,4 @@
-/*
-  This css file is for individual users to restyle items for their personal site,
-  or for the implementation of features specifically for their site.
-*/
+/* Teasers */
 
 #main section .flowing figure.teaser {
 	display: block;
@@ -44,6 +41,8 @@
 	margin: 0.4em auto 0;
 	display: block;
 }
+
+/* The items that fit in the flow like teasers, but aren't. */
 
 .item-with-bg {
 	margin: 1em;
@@ -89,16 +88,6 @@
 }
 
 /* Overall styling */
-
-.center {
-	margin: 0 auto;
-	width: fit-content;
-}
-
-.flowing {
-	max-width: 80em;
-	margin: 0 auto;
-}
 
 #main {
 	background-color: #fff;
@@ -169,4 +158,16 @@ footer {
 	background-color: #ccc;
 	color: #999;
 	padding: 0.8em 10em 0.2em;
+}
+
+/* Layouts & Positioning */
+
+.center {
+	margin: 0 auto;
+	width: fit-content;
+}
+
+.flowing {
+	max-width: 80em;
+	margin: 0 auto;
 }
