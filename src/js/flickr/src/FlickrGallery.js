@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import debounce from 'lodash.debounce';
-import QueryBox from './QueryBox';
 import ImageGallery from './ImageGallery';
 import { createCompleter, CancellationError } from './utils';
 import * as API from './api';
@@ -120,14 +119,10 @@ export default class FlickrGallery extends PureComponent {
   }
 
   render() {
-    const { photos, query, loading, online, done } = this.state;
+    const { photos, loading, online, done } = this.state;
 
     return (
       <div className="flickr-gallery" ref={this.storeRef}>
-        <QueryBox
-          query={query}
-          placeholder="search flickr"
-          onChange={this.handleInputChange} />
         <ImageGallery
           photos={photos}
           loading={loading || (!done && !online)}
