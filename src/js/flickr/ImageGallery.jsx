@@ -3,7 +3,7 @@ import { string, number, bool, func, shape, arrayOf } from 'prop-types';
 import createResizeDetector from 'element-resize-detector';
 import debounce from 'lodash.debounce';
 import { PhotoSwipeGallery } from 'react-photoswipe';
-import Loader from './Loader';
+import Loader from './Loader.jsx';
 import { computeLayout, getBestSize } from './utils';
 import './ImageGallery.css';
 

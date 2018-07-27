@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import debounce from 'lodash.debounce';
-import ImageGallery from './ImageGallery';
+import ImageGallery from './ImageGallery.jsx';
 import { createCompleter, CancellationError } from './utils';
 import * as API from './api';
 import './FlickrGallery.css';
