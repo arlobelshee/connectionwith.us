@@ -8,7 +8,7 @@ import "react-resizable/css/styles.css";
 
 document.querySelectorAll(".photo-gallery").forEach(domContainer =>
 	ReactDOM.render(
-		<div style={{ width: "640px", height: "320px", position: "relative" }}>
+		<div style={{height: "100%", width:"100%" }}>
 			<FlickrGallery {...domContainer.dataset} />
 		</div>,
 		domContainer
