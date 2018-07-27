@@ -11,10 +11,14 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
+				<article id="{{ .Params.id }}">
+			{{ .Content }}
+			<!-- <p>Everything below here is the old way. Moving them up and out.</p> -->
 			{{ $ctx := . }}
 			{{ range $section := .Site.Params.homepage.sections }}
 				{{ partial $section.partial $ctx }}
 			{{ end }}
+			</article>
     </div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 {{ partial "closing-scripts" . }}

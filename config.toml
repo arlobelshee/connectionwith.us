@@ -87,11 +87,6 @@ noChmod = true
 [params.homepage]
   shared_css = "index/common.css"
 
-# Extend with the sections that you want on the home page. Each is loaded from a partial.
-[[params.homepage.sections]]
-partial = "index/hero.html"
-css = "index/hero.css"
-
 [[params.homepage.sections]]
 partial = "index/conversation.html"
 

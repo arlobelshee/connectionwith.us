@@ -379,6 +379,9 @@ body {
 article {
 	padding: 1px 0 0; /* no idea why this fixes a layout problem. But without it, the main section just starts a bunch lower, leaving a gap in the layout. Yes: adding padding is removing like 60px of gap outside the top margin. */
 }
+article#home {
+	padding: 0;
+}
 
 #header {
 	background-color: #ffffff;
