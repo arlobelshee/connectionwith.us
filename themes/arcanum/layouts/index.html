@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href='{{ "css/index.css" | relURL }}'>
 </head>
 <body>
-    {{ $.Scratch.Set "shareNav" (.Site.Params.shareMenuInNav | default true) }}
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
