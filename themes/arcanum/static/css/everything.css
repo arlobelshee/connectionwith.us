@@ -886,6 +886,22 @@ textarea {
 	height: 5em;
 }
 
+input[type="checkbox"] {
+	display: inline;
+	transform: scale(2);
+	margin-right: 1.0ex;
+}
+
+input[type="checkbox"] + label {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline;
+	font-size: 1em;
+	font-weight: 400;
+	position: relative;
+	margin: 0;
+}
+
 input[type="radio"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -909,6 +925,7 @@ input[type="radio"] + label {
 	padding-left: 2.4em;
 	padding-right: 0.75em;
 	position: relative;
+	margin: 0;
 }
 
 input[type="radio"] + label:before {
