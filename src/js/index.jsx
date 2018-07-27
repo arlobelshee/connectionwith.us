@@ -1,18 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ResizableBox } from "react-resizable";
+import React from "react";
+import ReactDOM from "react-dom";
 import FlickrGallery from "./flickr/src/FlickrGallery";
 import "./flickr/src/index.css";
 import "react-resizable/css/styles.css";
 
-"use strict";
-
+("use strict");
 
 document.querySelectorAll(".photo-gallery").forEach(domContainer =>
 	ReactDOM.render(
-		<ResizableBox width={640} height={320}>
+		<div style={{ width: "640px", height: "320px", position: "relative" }}>
 			<FlickrGallery {...domContainer.dataset} />
-		</ResizableBox>,
+		</div>,
 		domContainer
 	)
 );
