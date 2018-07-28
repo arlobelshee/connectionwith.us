@@ -44,7 +44,7 @@ meaning_2 = "Mmmmm. Delicious sweet fruit with some complexity, and so much bett
 id = "mocktails"
 drink = "mocktails, fruffy"
 initial_value = 0
-meaning_0 = "Death by sweetness! It needs proper rotting."
+meaning_0 = "Death by sweetness! Needs to rot more."
 meaning_1 = "A good drink for my off-hand."
 meaning_2 = "So many delicious flavors. **And** I can still stand at the end of the night."
 
@@ -52,17 +52,17 @@ meaning_2 = "So many delicious flavors. **And** I can still stand at the end of 
 id = "classic-cocktails"
 drink = "cocktails, classic"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "I finished with hangovers in my 20s, thanks."
+meaning_1 = "Shaken, not stirred."
+meaning_2 = "Actually, shaking it breaks up the ice so more melts. It makes a weak drink. Stir gently, please."
 
 [[options]]
 id = "craft-cocktails"
 drink = "cocktails, crafty"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "So...lots of alcohol and extra expensive too?"
+meaning_1 = "It's fun to watch him make it. He set mine on fire!"
+meaning_2 = "I'd like subtle notes of thyme and tobacco. Surprise me."
 
 [[options]]
 id ="irish"
@@ -108,38 +108,46 @@ meaning_2 = "Such a delicious melding of flavor profiles, smoke with complex swe
 id = "wine"
 drink = "wine, normal"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Isn't wine made from grapes? This tastes like rocks!"
+meaning_1 = "It has strong notes of...I don't even know. Heather, help me out here."
+meaning_2 = "(Heather)"
 
 [[options]]
 id = "sweet-wine"
 drink = "wine, sweet"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Basically juice. But I'd rather the juice."
+meaning_1 = "Looks good in my hand; doesn't taste awful in my mouth."
+meaning_2 = "Nectar of the gods!"
 
 [[options]]
 id = "dark-beer"
 drink = "beer, dark"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "It's the beeriest of beers. Hell no, I won't go!"
+meaning_1 = "Can be perfect in the right circumstance."
+meaning_2 = "I named my cats after them."
 
 [[options]]
 id = "brown-beer"
-drink = "beer, brown ales and the like"
+drink = "beer, brown and scotch ales"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "Like beer, without the beer. Worst of both worlds."
+meaning_1 = "Like beer, but drinkable!"
+meaning_2 = "Barkeep, another round!"
+
+[[options]]
+id = "lager-beer"
+drink = "beer, lagers and light ales"
+initial_value = 0
+meaning_0 = "I remember my poor college days. But not enough to want to relive them."
+meaning_1 = "It's a good, simple quaffable drink. Mostly summer, but I drink it in winter too."
+meaning_2 = "Hi, papa!"
 
 [[options]]
 id = "hoppy-beer"
 drink = "beer, hoppy"
 initial_value = 0
-meaning_0 = ""
-meaning_1 = ""
-meaning_2 = ""
+meaning_0 = "You Pacific Northwesterners are weird."
+meaning_1 = "I'm not a hipster, yet I drink their beer."
+meaning_2 = "Keep Portland Weird!"
