@@ -1,6 +1,4 @@
-
-
-function slugify(text) {
+export function slugify(text) {
 	return text
 		.toString()
 		.toLowerCase()
@@ -11,4 +9,97 @@ function slugify(text) {
 		.replace(/\-\-+/g, "-") // replace multiple '-' with single '-'
 		.replace(/^\-/g, "") // remove dash at start
 		.replace(/\-$/g, ""); // remove dash at end
+}
+
+function isHuman(honeypot) {
+	return !honeypot; // Human if they didn't fill up the field.
+}
+
+// get all data in form and return object
+function getFormData(form) {
+	// var form = document.getElementById("testForm");
+	var elements = form.elements;
+
+	var fields = Object.keys(elements)
+		.map(function(k) {
+			if (elements[k].name !== undefined) {
+				return elements[k].name;
+				// special case for Edge's html collection
+			} else if (elements[k].length > 0) {
+				return elements[k].item(0).name;
+			}
+		})
+		.filter(function(item, pos, self) {
+			return self.indexOf(item) == pos && item;
+		});
+
+	var formData = {};
+	fields.forEach(function(name) {
+		var element = elements[name];
+
+		// singular form elements just have one value
+		formData[name] = element.value;
+
+		// when our element has multiple items, get their values
+		if (element.length) {
+			var data = [];
+			for (var i = 0; i < element.length; i++) {
+				var item = element.item(i);
+				if (item.checked || item.selected) {
+					data.push(item.value);
+				}
+			}
+			formData[name] = data.join(", ");
+		}
+	});
+
+	console.log(formData);
+	return formData;
+}
+
+function handleFormSubmit(event) {
+	// handles form submit without any jquery
+	event.preventDefault(); // we are submitting via xhr below
+	var data = getFormData(event.target); // get the values submitted in the form
+
+	if (!isHuman(data.robbiecheck)) {
+		return false;
+	}
+
+	disableAllButtons(event.target);
+	var url = event.target.action; //
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url);
+	// xhr.withCredentials = true;
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function() {
+		console.log(xhr.status, xhr.statusText);
+		console.log(xhr.responseText);
+		document.getElementById("testForm").style.display = "none"; // hide form
+		var thankYouMessage = document.getElementById("thankyou_message");
+		if (thankYouMessage) {
+			thankYouMessage.style.display = "block";
+		}
+		return;
+	};
+	// url encode form data for sending as post data
+	var encoded = Object.keys(data)
+		.map(function(k) {
+			return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+		})
+		.join("&");
+	xhr.send(encoded);
+}
+export function loaded() {
+	console.log("Contact form submission handler loaded successfully.");
+	// bind to the submit event of our form
+	var form = document.getElementById("testForm");
+	form.addEventListener("submit", handleFormSubmit, false);
+}
+
+function disableAllButtons(form) {
+	var buttons = form.querySelectorAll("button");
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].disabled = true;
+	}
 }

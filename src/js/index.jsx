@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
 import ShowMeaning from "./ShowMeaning.jsx";
+import {slugify, loaded} from"./save-user-data.js";
 
 ("use strict");
 
@@ -19,3 +20,5 @@ document
 	.forEach(domContainer =>
 		ReactDOM.render(<ShowMeaning {...domContainer.dataset} />, domContainer)
 	);
+
+$(document).ready(loaded);

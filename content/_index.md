@@ -29,8 +29,17 @@ Join our journey!
 <input id="drink" name="drink" placeholder="booze it up!" />
 </fieldset>
 
+<fieldset>
+<label for="robbiecheck">Leave this blank if you are human </label>
+<input id="robbiecheck" name="robbiecheck" placeholder="Show me" />
+</fieldset>
+
 <button><i class="far fa-paper-plane"></i>&nbsp;Send</button>
 
 </form>
+
+<div id="thankyou_message" style="display:none">
+Thanks! We totally saved that!
+</div>
 
 {{% /band %}}
