@@ -1,134 +1,134 @@
-import React, { PureComponent } from 'react';
-import debounce from 'lodash.debounce';
-import ImageGallery from './ImageGallery.jsx';
-import { createCompleter, CancellationError } from './utils';
-import * as API from './api';
-import './FlickrGallery.css';
+import React, { PureComponent } from "react";
+import debounce from "lodash.debounce";
+import ImageGallery from "./ImageGallery.jsx";
+import { createCompleter, CancellationError } from "./utils";
+import * as API from "./api";
+import "./FlickrGallery.css";
 
 export default class FlickrGallery extends PureComponent {
-  constructor(props){
-    super(props);
-    this.state = {
-      query: props.tags,
-      photos: [],
-      loading: false,
-      done: true,
-      online: navigator.onLine
-    };
-    this.fetchPhotos();
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			query: props.tags,
+			photos: [],
+			loading: false,
+			done: true,
+			online: navigator.onLine
+		};
+		this.currentQuery = null;
+		this.currentStream = null;
+		this.currentRequest = null;
+		this.currentCanceler = null;
+		this.fetchPhotos();
+	}
 
-  currentQuery = null;
-  currentStream = null;
-  currentRequest = null;
-  currentCanceler = null;
+	fetchPhotos = debounce(async () => {
+		const { query } = this.state;
 
-  fetchPhotos = debounce(async () => {
-    const { query } = this.state;
+		// If invalid query, stop
+		if (query === "") {
+			this.setState({ photos: [], done: true });
+			return;
+		}
 
-    // If invalid query, stop
-    if (query === '') {
-      this.setState({ photos: [], done: true });
-      return;
-    }
+		// If not same query, cancel existing requests if they exist
+		if (query === this.currentQuery) {
+			if (this.currentRequest !== null) {
+				return this.currentRequest;
+			}
+		} else {
+			// Cancel current request
+			if (this.currentCanceler !== null) {
+				this.currentCanceler.reject(new CancellationError());
+				this.currentCanceler = null;
+				this.currentRequest = null;
+			}
 
-    // If not same query, cancel existing requests if they exist
-    if (query === this.currentQuery) {
-      if (this.currentRequest !== null) {
-        return this.currentRequest;
-      }
-    } else {
-      // Cancel current request
-      if (this.currentCanceler !== null) {
-        this.currentCanceler.reject(new CancellationError())
-        this.currentCanceler = null;
-        this.currentRequest = null;
-      }
+			this.currentQuery = null;
+			this.currentStream = null;
+		}
 
-      this.currentQuery = null;
-      this.currentStream = null;
-    }
+		// Start stream if it does not exist
+		if (this.currentStream === null) {
+			this.currentQuery = query;
+			this.currentStream = API.streamPhotos(query);
+			this.setState({ photos: [], done: false });
+		}
 
-    // Start stream if it does not exist
-    if (this.currentStream === null) {
-      this.currentQuery = query;
-      this.currentStream = API.streamPhotos(query);
-      this.setState({ photos: [], done: false });
-    }
+		this.setState({ loading: true });
 
-    this.setState({ loading: true });
+		// Start the request, and store a canceler
+		this.currentCanceler = createCompleter();
 
-    // Start the request, and store a canceler
-    this.currentCanceler = createCompleter();
+		this.currentRequest = Promise.race([
+			this.currentStream.next(),
+			this.currentCanceler.promise
+		]);
 
-    this.currentRequest = Promise.race([
-      this.currentStream.next(),
-      this.currentCanceler.promise,
-    ]);
+		// Fetch the next request
+		let done, value;
+		try {
+			({ done, value } = await this.currentRequest);
+			if (done) {
+				this.currentStream = null;
+				this.currentQuery = null;
+			} else {
+				this.setState(prevState => ({
+					photos: prevState.photos.concat(value)
+				}));
+			}
+		} catch (error) {
+			if (!(error instanceof CancellationError)) {
+				console.error(error);
+			}
+		} finally {
+			this.setState({ done, loading: false });
+			this.currentRequest = null;
+		}
+	}, 500);
 
-    // Fetch the next request
-    let done, value;
-    try {
-      ({ done, value } = await this.currentRequest);
-      if (done) {
-        this.currentStream = null;
-        this.currentQuery = null;
-      } else {
-        this.setState(prevState => ({
-          photos: prevState.photos.concat(value),
-        }));
-      }
-    } catch (error) {
-      if (!(error instanceof CancellationError)) {
-        console.error(error);
-      }
-    } finally {
-      this.setState({ done, loading: false });
-      this.currentRequest = null;
-    }
-  }, 500);
+	handleInputChange = e => {
+		const query = e.target.value;
+		this.setState({ query }, this.fetchPhotos);
+	};
 
-  handleInputChange = e => {
-    const query = e.target.value;
-    this.setState({ query }, this.fetchPhotos);
-  };
+	dismissError = error => {
+		this.setState({ error: null });
+	};
 
-  dismissError = error => {
-    this.setState({ error: null });
-  };
+	updateOnlineStatus = () => {
+		this.setState({ online: navigator.onLine });
+	};
 
-  updateOnlineStatus = () => {
-    this.setState({ online: navigator.onLine });
-  };
+	storeRef = ref => {
+		this.flickrGalleryRef = ref;
+	};
 
-  storeRef = ref => {
-    this.flickrGalleryRef = ref;
-  };
+	componentDidMount() {
+		window.addEventListener("online", this.updateOnlineStatus, false);
+		window.addEventListener("offline", this.updateOnlineStatus, false);
+	}
 
-  componentDidMount() {
-    window.addEventListener('online', this.updateOnlineStatus, false);
-    window.addEventListener('offline', this.updateOnlineStatus, false);
-  }
+	componentWillUnmount() {
+		window.removeEventListener("online", this.updateOnlineStatus);
+		window.removeEventListener("offline", this.updateOnlineStatus);
+		if (this.currentCanceler !== null) {
+			this.currentCanceler.reject(new CancellationError());
+		}
+	}
 
-  componentWillUnmount() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-    if (this.currentCanceler !== null) {
-      this.currentCanceler.reject(new CancellationError());
-    }
-  }
+	render() {
+		const { photos, loading, online, done } = this.state;
 
-  render() {
-    const { photos, loading, online, done } = this.state;
-
-    return (
-      <div className="flickr-gallery" ref={this.storeRef}>
-        <ImageGallery
-          photos={photos}
-          loading={loading || (!done && !online)}
-          done={done}
-          onLoad={this.fetchPhotos} />
-      </div>
-    );
-  }
+		return (
+			<div className="flickr-gallery" ref={this.storeRef}>
+				<ImageGallery
+					photos={photos}
+					loading={loading || (!done && !online)}
+					done={done}
+					onLoad={this.fetchPhotos}
+				/>
+			</div>
+		);
+	}
 }

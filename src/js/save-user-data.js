@@ -15,9 +15,7 @@ function isHuman(honeypot) {
 	return !honeypot; // Human if they didn't fill up the field.
 }
 
-// get all data in form and return object
 function getFormData(form) {
-	// var form = document.getElementById("testForm");
 	var elements = form.elements;
 
 	var fields = Object.keys(elements)
@@ -37,7 +35,6 @@ function getFormData(form) {
 	fields.forEach(function(name) {
 		var element = elements[name];
 
-		// singular form elements just have one value
 		formData[name] = element.value;
 
 		// when our element has multiple items, get their values
@@ -53,46 +50,29 @@ function getFormData(form) {
 		}
 	});
 
-	console.log(formData);
 	return formData;
 }
 
 function handleFormSubmit(event) {
-	// handles form submit without any jquery
-	event.preventDefault(); // we are submitting via xhr below
-	var data = getFormData(event.target); // get the values submitted in the form
+	event.preventDefault();
+	var data = getFormData(event.target);
 
 	if (!isHuman(data.robbiecheck)) {
 		return false;
 	}
 
 	disableAllButtons(event.target);
-	var url = event.target.action; //
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url);
-	// xhr.withCredentials = true;
-	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	xhr.onreadystatechange = function() {
-		console.log(xhr.status, xhr.statusText);
-		console.log(xhr.responseText);
-		document.getElementById("testForm").style.display = "none"; // hide form
+	var url = event.target.action;
+	$.post(url, data).done(() => {
+		document.getElementById("testForm").style.display = "none";
 		var thankYouMessage = document.getElementById("thankyou_message");
 		if (thankYouMessage) {
 			thankYouMessage.style.display = "block";
 		}
-		return;
-	};
-	// url encode form data for sending as post data
-	var encoded = Object.keys(data)
-		.map(function(k) {
-			return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-		})
-		.join("&");
-	xhr.send(encoded);
+	});
 }
 export function loaded() {
 	console.log("Contact form submission handler loaded successfully.");
-	// bind to the submit event of our form
 	var form = document.getElementById("testForm");
 	form.addEventListener("submit", handleFormSubmit, false);
 }
