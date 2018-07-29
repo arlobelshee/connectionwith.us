@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
 import ShowMeaning from "./ShowMeaning.jsx";
-import { slugify, loaded, createUserData } from "./save-user-data.js";
+import { slugify, loaded, UserData } from "./save-user-data.js";
 
 ("use strict");
+
+const user_data = new UserData();
 
 document.querySelectorAll(".photo-gallery").forEach(domContainer =>
 	ReactDOM.render(

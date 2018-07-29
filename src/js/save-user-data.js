@@ -1,6 +1,18 @@
-import { observable, action } from "mobx"
+import { observable, computed, action } from "mobx";
 
-export function createUserData() {}
+export default class UserData {
+	@observable name = "";
+
+	@computed
+	get key() {
+		return slugify(this.name);
+	}
+
+	@action
+	log_out() {
+		this.name = "";
+	}
+}
 
 export function slugify(text) {
 	return text
