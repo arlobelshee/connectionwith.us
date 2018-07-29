@@ -1,4 +1,5 @@
 import React from "react";
+import { observer } from "mobx-react";
 
 ("use strict");
 
@@ -7,6 +8,7 @@ function htmlDecode(input) {
 	return doc.documentElement.textContent;
 }
 
+@observer
 export default class ShowMeaning extends React.Component {
 	constructor(props) {
 		super(props);

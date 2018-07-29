@@ -1,3 +1,7 @@
+import { observable, action } from "mobx"
+
+export function createUserData() {}
+
 export function slugify(text) {
 	return text
 		.toString()

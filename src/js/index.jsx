@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
 import ShowMeaning from "./ShowMeaning.jsx";
-import { slugify, loaded } from "./save-user-data.js";
+import { slugify, loaded, createUserData } from "./save-user-data.js";
 
 ("use strict");
 

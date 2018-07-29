@@ -9,5 +9,11 @@
 				}
 			}
 		]
+	],
+	"plugins": [
+		"add-module-exports",
+		"transform-decorators-legacy",
+		"transform-class-properties",
+		"fast-async"
 	]
 }
