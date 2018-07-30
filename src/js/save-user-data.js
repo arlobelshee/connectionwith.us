@@ -1,6 +1,9 @@
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, autorun } from "mobx";
 
 export class UserData {
+	constructor() {
+		autorun(() => saveToServer(this));
+	}
 	@observable name = "";
 	@observable drinks = {};
 	@observable accepted_data_tracking = false;
@@ -8,6 +11,15 @@ export class UserData {
 	@computed
 	get key() {
 		return slugify(this.name);
+	}
+
+	@computed
+	get allDataAsFields() {
+		const result = { name: this.name, key: this.key };
+		Object.keys(this.drinks).forEach(
+			drink => (result["drink/" + drink] = this.drinks[drink])
+		);
+		return result;
 	}
 
 	@computed
@@ -19,16 +31,28 @@ export class UserData {
 	log_out() {
 		this.name = "";
 		const drink_names = Object.keys(this.drinks).slice();
-		for (var i = 0; i < drink_names.length; ++i){
+		for (var i = 0; i < drink_names.length; ++i) {
 			delete this.drinks[drink_names[i]];
 		}
 	}
 }
 
-export function loaded() {
-	console.log("Contact form submission handler loaded successfully.");
-	var form = document.getElementById("testForm");
-	form.addEventListener("submit", handleFormSubmit, false);
+function saveToServer(user_data) {
+	console.log("Trying to save user_data");
+	if (!user_data.key) {
+		console.log("no key");
+		return;
+	}
+	console.log("posting!");
+	const url =
+		"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
+	$.post(url, user_data.allDataAsFields)
+		.done(data => {
+			console.log("success! " + data);
+		})
+		.fail(e => {
+			console.log("Total failure! " + e);
+		});
 }
 
 function slugify(text) {
