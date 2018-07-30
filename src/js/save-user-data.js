@@ -2,6 +2,7 @@ import { observable, computed, action } from "mobx";
 
 export class UserData {
 	@observable name = "";
+	@observable drinks = {};
 
 	@computed
 	get key() {

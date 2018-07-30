@@ -25,8 +25,10 @@ export class ShowMeaning extends React.Component {
 			htmlDecode(props.some),
 			htmlDecode(props.yes)
 		];
-		this.state = { value: props.initialvalue };
-		this.drinker = props.user_data;
+		this.drinker = props.user_data.drinks;
+		if (!this.drinker[props.id]){
+			this.drinker[props.id] = props.initialvalue;
+		}
 		document.querySelector(
 			"input[name=" + props.fieldname + "]"
 		).oninput = this.onChange.bind(this);
@@ -34,11 +36,11 @@ export class ShowMeaning extends React.Component {
 	}
 
 	onChange(evt) {
-		this.setState({ value: evt.target.value });
+		this.drinker[this.props.id] = evt.target.value;
 	}
 
 	currentMeaning() {
-		return this.meanings[this.state.value];
+		return this.meanings[this.drinker[this.props.id]];
 	}
 
 	render() {
