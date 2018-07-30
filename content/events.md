@@ -21,11 +21,11 @@ subtitle = "Come hang out and do things!"
 
 {{% flowing %}}
 
-{{< teaser url="img/heather-wine-in-sun.jpg" title="Wine and Connect" description="Swing by for hugs, bubbles, and gossip while we're primping. (girls only)" when="15:00" where="TBD" button="Tell me where!" button-data="connection-day">}}
+{{< teaser url="img/heather-wine-in-sun.jpg" title="Wine and Connect" description="Swing by for hugs, bubbles, and gossip while we're primping. (girls only)" when="15:00" where="TBD" button="Tell me where!" button-data="wine-and-connect-while-primping">}}
 
 {{< teaser url="img/tightrope-umbrella.jpg" title="Your Face and Hair!" description="Get your girl on and join the wedding party for your hair and make-up. ($TBD, girls only)" when="15:00" where="TBD" button="Reserve me a spot!" button-data="salon">}}
 
-{{< teaser url="img/awesome-arlo.jpg" title="Lazy Afternoon" description="Come hang out and sip the wine while the women do work to look nice for us. (boys only)" when="13:00" where="TBD" button="Let's chill" button-data="salon">}}
+{{< teaser url="img/awesome-arlo.jpg" title="Lazy Afternoon" description="Come hang out and sip the wine while the women do work to look nice for us. (boys only)" when="13:00" where="TBD" button="Let's chill" button-data="lazy-afternoon">}}
 
 {{% /flowing %}}
 
@@ -65,6 +65,6 @@ We will rent a cabin low on the slopes. Beer and chili.
 
 We are checking on cabin access for non-skiiers.
 
-<button data-column="ski-day">Invite me!</button>
+<span class="event-invitation" data-column="ski-day" data-text="Invite me!"></span>
 
 {{% /band %}}

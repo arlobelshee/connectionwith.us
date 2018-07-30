@@ -4,6 +4,7 @@ import { UserData } from "./save-user-data.js";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
 import { DrinkOption, HideWarning } from "./DrinkOption.jsx";
 import { UserProfile } from "./UserProfile.jsx";
+import { EventInvitation } from "./EventInvitation.jsx";
 
 ("use strict");
 
@@ -23,6 +24,15 @@ document
 	.forEach(domContainer =>
 		ReactDOM.render(
 			<DrinkOption user_data={user_data} {...domContainer.dataset} />,
+			domContainer
+		)
+	);
+
+document
+	.querySelectorAll(".event-invitation")
+	.forEach(domContainer =>
+		ReactDOM.render(
+			<EventInvitation user_data={user_data} {...domContainer.dataset} />,
 			domContainer
 		)
 	);

@@ -1281,7 +1281,7 @@ body.is-menu-visible #menu {
 	visibility: visible;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 735px) {
 	#menu > * {
 		padding: 1.5em;
 	}
@@ -1296,4 +1296,14 @@ body.is-menu-visible #menu {
 
 section.band {
 	padding: 15em 0;
+}
+
+section.band .band-content {
+	margin: 0 15%;
+}
+
+@media screen and (max-width: 735px) {
+section.band .band-content {
+	margin: 0 1.5em;
+}
 }

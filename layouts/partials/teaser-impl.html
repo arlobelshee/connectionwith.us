@@ -12,7 +12,7 @@
 		<p class="logistics"><b>When:</b> {{ $when }}<br><b>Where:</b> {{ $where }}</p>
 		{{ end }}
 		{{ if (not (or (eq $button ":none") (eq $button_data ":none"))) }}
-		<button data-column="{{ $button_data }}">{{ $button }}</button>
+		<span class="event-invitation" data-column="{{ $button_data }}" data-text="{{ $button }}"></span>
 		{{ end }}
 	</figcaption>
 </figure>
