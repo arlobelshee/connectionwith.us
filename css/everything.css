@@ -379,6 +379,9 @@ body {
 article {
 	padding: 1px 0 0; /* no idea why this fixes a layout problem. But without it, the main section just starts a bunch lower, leaving a gap in the layout. Yes: adding padding is removing like 60px of gap outside the top margin. */
 }
+article#home {
+	padding: 0;
+}
 
 #header {
 	background-color: #ffffff;
@@ -597,25 +600,6 @@ article {
 		min-width: 0;
 		padding: 0 0 0 0.5em;
 	}
-}
-
-/* Markdown output text */
-
-.post {
-	width: 100%;
-	min-height: 150px;
-	background-color: white;
-	border-bottom: 1px dotted #ddd;
-}
-
-.post a:link,
-.post a:visited {
-	font-size: 30px;
-	color: #333;
-}
-
-.post a:hover {
-	color: #0d0017;
 }
 
 /* Box */
@@ -902,6 +886,22 @@ textarea {
 	height: 5em;
 }
 
+input[type="checkbox"] {
+	display: inline;
+	transform: scale(2);
+	margin-right: 1.0ex;
+}
+
+input[type="checkbox"] + label {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline;
+	font-size: 1em;
+	font-weight: 400;
+	position: relative;
+	margin: 0;
+}
+
 input[type="radio"] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -925,6 +925,7 @@ input[type="radio"] + label {
 	padding-left: 2.4em;
 	padding-right: 0.75em;
 	position: relative;
+	margin: 0;
 }
 
 input[type="radio"] + label:before {

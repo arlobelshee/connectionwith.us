@@ -1,7 +1,4 @@
-/*
-  This css file is for individual users to restyle items for their personal site,
-  or for the implementation of features specifically for their site.
-*/
+/* Teasers */
 
 #main section .flowing figure.teaser {
 	display: block;
@@ -17,7 +14,7 @@
 
 #main section .flowing figure.teaser h3,
 #main section .flowing .scroll h3 {
-	margin: 1.0em 0 0;
+	margin: 1em 0 0;
 	font-size: 20pt;
 	text-align: center;
 }
@@ -44,6 +41,8 @@
 	margin: 0.4em auto 0;
 	display: block;
 }
+
+/* The items that fit in the flow like teasers, but aren't. */
 
 .item-with-bg {
 	margin: 1em;
@@ -75,14 +74,16 @@
 
 /* Buttons */
 #main section .button,
-#main section button {
+#main section button,
+.open-modal button {
 	background-color: #655e7a;
 	color: #fff;
 	border-color: #655e7a;
 }
 
 #main section.dark-bg .button,
-#main section.dark-bg button {
+#main section.dark-bg button,
+.open-modal.dark-bg button {
 	background-color: #e3e3e3;
 	color: #3b3b3b;
 	border-color: #e3e3e3;
@@ -90,30 +91,35 @@
 
 /* Overall styling */
 
-.center {
-	margin: 0 auto;
-	width: fit-content;
-}
-
-.flowing {
-	max-width: 80em;
-	margin: 0 auto;
-}
-
 #main {
 	background-color: #fff;
 }
 
-#main .post h2 {
-	text-align: center;
-	font-size: 2.6em;
-	margin: 1.6em 0 1.0em;
+html, body {
+	background-color: #fff;
 }
 
-#main .post h3 {
+#main article.subpage {
+	font-size: 14pt;
+	padding: 2em 8em 0;
+}
+
+/* Events page styles */
+
+#main article.subpage#events {
+	padding: 1px 0 0;
+}
+
+#main #events h2 {
+	text-align: center;
+	font-size: 2.6em;
+	margin: 1.6em 0 1em;
+}
+
+#main #events h3 {
 	text-align: center;
 	font-size: 1.4em;
-	margin: 0.6em 0 1.0em;
+	margin: 0.6em 0 1em;
 }
 
 /* picture galleries */
@@ -138,7 +144,7 @@
 }
 
 #logistics-icons i.dual-icon:hover {
-	font-family:"Font Awesome 5 Brands";
+	font-family: "Font Awesome 5 Brands";
 	font-weight: 400;
 }
 
@@ -169,4 +175,112 @@ footer {
 	background-color: #ccc;
 	color: #999;
 	padding: 0.8em 10em 0.2em;
+}
+
+/* Layouts & Positioning */
+
+.center {
+	margin: 0 auto;
+	width: fit-content;
+}
+
+.flowing {
+	max-width: 80em;
+	margin: 0 auto;
+}
+
+/* Home Hero graphic */
+
+article#home section#hero {
+	background: linear-gradient(to left, #8b86a3cc, #322e40cc),
+		url("../img/hero-bg.jpg") fixed no-repeat 45% 0%;
+	background-size: cover;
+	padding: 10em 1.5em;
+}
+@media screen and (min-width: 736px) {
+	article#home section#hero {
+		padding: 22em 8em;
+	}
+}
+article#home section#hero .band-content {
+	color: #e3e3e3;
+}
+@media screen and (min-width: 736px) {
+	article#home section#hero .band-content {
+		margin-left: 20%;
+	}
+}
+article#home section#hero h1 {
+	color: inherit;
+	font-family: "Display", fantasy, serif;
+	font-weight: 400;
+	font-size: 42pt;
+	line-height: 1.3;
+	letter-spacing: 0.3ex;
+	margin-bottom: 1em;
+}
+article#home section#hero p {
+	font-family: "Body", serif;
+	font-weight: 400;
+	font-size: 25pt;
+	line-height: 2;
+	letter-spacing: 0.3ex;
+	margin: 0;
+}
+
+/* No react warning */
+
+.warning {
+	font-size: 2em;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Modal dialog formatting */
+
+.ReactModalPortal {
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+	overflow: hidden;
+}
+
+.open-modal-overlay {
+	z-index: 11000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.open-modal {
+	z-index: 15000;
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	right: 20%;
+	bottom: 10%;
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 4px;
+	outline: none;
+	padding: 20px;
+	font-size: 16pt;
+}
+
+@media screen and (max-width: 735px) {
+	.open-modal {
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border: 0;
+	}
 }
