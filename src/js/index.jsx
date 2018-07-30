@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { loaded, UserData } from "./save-user-data.js";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
-import { ShowMeaning, HideWarning } from "./ShowMeaning.jsx";
+import { DrinkOption, HideWarning } from "./ShowMeaning.jsx";
 import { UserProfile } from "./UserProfile.jsx";
 
 ("use strict");
@@ -22,7 +22,7 @@ document
 	.querySelectorAll(".meaning")
 	.forEach(domContainer =>
 		ReactDOM.render(
-			<ShowMeaning user_data={user_data} {...domContainer.dataset} />,
+			<DrinkOption user_data={user_data} {...domContainer.dataset} />,
 			domContainer
 		)
 	);

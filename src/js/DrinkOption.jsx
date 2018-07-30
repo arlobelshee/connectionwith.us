@@ -12,7 +12,7 @@ export class HideWarning extends React.Component {
 }
 
 @observer
-export class ShowMeaning extends React.Component {
+export class DrinkOption extends React.Component {
 	constructor(props) {
 		super(props);
 		this.meanings = [
