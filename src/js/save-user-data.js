@@ -149,7 +149,6 @@ class Persister {
 }
 
 function tryToLoadMostRecentUserKeyFromLocalStorage(user_data) {
-	console.log("Trying to load from local storage");
 	const key = localStorage.getItem("most-recent-key");
 	if (!key) {
 		console.log("No recent key");
@@ -178,23 +177,24 @@ function becomeAnonymousInLocalStorage() {
 }
 
 function saveToLocalStorage(data) {
-	console.log("Trying to save to local storage");
 	localStorage.setItem("most-recent-key", data.key);
 	const json_data = JSON.stringify(data);
 	localStorage.setItem("user/" + data.key, json_data);
-	console.log("stored " + json_data);
+	console.log("locally stored " + json_data);
 }
 
 const SERVER_API_URL =
 	"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
 
 function saveToServer(data, user_data) {
-	console.log("posting!");
+	if (!data.accepted_data_tracking) {
+		return; // Whole site will work, we just won't save anything to our servers.
+	}
 	$.post(SERVER_API_URL, data)
 		.done(
 			action(data => {
 				user_data.network_problem = "";
-				console.log("success! " + JSON.stringify(data));
+				console.log("Posted! " + JSON.stringify(data));
 			})
 		)
 		.fail(
