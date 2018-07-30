@@ -3,15 +3,25 @@ import { observable, computed, action } from "mobx";
 export class UserData {
 	@observable name = "";
 	@observable drinks = {};
+	@observable accepted_data_tracking = false;
 
 	@computed
 	get key() {
 		return slugify(this.name);
 	}
 
+	@computed
+	get needsName() {
+		return Object.keys(this.drinks).length > 0 && !this.name;
+	}
+
 	@action
 	log_out() {
 		this.name = "";
+		const drink_names = Object.keys(this.drinks).slice();
+		for (var i = 0; i < drink_names.length; ++i){
+			delete this.drinks[drink_names[i]];
+		}
 	}
 }
 
