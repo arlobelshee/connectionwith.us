@@ -85,7 +85,7 @@ class Persister {
 
 	@action
 	onServerData(data) {
-		if (data.key === this.user_data.key) {
+		if (data.key === this.user_data.key && this.source_of_truth === STORAGE) {
 			this.user_data.deserializeUnderAnyLocalEdits(data);
 			this.source_of_truth = APPLICATION;
 			this.startSavingChanges();
@@ -93,10 +93,11 @@ class Persister {
 	}
 
 	startSavingChanges() {
+		const original_key = this.user_data.key;
 		reaction(
 			() => this.user_data.serialize,
 			(data, obs) => {
-				if (data.key) {
+				if (data.key && data.key === original_key) {
 					saveToServer(data, this.user_data);
 				} else {
 					console.log("Stopping server posting until next login");
