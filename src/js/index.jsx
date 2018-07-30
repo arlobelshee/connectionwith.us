@@ -29,9 +29,6 @@ document
 
 ReactDOM.render(<UserProfile user_data={user_data} />, document.getElementById("user-profile"));
 
-$(document).ready(loaded);
-
-
 document
 	.querySelectorAll(".no-react")
 	.forEach(domContainer => ReactDOM.render(<HideWarning />, domContainer));

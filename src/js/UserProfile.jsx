@@ -25,7 +25,7 @@ export class UserProfile extends React.Component {
 				</span>
 			);
 		} else {
-			return "lollygagging";
+			return "";
 		}
 	}
 }
