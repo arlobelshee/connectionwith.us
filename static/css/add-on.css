@@ -14,7 +14,7 @@
 
 #main section .flowing figure.teaser h3,
 #main section .flowing .scroll h3 {
-	margin: 1.0em 0 0;
+	margin: 1em 0 0;
 	font-size: 20pt;
 	text-align: center;
 }
@@ -74,14 +74,16 @@
 
 /* Buttons */
 #main section .button,
-#main section button {
+#main section button,
+.open-modal button {
 	background-color: #655e7a;
 	color: #fff;
 	border-color: #655e7a;
 }
 
 #main section.dark-bg .button,
-#main section.dark-bg button {
+#main section.dark-bg button,
+.open-modal.dark-bg button {
 	background-color: #e3e3e3;
 	color: #3b3b3b;
 	border-color: #e3e3e3;
@@ -98,13 +100,13 @@
 #main #events h2 {
 	text-align: center;
 	font-size: 2.6em;
-	margin: 1.6em 0 1.0em;
+	margin: 1.6em 0 1em;
 }
 
 #main #events h3 {
 	text-align: center;
 	font-size: 1.4em;
-	margin: 0.6em 0 1.0em;
+	margin: 0.6em 0 1em;
 }
 
 /* picture galleries */
@@ -129,7 +131,7 @@
 }
 
 #logistics-icons i.dual-icon:hover {
-	font-family:"Font Awesome 5 Brands";
+	font-family: "Font Awesome 5 Brands";
 	font-weight: 400;
 }
 
@@ -177,14 +179,15 @@ footer {
 /* Home Hero graphic */
 
 article#home section#hero {
-	background: linear-gradient(to left, #8b86a3cc, #322e40cc), url("../img/hero-bg.jpg") fixed no-repeat 45% 0%;
+	background: linear-gradient(to left, #8b86a3cc, #322e40cc),
+		url("../img/hero-bg.jpg") fixed no-repeat 45% 0%;
 	background-size: cover;
 	padding: 10em 1.5em;
 }
 @media screen and (min-width: 736px) {
-article#home section#hero {
+	article#home section#hero {
 		padding: 22em 8em;
-}
+	}
 }
 article#home section#hero .band-content {
 	color: #e3e3e3;
@@ -215,9 +218,46 @@ article#home section#hero p {
 /* No react warning */
 
 .warning {
-	font-size: 2.0em;
+	font-size: 2em;
 }
 
 .hidden {
 	display: none;
+}
+
+/* Modal dialog formatting */
+
+.ReactModalPortal {
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+	overflow: hidden;
+}
+
+.open-modal-overlay {
+	z-index: 9000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.open-modal {
+	z-index: 10000;
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	right: 20%;
+	bottom: 10%;
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 4px;
+	outline: none;
+	padding: 20px;
+	font-size: 16pt;
 }
