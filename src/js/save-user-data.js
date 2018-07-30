@@ -1,10 +1,12 @@
-import { observable, computed, action, autorun } from "mobx";
+import { observable, computed, action, reaction } from "mobx";
 
 export class UserData {
 	constructor() {
 		tryToLoadFromLocalStorage(this);
-		autorun(() => saveToServer(this));
-		autorun(() => saveToLocalStorage(this));
+		reaction(() => this.allDataAsFields, data => saveToServer(data, this), {
+			delay: 7000
+		});
+		reaction(() => this.allDataAsFields, data => saveToLocalStorage(data));
 	}
 	@observable name = "";
 	@observable drinks = {};
@@ -71,23 +73,23 @@ function tryToLoadFromLocalStorage(user_data) {
 	user_data.setFromDataFields(data);
 }
 
-function saveToLocalStorage(user_data) {
+function saveToLocalStorage(data) {
 	console.log("Trying to save to local storage");
-	const key = user_data.key || "(anonymous)";
+	const key = data.key || "(anonymous)";
 	localStorage.setItem("most-recent-key", key);
-	const data = JSON.stringify(user_data.allDataAsFields);
-	localStorage.setItem("user/" + key, data);
-	console.log("stored " + data);
+	const json_data = JSON.stringify(data);
+	localStorage.setItem("user/" + key, json_data);
+	console.log("stored " + json_data);
 }
 
-function saveToServer(user_data) {
-	if (!user_data.key) {
+function saveToServer(data, user_data) {
+	if (!data.key) {
 		return;
 	}
 	console.log("posting!");
 	const url =
 		"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
-	$.post(url, user_data.allDataAsFields)
+	$.post(url, data)
 		.done(data => {
 			user_data.network_problem = "";
 			console.log("success! " + JSON.stringify(data));
