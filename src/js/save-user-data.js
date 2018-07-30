@@ -7,6 +7,7 @@ export class UserData {
 	@observable name = "";
 	@observable drinks = {};
 	@observable accepted_data_tracking = false;
+	@observable network_problem = "";
 
 	@computed
 	get key() {
@@ -38,9 +39,7 @@ export class UserData {
 }
 
 function saveToServer(user_data) {
-	console.log("Trying to save user_data");
 	if (!user_data.key) {
-		console.log("no key");
 		return;
 	}
 	console.log("posting!");
@@ -48,10 +47,11 @@ function saveToServer(user_data) {
 		"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
 	$.post(url, user_data.allDataAsFields)
 		.done(data => {
-			console.log("success! " + data);
+			user_data.network_problem = "";
+			console.log("success! " + JSON.stringify(data));
 		})
 		.fail(e => {
-			console.log("Total failure! " + e);
+			user_data.network_problem = JSON.stringify(e);
 		});
 }
 
@@ -66,72 +66,4 @@ function slugify(text) {
 		.replace(/\-\-+/g, "-") // replace multiple '-' with single '-'
 		.replace(/^\-/g, "") // remove dash at start
 		.replace(/\-$/g, ""); // remove dash at end
-}
-
-function isHuman(honeypot) {
-	return !honeypot; // Human if they didn't fill up the field.
-}
-
-function getFormData(form) {
-	var elements = form.elements;
-
-	var fields = Object.keys(elements)
-		.map(function(k) {
-			if (elements[k].name !== undefined) {
-				return elements[k].name;
-				// special case for Edge's html collection
-			} else if (elements[k].length > 0) {
-				return elements[k].item(0).name;
-			}
-		})
-		.filter(function(item, pos, self) {
-			return self.indexOf(item) == pos && item;
-		});
-
-	var formData = {};
-	fields.forEach(function(name) {
-		var element = elements[name];
-
-		formData[name] = element.value;
-
-		// when our element has multiple items, get their values
-		if (element.length) {
-			var data = [];
-			for (var i = 0; i < element.length; i++) {
-				var item = element.item(i);
-				if (item.checked || item.selected) {
-					data.push(item.value);
-				}
-			}
-			formData[name] = data.join(", ");
-		}
-	});
-
-	return formData;
-}
-
-function handleFormSubmit(event) {
-	event.preventDefault();
-	var data = getFormData(event.target);
-
-	if (!isHuman(data.robbiecheck)) {
-		return false;
-	}
-
-	disableAllButtons(event.target);
-	var url = event.target.action;
-	$.post(url, data).done(() => {
-		document.getElementById("testForm").style.display = "none";
-		var thankYouMessage = document.getElementById("thankyou_message");
-		if (thankYouMessage) {
-			thankYouMessage.style.display = "block";
-		}
-	});
-}
-
-function disableAllButtons(form) {
-	var buttons = form.querySelectorAll("button");
-	for (var i = 0; i < buttons.length; i++) {
-		buttons[i].disabled = true;
-	}
 }
