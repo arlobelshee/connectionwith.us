@@ -34,7 +34,7 @@ export class UserProfile extends React.Component {
 	render() {
 		if (this.user_data.needsName) {
 			return (
-				<ReactModal isOpen={this.user_data.needsName}>
+				<ReactModal isOpen={this.user_data.needsName} appElement={document.getElementById("main")} >
 					<h2>So, I forgot to ask...</h2>
 					<p>Who is this?</p>
 					<p>

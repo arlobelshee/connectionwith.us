@@ -8,7 +8,9 @@ export class HideWarning extends React.Component {
 		super(props);
 	}
 
-	render() { return ""; }
+	render() {
+		return "";
+	}
 }
 
 @observer
@@ -21,10 +23,7 @@ export class DrinkOption extends React.Component {
 			htmlDecode(props.yes)
 		];
 		this.drinks = props.user_data.drinks;
-		document.querySelector(
-			"input[name=" + props.fieldname + "]"
-		).oninput = this.onChange.bind(this);
-		this.currentMeaning = this.currentMeaning.bind(this);
+		this.onChange = this.onChange.bind(this);
 	}
 
 	onChange(evt) {
@@ -36,7 +35,23 @@ export class DrinkOption extends React.Component {
 	}
 
 	render() {
-		return <span dangerouslySetInnerHTML={{ __html: this.currentMeaning() }} />;
+		return (
+			<span className="use-children">
+				<input
+					type="range"
+					name={this.props.fieldname}
+					min="0"
+					max="2"
+					value={this.drinks[this.props.id] || this.props.initialvalue}
+					onInput={this.onChange}
+					onChange={this.onChange}
+				/>
+				<span
+					className="meaning"
+					dangerouslySetInnerHTML={{ __html: this.currentMeaning() }}
+				/>
+			</span>
+		);
 	}
 }
 

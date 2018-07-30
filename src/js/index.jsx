@@ -19,7 +19,7 @@ document.querySelectorAll(".photo-gallery").forEach(domContainer =>
 );
 
 document
-	.querySelectorAll(".meaning")
+	.querySelectorAll(".drink-choice")
 	.forEach(domContainer =>
 		ReactDOM.render(
 			<DrinkOption user_data={user_data} {...domContainer.dataset} />,
@@ -27,9 +27,12 @@ document
 		)
 	);
 
-ReactDOM.render(<UserProfile user_data={user_data} />, document.getElementById("user-profile"));
+ReactDOM.render(
+	<UserProfile user_data={user_data} />,
+	document.getElementById("user-profile")
+);
 
 document
 	.querySelectorAll(".no-react")
 	.forEach(domContainer => ReactDOM.render(<HideWarning />, domContainer));
-$(document).ready(()=> $("#no-old-browsers-warning").removeClass("hidden"));
+$(document).ready(() => $("#no-old-browsers-warning").removeClass("hidden"));
