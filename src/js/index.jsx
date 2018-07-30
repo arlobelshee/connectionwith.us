@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { loaded, UserData } from "./save-user-data.js";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
 import { ShowMeaning, HideWarning } from "./ShowMeaning.jsx";
-import { loaded, UserData } from "./save-user-data.js";
+import { UserProfile } from "./UserProfile.jsx";
 
 ("use strict");
 
@@ -26,8 +27,12 @@ document
 		)
 	);
 
+ReactDOM.render(<UserProfile user_data={user_data} />, document.getElementById("user-profile"));
+
+$(document).ready(loaded);
+
+
 document
 	.querySelectorAll(".no-react")
 	.forEach(domContainer => ReactDOM.render(<HideWarning />, domContainer));
-
-$(document).ready(loaded);
+$(document).ready(()=> $("#no-old-browsers-warning").removeClass("hidden"));

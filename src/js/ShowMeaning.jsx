@@ -3,11 +3,6 @@ import { observer } from "mobx-react";
 
 ("use strict");
 
-function htmlDecode(input) {
-	var doc = new DOMParser().parseFromString(input, "text/html");
-	return doc.documentElement.textContent;
-}
-
 export class HideWarning extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,4 +41,9 @@ export class ShowMeaning extends React.Component {
 	render() {
 		return <span dangerouslySetInnerHTML={{ __html: this.currentMeaning() }} />;
 	}
+}
+
+function htmlDecode(input) {
+	var doc = new DOMParser().parseFromString(input, "text/html");
+	return doc.documentElement.textContent;
 }
