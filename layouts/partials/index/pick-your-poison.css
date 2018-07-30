@@ -17,11 +17,15 @@
 	margin: 0;
 }
 
-#pick-you #drinks input {
+#pick-you #drinks .drink-choice {
+	display: contents;
+}
+
+#pick-you #drinks .drink-choice input {
 	grid-column: 2;
 }
 
-#pick-you #drinks .meaning {
+#pick-you #drinks .drink-choice .meaning {
 	grid-column: 3;
 }
 
