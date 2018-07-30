@@ -29,7 +29,7 @@ export class UserProfile extends React.Component {
 		this.user_data.name = evt.target.querySelector("input[name=name]").value;
 		this.user_data.accepted_data_tracking = evt.target.querySelector(
 			"input[name=consent]"
-		).value;
+		).checked;
 	}
 
 	render() {

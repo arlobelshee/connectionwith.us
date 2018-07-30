@@ -9,6 +9,7 @@ export class UserData {
 	}
 	@observable name = "";
 	@observable drinks = new Map();
+	@observable invitations = new Map();
 	@observable accepted_data_tracking = false;
 	@observable network_problem = "";
 
@@ -24,8 +25,15 @@ export class UserData {
 			key: this.key,
 			accepted_data_tracking: this.accepted_data_tracking
 		};
-		this.drinks.forEach((value, drink) => (result["drink/" + drink] = value));
+		this.serializeOneMap(this.drinks, "drink/", result);
+		this.serializeOneMap(this.invitations, "event/", result);
 		return result;
+	}
+
+	serializeOneMap(src_map, serialized_prefix, result) {
+		src_map.forEach(
+			(value, name) => (result[serialized_prefix + name] = value)
+		);
 	}
 
 	@action
@@ -33,19 +41,24 @@ export class UserData {
 		this.name = data.name;
 		this.accepted_data_tracking =
 			data.accepted_data_tracking || this.accepted_data_tracking;
+		this.updateOneMap(data, "drink/", this.drinks);
+		this.updateOneMap(data, "event/", this.invitations);
+	}
+
+	updateOneMap(data, serialized_prefix, destination_map) {
 		Object.keys(data)
-			.filter(k => k.startsWith("drink/"))
-			.forEach(drink_field => {
-				const drink = drink_field.split("/", 2);
-				if (!this.drinks.has(drink[1])) {
-					this.drinks.set(drink[1], data[drink_field]);
+			.filter(k => k.startsWith(serialized_prefix))
+			.forEach(matching_field => {
+				const name = matching_field.split("/", 2)[1];
+				if (!destination_map.has(name)) {
+					destination_map.set(name, data[matching_field]);
 				}
 			});
 	}
 
 	@computed
 	get needsName() {
-		return this.drinks.size > 0 && !this.name;
+		return (this.drinks.size > 0 || this.invitations.size > 0) && !this.name;
 	}
 
 	@action
@@ -53,6 +66,7 @@ export class UserData {
 		this.name = "";
 		this.accepted_data_tracking = false;
 		this.drinks.clear();
+		this.invitations.clear();
 	}
 }
 
@@ -85,7 +99,13 @@ class Persister {
 
 	@action
 	onServerData(data) {
-		if (data.key === this.user_data.key && this.source_of_truth === STORAGE) {
+		if (!data.key && this.source_of_truth === STORAGE) {
+			this.source_of_truth = APPLICATION;
+			this.startSavingChanges();
+		} else if (
+			data.key === this.user_data.key &&
+			this.source_of_truth === STORAGE
+		) {
 			this.user_data.deserializeUnderAnyLocalEdits(data);
 			this.source_of_truth = APPLICATION;
 			this.startSavingChanges();
