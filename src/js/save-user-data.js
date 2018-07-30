@@ -2,7 +2,9 @@ import { observable, computed, action, autorun } from "mobx";
 
 export class UserData {
 	constructor() {
+		tryToLoadFromLocalStorage(this);
 		autorun(() => saveToServer(this));
+		autorun(() => saveToLocalStorage(this));
 	}
 	@observable name = "";
 	@observable drinks = {};
@@ -23,6 +25,16 @@ export class UserData {
 		return result;
 	}
 
+	setFromDataFields(data) {
+		this.name = data.name;
+		Object.keys(data)
+			.filter(k => k.startsWith("drink/"))
+			.forEach(drink_field => {
+				const drink = drink_field.split("/", 2);
+				this.drinks[drink[1]] = data[drink_field];
+			});
+	}
+
 	@computed
 	get needsName() {
 		return Object.keys(this.drinks).length > 0 && !this.name;
@@ -36,6 +48,36 @@ export class UserData {
 			delete this.drinks[drink_names[i]];
 		}
 	}
+}
+
+function tryToLoadFromLocalStorage(user_data) {
+	console.log("Trying to laod from local storage");
+	const key = localStorage.getItem("most-recent-key");
+	if (!key) {
+		console.log("No recent key");
+		return;
+	}
+	let data = null;
+	try {
+		data = JSON.parse(localStorage.getItem("user/" + key));
+	} catch (e) {
+		console.log(JSON.stringify(e));
+	}
+	if (!data) {
+		console.log("No valid data matching key " + key);
+		return;
+	}
+	console.log("Loading from data " + JSON.stringify(data));
+	user_data.setFromDataFields(data);
+}
+
+function saveToLocalStorage(user_data) {
+	console.log("Trying to save to local storage");
+	const key = user_data.key || "(anonymous)";
+	localStorage.setItem("most-recent-key", key);
+	const data = JSON.stringify(user_data.allDataAsFields);
+	localStorage.setItem("user/" + key, data);
+	console.log("stored " + data);
 }
 
 function saveToServer(user_data) {
