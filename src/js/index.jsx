@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
-import ShowMeaning from "./ShowMeaning.jsx";
-import { slugify, loaded, UserData } from "./save-user-data.js";
+import { ShowMeaning, HideWarning } from "./ShowMeaning.jsx";
+import { loaded, UserData } from "./save-user-data.js";
 
 ("use strict");
 
@@ -20,7 +20,14 @@ document.querySelectorAll(".photo-gallery").forEach(domContainer =>
 document
 	.querySelectorAll(".meaning")
 	.forEach(domContainer =>
-		ReactDOM.render(<ShowMeaning {...domContainer.dataset} />, domContainer)
+		ReactDOM.render(
+			<ShowMeaning user_data={user_data} {...domContainer.dataset} />,
+			domContainer
+		)
 	);
+
+document
+	.querySelectorAll(".no-react")
+	.forEach(domContainer => ReactDOM.render(<HideWarning />, domContainer));
 
 $(document).ready(loaded);

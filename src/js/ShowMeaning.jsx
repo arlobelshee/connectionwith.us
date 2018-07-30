@@ -8,12 +8,25 @@ function htmlDecode(input) {
 	return doc.documentElement.textContent;
 }
 
-@observer
-export default class ShowMeaning extends React.Component {
+export class HideWarning extends React.Component {
 	constructor(props) {
 		super(props);
-		this.meanings = [htmlDecode(props.no), htmlDecode(props.some), htmlDecode(props.yes)];
+	}
+
+	render() { return ""; }
+}
+
+@observer
+export class ShowMeaning extends React.Component {
+	constructor(props) {
+		super(props);
+		this.meanings = [
+			htmlDecode(props.no),
+			htmlDecode(props.some),
+			htmlDecode(props.yes)
+		];
 		this.state = { value: props.initialvalue };
+		this.drinker = props.user_data;
 		document.querySelector(
 			"input[name=" + props.fieldname + "]"
 		).oninput = this.onChange.bind(this);

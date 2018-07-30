@@ -1,9 +1,19 @@
 <section class="" id="pick-you">
+	<div class="warning no-react">
+		<p>
+			Hey, just a quick warning. If you can see this, then there's a lot of this site you can't see. Oh, and we also won't be able
+			to save anything or notice when you ask to be invited to stuff.
+		</p>
+		<p>Please come back with a different browser and with javascript turned on. Just about any modern browser other than IE 11
+			will do. Edge is fine, just not IE.</p>
+	</div>
 	<div class="block">
 		<h2>Some really important info we need from you!</h2>
 		<p>First, who is this? If this is multiple people, then come back multiple times! We needs personal info from each of you!
 			<input name="name" type="text" placeholder="Your name">
-			<input name="consent" type="checkbox" id="consent"> <label for="consent">As per GDPR, I consent to let you gather info about me in order to organize this event, especially to ensure we have the right drinks and to make gratuitous analyses of how you use the site. We will totally track you on this site!</label>
+			<input name="consent" type="checkbox" id="consent">
+			<label for="consent">As per GDPR, I consent to let you gather info about me in order to organize this event, especially to ensure we have the
+				right drinks and to make gratuitous analyses of how you use the site. We will totally track you on this site!</label>
 		</p>
 		<p>We've got 2 days of festivities! "They" tell us it's important to keep everyone hydrated, and each event has a different
 			ambiance. Thus many different forms of hydration. So what do you like to drink?
@@ -11,8 +21,8 @@
 				{{ range .Site.Data.drinks.options }}
 				<label for="drink_{{ .id }}">{{ .drink | markdownify }}</label>
 				<input type="range" name="drink_{{ .id }}" min="0" max="2" value="{{ .initial_value | default 0 }}">
-				<span class="meaning" data-fieldname="drink_{{ .id }}" data-no="{{ .meaning_0 | markdownify | htmlEscape }}" data-some="{{ .meaning_1 | markdownify | htmlEscape }}" data-yes="{{ .meaning_2 | markdownify | htmlEscape }}"
-				 data-initialvalue="{{ .initial_value | default 0 }}"></span>
+				<span class="meaning" data-fieldname="drink_{{ .id }}" data-no="{{ .meaning_0 | markdownify | htmlEscape }}" data-some="{{ .meaning_1 | markdownify | htmlEscape }}"
+				 data-yes="{{ .meaning_2 | markdownify | htmlEscape }}" data-initialvalue="{{ .initial_value | default 0 }}"></span>
 				{{ end }}
 			</div>
 		</p>

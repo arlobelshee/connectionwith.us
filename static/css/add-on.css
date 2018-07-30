@@ -211,3 +211,9 @@ article#home section#hero p {
 	letter-spacing: 0.3ex;
 	margin: 0;
 }
+
+/* No react warning */
+
+.warning {
+	font-size: 2.0em;
+}

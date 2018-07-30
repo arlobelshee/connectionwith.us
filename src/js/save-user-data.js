@@ -1,6 +1,6 @@
 import { observable, computed, action } from "mobx";
 
-export default class UserData {
+export class UserData {
 	@observable name = "";
 
 	@computed
@@ -14,7 +14,13 @@ export default class UserData {
 	}
 }
 
-export function slugify(text) {
+export function loaded() {
+	console.log("Contact form submission handler loaded successfully.");
+	var form = document.getElementById("testForm");
+	form.addEventListener("submit", handleFormSubmit, false);
+}
+
+function slugify(text) {
 	return text
 		.toString()
 		.toLowerCase()
@@ -86,11 +92,6 @@ function handleFormSubmit(event) {
 			thankYouMessage.style.display = "block";
 		}
 	});
-}
-export function loaded() {
-	console.log("Contact form submission handler loaded successfully.");
-	var form = document.getElementById("testForm");
-	form.addEventListener("submit", handleFormSubmit, false);
 }
 
 function disableAllButtons(form) {
