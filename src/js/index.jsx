@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { loaded, UserData } from "./save-user-data.js";
 import FlickrGallery from "./flickr/FlickrGallery.jsx";
-import { DrinkOption, HideWarning } from "./ShowMeaning.jsx";
+import { DrinkOption, HideWarning } from "./DrinkOption";
 import { UserProfile } from "./UserProfile.jsx";
 
 ("use strict");
