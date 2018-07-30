@@ -29,15 +29,17 @@ export class UserData {
 	}
 
 	@action
-	deserializeAndOverwrite(data) {
+	deserializeUnderAnyLocalEdits(data) {
 		this.name = data.name;
-		this.accepted_data_tracking = data.accepted_data_tracking;
-		this.drinks.clear();
+		this.accepted_data_tracking =
+			data.accepted_data_tracking || this.accepted_data_tracking;
 		Object.keys(data)
 			.filter(k => k.startsWith("drink/"))
 			.forEach(drink_field => {
 				const drink = drink_field.split("/", 2);
-				this.drinks.set(drink[1], data[drink_field]);
+				if (!this.drinks.has(drink[1])) {
+					this.drinks.set(drink[1], data[drink_field]);
+				}
 			});
 	}
 
@@ -72,7 +74,19 @@ class Persister {
 
 	monitorLoginAndLogout(key, obs) {
 		if (key && this.source_of_truth === STORAGE) {
-			tryToLoadSpecificUserFromLocalStorage(key, this.user_data);
+			if (tryToLoadSpecificUserFromLocalStorage(key, this.user_data)) {
+				this.source_of_truth = APPLICATION;
+				this.startSavingChanges();
+			} else {
+				loadFromServer(key, this);
+			}
+		}
+	}
+
+	@action
+	onServerData(data) {
+		if (data.key === this.user_data.key) {
+			this.user_data.deserializeUnderAnyLocalEdits(data);
 			this.source_of_truth = APPLICATION;
 			this.startSavingChanges();
 		}
@@ -131,10 +145,11 @@ function tryToLoadSpecificUserFromLocalStorage(key, user_data) {
 	}
 	if (!data) {
 		console.log("No valid data matching key " + key);
-		return;
+		return false;
 	}
 	console.log("Loading from data " + JSON.stringify(data));
-	user_data.deserializeAndOverwrite(data);
+	user_data.deserializeUnderAnyLocalEdits(data);
+	return true;
 }
 
 function becomeAnonymousInLocalStorage() {
@@ -149,11 +164,12 @@ function saveToLocalStorage(data) {
 	console.log("stored " + json_data);
 }
 
+const SERVER_API_URL =
+	"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
+
 function saveToServer(data, user_data) {
 	console.log("posting!");
-	const url =
-		"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
-	$.post(url, data)
+	$.post(SERVER_API_URL, data)
 		.done(
 			action(data => {
 				user_data.network_problem = "";
@@ -165,6 +181,25 @@ function saveToServer(data, user_data) {
 				const result = JSON.stringify(e);
 				user_data.network_problem = result;
 				console.log("error writing to server! " + result);
+			})
+		);
+}
+
+function loadFromServer(key, persister) {
+	console.log("Asking the server...");
+	$.get(SERVER_API_URL, { key: key })
+		.done(
+			action(data => {
+				if (data.result === "success") {
+					persister.onServerData(data.data);
+				} else {
+					console.log("error loading from server! " + JSON.stringify(data));
+				}
+			})
+		)
+		.fail(
+			action(e => {
+				console.log("error loading from server! " + JSON.stringify(e));
 			})
 		);
 }
