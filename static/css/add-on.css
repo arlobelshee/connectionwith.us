@@ -95,7 +95,20 @@
 	background-color: #fff;
 }
 
+html, body {
+	background-color: #fff;
+}
+
+#main article.subpage {
+	font-size: 14pt;
+	padding: 2em 8em 0;
+}
+
 /* Events page styles */
+
+#main article.subpage#events {
+	padding: 1px 0 0;
+}
 
 #main #events h2 {
 	text-align: center;

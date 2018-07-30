@@ -4,10 +4,10 @@ id = "journey"
 longtitle = "Our Journey to Date"
 +++
 
-<div class="photo-gallery" data-tags="dogs" style="height:350px; width:800px;"></div>
-<div class="photo-gallery" data-tags="ha19-cats" style="height:350px; width:800px;"></div>
-<div class="photo-gallery" data-tags="jedi" style="height:350px; width:800px;"></div>
+Heather has written up some wonderful stories, but Arlo is too slow at websites, so they aren't here yet.
 
-Blog of all the things! With commenting, of course.
+Come back in a couple of days. They should be up by Friday.
 
-Nederburg theme here, with pull summary + main photo + rotating recent comments / discussion.
+They're funny. They have pictures. Oh, and you will also be able to upload your own pictures (to flickr) and have them appear with stories. In case you have more "evidence" to support some of the wild accusations.
+
+In fact, one of the stories is all about Heather's amazement at Arlo's spectacular speed with websites. She went all PM on him.
