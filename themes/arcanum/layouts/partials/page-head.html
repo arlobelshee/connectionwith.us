@@ -24,6 +24,8 @@
 	{{ end }}
 {{ end }}
 
+<link rel="alternate" type="application/rss+xml" title="subscribe to what's new" href='{{ .Site.RSSLink | absURL }}' />
+
 {{ template "_internal/twitter_cards.html" . }}
 {{ template "_internal/opengraph.html" . }}
 <meta property="og:image" content="{{ .Site.BaseURL }}/images/logo.png">
