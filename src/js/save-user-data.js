@@ -1,15 +1,14 @@
-import { observable, computed, action, reaction } from "mobx";
+import { configure, observable, computed, action, reaction } from "mobx";
+
+configure({ enforceActions: "strict" });
 
 export class UserData {
 	constructor() {
-		tryToLoadFromLocalStorage(this);
-		reaction(() => this.allDataAsFields, data => saveToServer(data, this), {
-			delay: 7000
-		});
-		reaction(() => this.allDataAsFields, data => saveToLocalStorage(data));
+		this.persistance_friend = new Persister(this);
+		this.persistance_friend.initializeEmptyDataToLastKnownUser();
 	}
 	@observable name = "";
-	@observable drinks = {};
+	@observable drinks = new Map();
 	@observable accepted_data_tracking = false;
 	@observable network_problem = "";
 
@@ -19,46 +18,111 @@ export class UserData {
 	}
 
 	@computed
-	get allDataAsFields() {
-		const result = { name: this.name, key: this.key };
-		Object.keys(this.drinks).forEach(
-			drink => (result["drink/" + drink] = this.drinks[drink])
-		);
+	get serialize() {
+		const result = {
+			name: this.name,
+			key: this.key,
+			accepted_data_tracking: this.accepted_data_tracking
+		};
+		this.drinks.forEach((value, drink) => (result["drink/" + drink] = value));
 		return result;
 	}
 
-	setFromDataFields(data) {
+	@action
+	deserializeAndOverwrite(data) {
 		this.name = data.name;
+		this.accepted_data_tracking = data.accepted_data_tracking;
+		this.drinks.clear();
 		Object.keys(data)
 			.filter(k => k.startsWith("drink/"))
 			.forEach(drink_field => {
 				const drink = drink_field.split("/", 2);
-				this.drinks[drink[1]] = data[drink_field];
+				this.drinks.set(drink[1], data[drink_field]);
 			});
 	}
 
 	@computed
 	get needsName() {
-		return Object.keys(this.drinks).length > 0 && !this.name;
+		return this.drinks.size > 0 && !this.name;
 	}
 
 	@action
 	log_out() {
 		this.name = "";
-		const drink_names = Object.keys(this.drinks).slice();
-		for (var i = 0; i < drink_names.length; ++i) {
-			delete this.drinks[drink_names[i]];
-		}
+		this.accepted_data_tracking = false;
+		this.drinks.clear();
 	}
 }
 
-function tryToLoadFromLocalStorage(user_data) {
-	console.log("Trying to laod from local storage");
+const STORAGE = 1;
+const APPLICATION = 2;
+
+class Persister {
+	constructor(user_data) {
+		this.user_data = user_data;
+		this.monitorLoginAndLogout = this.monitorLoginAndLogout.bind(this);
+		this.source_of_truth = STORAGE;
+	}
+
+	initializeEmptyDataToLastKnownUser() {
+		const key = tryToLoadMostRecentUserKeyFromLocalStorage(this.user_data);
+		this.monitorLoginAndLogout(key);
+		reaction(() => this.user_data.key, this.monitorLoginAndLogout);
+	}
+
+	monitorLoginAndLogout(key, obs) {
+		if (key && this.source_of_truth === STORAGE) {
+			tryToLoadSpecificUserFromLocalStorage(key, this.user_data);
+			this.source_of_truth = APPLICATION;
+			this.startSavingChanges();
+		}
+	}
+
+	startSavingChanges() {
+		reaction(
+			() => this.user_data.serialize,
+			(data, obs) => {
+				if (data.key) {
+					saveToServer(data, this.user_data);
+				} else {
+					console.log("Stopping server posting until next login");
+					obs.dispose();
+				}
+			},
+			{
+				delay: 7000,
+				fireImmediately: this.user_data.key
+			}
+		);
+		reaction(
+			() => this.user_data.serialize,
+			(data, obs) => {
+				if (data.key) {
+					saveToLocalStorage(data);
+				} else {
+					becomeAnonymousInLocalStorage();
+					console.log("Stopping local saves until next login");
+					obs.dispose();
+					this.source_of_truth = STORAGE;
+				}
+			},
+			{
+				fireImmediately: this.user_data.key
+			}
+		);
+	}
+}
+
+function tryToLoadMostRecentUserKeyFromLocalStorage(user_data) {
+	console.log("Trying to load from local storage");
 	const key = localStorage.getItem("most-recent-key");
 	if (!key) {
 		console.log("No recent key");
-		return;
 	}
+	return key;
+}
+
+function tryToLoadSpecificUserFromLocalStorage(key, user_data) {
 	let data = null;
 	try {
 		data = JSON.parse(localStorage.getItem("user/" + key));
@@ -70,33 +134,39 @@ function tryToLoadFromLocalStorage(user_data) {
 		return;
 	}
 	console.log("Loading from data " + JSON.stringify(data));
-	user_data.setFromDataFields(data);
+	user_data.deserializeAndOverwrite(data);
+}
+
+function becomeAnonymousInLocalStorage() {
+	localStorage.removeItem("most-recent-key");
 }
 
 function saveToLocalStorage(data) {
 	console.log("Trying to save to local storage");
-	const key = data.key || "(anonymous)";
-	localStorage.setItem("most-recent-key", key);
+	localStorage.setItem("most-recent-key", data.key);
 	const json_data = JSON.stringify(data);
-	localStorage.setItem("user/" + key, json_data);
+	localStorage.setItem("user/" + data.key, json_data);
 	console.log("stored " + json_data);
 }
 
 function saveToServer(data, user_data) {
-	if (!data.key) {
-		return;
-	}
 	console.log("posting!");
 	const url =
 		"https://script.google.com/macros/s/AKfycbwjZOYoUPYSNuOV3wZ_oqatJgvh2vuH-VB7pqkJ/exec";
 	$.post(url, data)
-		.done(data => {
-			user_data.network_problem = "";
-			console.log("success! " + JSON.stringify(data));
-		})
-		.fail(e => {
-			user_data.network_problem = JSON.stringify(e);
-		});
+		.done(
+			action(data => {
+				user_data.network_problem = "";
+				console.log("success! " + JSON.stringify(data));
+			})
+		)
+		.fail(
+			action(e => {
+				const result = JSON.stringify(e);
+				user_data.network_problem = result;
+				console.log("error writing to server! " + result);
+			})
+		);
 }
 
 function slugify(text) {

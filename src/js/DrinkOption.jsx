@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "mobx";
 import { observer } from "mobx-react";
 
 ("use strict");
@@ -22,16 +23,18 @@ export class DrinkOption extends React.Component {
 			htmlDecode(props.some),
 			htmlDecode(props.yes)
 		];
-		this.drinks = props.user_data.drinks;
-		this.onChange = this.onChange.bind(this);
+		this.drinker = props.user_data;
 	}
 
+	@action.bound
 	onChange(evt) {
-		this.drinks[this.props.id] = evt.target.value;
+		this.drinker.drinks.set(this.props.id, evt.target.value);
 	}
 
 	currentMeaning() {
-		return this.meanings[this.drinks[this.props.id] || this.props.initialvalue];
+		return this.meanings[
+			this.drinker.drinks.get(this.props.id) || this.props.initialvalue
+		];
 	}
 
 	render() {
@@ -42,7 +45,9 @@ export class DrinkOption extends React.Component {
 					name={this.props.fieldname}
 					min="0"
 					max="2"
-					value={this.drinks[this.props.id] || this.props.initialvalue}
+					value={
+						this.drinker.drinks.get(this.props.id) || this.props.initialvalue
+					}
 					onInput={this.onChange}
 					onChange={this.onChange}
 				/>

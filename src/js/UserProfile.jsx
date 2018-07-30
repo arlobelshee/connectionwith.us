@@ -1,5 +1,6 @@
 import React from "react";
 import ReactModal from "react-modal";
+import { action } from "mobx";
 import { observer } from "mobx-react";
 
 ("use strict");
@@ -9,11 +10,10 @@ export class UserProfile extends React.Component {
 	constructor(props) {
 		super(props);
 		this.user_data = this.props.user_data;
-		this.onChange = this.onChange.bind(this);
-		this.closeDialog = this.closeDialog.bind(this);
 		this.logOut = this.logOut.bind(this);
 	}
 
+	@action.bound
 	onChange(evt) {
 		this.user_data.name = evt.target.value;
 	}
@@ -23,6 +23,7 @@ export class UserProfile extends React.Component {
 		this.user_data.log_out();
 	}
 
+	@action.bound
 	closeDialog(evt) {
 		evt.preventDefault();
 		this.user_data.name = evt.target.querySelector("input[name=name]").value;
@@ -52,20 +53,10 @@ export class UserProfile extends React.Component {
 					</p>
 					<form onSubmit={this.closeDialog}>
 						<p>
-							<input
-								name="name"
-								type="text"
-								placeholder="Your name"
-								// value={this.user_data.name}
-							/>
+							<input name="name" type="text" placeholder="Your name" />
 						</p>
 						<p>
-							<input
-								name="consent"
-								type="checkbox"
-								id="consent"
-								// checked={this.user_data.accepted_data_tracking}
-							/>
+							<input name="consent" type="checkbox" id="consent" />
 							<label htmlFor="consent">
 								As per GDPR, I consent to let you gather info about me in order
 								to organize this event, especially to ensure we have the right
