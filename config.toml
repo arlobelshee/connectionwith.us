@@ -88,9 +88,6 @@ noChmod = true
   shared_css = "index/common.css"
 
 [[params.homepage.sections]]
-partial = "index/conversation.html"
-
-[[params.homepage.sections]]
 partial = "index/news.html"
 css = "index/news-row.css"
 
