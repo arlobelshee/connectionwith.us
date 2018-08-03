@@ -1,6 +1,8 @@
 +++
 id = "home"
 +++
+
+{{% blank-space-fix %}}
 {{% band bg-photo="img/hero-bg.jpg" bg="dark" id="hero" %}}
 
 # Bringing together Arlo and Heather
@@ -15,3 +17,4 @@ Join our journey!
 Good thing Heather can do all the work of photographing and writing about it all for you!
 
 {{% /band %}}
+{{% /blank-space-fix %}}

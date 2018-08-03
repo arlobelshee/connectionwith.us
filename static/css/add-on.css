@@ -284,9 +284,3 @@ article#home section#hero p {
 		border: 0;
 	}
 }
-
-article,
-section.content, #main {
-	top: 0;
-	position: static;
-}
