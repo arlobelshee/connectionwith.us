@@ -10,7 +10,7 @@
 {{- end -}}
 {{- $.Scratch.Set "style" (printf "style=%q" ($.Scratch.Get "style") | safeHTMLAttr ) -}}
 {{- end -}}
-<section class='band {{ $bg }}-bg'{{ with .Get "id" }} id="{{ . }}"{{ end }} {{ with ($.Scratch.Get "style") }}{{ . }}{{ end }}>
+<section class='band {{ $bg }}-bg'{{ with .Get "id" }} id="{{ . }}"{{ end }}{{ with .Get "cssclass" }} class="{{ . }}"{{ end }}{{ with ($.Scratch.Get "style") }} {{ . }}{{ end }}>
 	<div class="band-content">
 		{{- .Inner -}}
 	</div>
