@@ -78,7 +78,7 @@ export class UserProfile extends React.Component {
 		if (this.user_data.name) {
 			return (
 				<a onClick={this.logOut} title="log out and become someone else">
-					<i className="fas fa-user-astronaut">&nbsp;</i> hi,{" "}
+					<i className="fas fa-user-astronaut">&nbsp;</i> Hi,{" "}
 					{this.user_data.name}
 				</a>
 			);
