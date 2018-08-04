@@ -122,21 +122,3 @@ noChmod = true
   instagram        = ""
   telegram         = ""
 	twitter = "arlobelshee"
-
-# To get the index.css. Don't modify.
-[outputs]
-	home = ["HTML", "RSS", "CSS"]
-
-[mediaTypes]
-[mediaTypes."text/css"]
-suffixes = ["css"]
-
-[outputFormats]
-[outputFormats.css]
-name = "CSS"
-mediaType = "text/css"
-path = "css"
-baseName = "index"
-isPlainText = true
-isHTML = false
-notAlternative = true
