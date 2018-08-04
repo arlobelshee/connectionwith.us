@@ -5,6 +5,8 @@ longtitle = "What's Happening When"
 subtitle = "Come hang out and do things!"
 +++
 
+{{< no-js-warnings >}}
+
 ## Jan 11 --- Coming Together Day
 
 {{% flowing css_class="center" %}}
