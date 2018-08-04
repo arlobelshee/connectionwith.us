@@ -44,4 +44,13 @@ So what do you like to drink?
 {{< pick-drinks >}}
 
 {{% /band %}}
+{{% band bg-photo="img/beach-picnic.jpg" bg="dark" id="photos" %}}
+
+## Ceremony Weekend
+
+There will be serious tea and mad tea, skiing and dancing and a conference. We're bringing together all sorts of parts of us. Join us! Weave yourself in.
+
+And if you drink at every opportunity provided, expect to weave yourself out too.
+
+{{% /band %}}
 {{% /blank-space-fix %}}

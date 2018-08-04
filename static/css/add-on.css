@@ -329,3 +329,10 @@ article#home section#hero p {
 	display: contents;
 }
 
+/* Photos */
+@media screen and (min-width: 736px) {
+	section.band#photos .band-content {
+		width: 35%;
+		margin-left: 50%;
+	}
+}

@@ -1,7 +1,0 @@
-/* Photos row */
-section#photos {
-	background: linear-gradient(to left, #8b86a3cc, #322e40cc),
-		url("../img/beach-picnic.jpg") fixed
-			no-repeat center center;
-	background-size: cover;
-}
