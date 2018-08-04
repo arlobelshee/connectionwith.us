@@ -1,0 +1,7 @@
+<div id="drinks">
+	{{ range .Site.Data.drinks.options }}
+	<label for="drink_{{ .id }}">{{ .drink | markdownify }}</label>
+	<span class="drink-choice use-children" data-id={{ .id }} data-fieldname="drink_{{ .id }}" data-no="{{ .meaning_0 | markdownify | htmlEscape }}"
+	 data-some="{{ .meaning_1 | markdownify | htmlEscape }}" data-yes="{{ .meaning_2 | markdownify | htmlEscape }}" data-initialvalue="{{ .initial_value | default 0 }}"></span>
+	{{ end }}
+</div>

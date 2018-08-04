@@ -35,5 +35,13 @@ You live all over the place. So we're doing our showers virtually.
 {{% band bg="light" id="pick-you" %}}
 {{< no-js-warnings >}}
 
+## Some really important info we need from you!
+
+We've got 2 days of festivities! "They" tell us it's important to keep everyone hydrated, and each event has a different ambiance. Thus many different forms of hydration.
+
+So what do you like to drink?
+
+{{< pick-drinks >}}
+
 {{% /band %}}
 {{% /blank-space-fix %}}
