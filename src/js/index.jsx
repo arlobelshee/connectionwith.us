@@ -45,4 +45,4 @@ ReactDOM.render(
 document
 	.querySelectorAll(".no-react")
 	.forEach(domContainer => ReactDOM.render(<HideWarning />, domContainer));
-$(document).ready(() => $("#no-old-browsers-warning").removeClass("hidden"));
+$(document).ready(() => $(".no-react").removeClass("hidden"));
