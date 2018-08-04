@@ -84,13 +84,6 @@ noChmod = true
   customCSS            = ["default", "/css/add-on.css"]
   customJS             = ["default"]
 
-[params.homepage]
-  shared_css = "index/common.css"
-
-[[params.homepage.sections]]
-partial = "index/key-logistics.html"
-css = ""
-
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]

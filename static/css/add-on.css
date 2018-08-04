@@ -172,9 +172,10 @@ html, body {
 footer {
 	display: block;
 	width: 100%;
-	background-color: #ccc;
+	background-color: #eee;
 	color: #999;
-	padding: 0.8em 10em 0.2em;
+	text-align: right;
+	padding: 0.6em 1em 0.2em;
 }
 
 /* Layouts & Positioning */
@@ -335,4 +336,26 @@ article#home section#hero p {
 		width: 35%;
 		margin-left: 50%;
 	}
+}
+
+/* Logistics band */
+#logistics .band-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+section.band#logistics {
+	padding: 6em 5%;
+}
+#logistics .block {
+	flex-grow: 1;
+	min-width: 300px;
+	max-width: 50%;
+}
+#logistics .attention-graphic {
+	flex-grow: 0;
+}
+#logistics .attention-graphic img {
+  width: 100%;
 }

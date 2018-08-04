@@ -1295,15 +1295,11 @@ body.is-menu-visible #menu {
 }
 
 #main section.band {
-	padding: 6em 0;
-}
-
-#main section.band .band-content {
-	margin: 0 15%;
+	padding: 6em 15%;
 }
 
 @media screen and (max-width: 735px) {
-#main section.band .band-content {
-	margin: 0 1.5em;
+#main section.band {
+	padding: 6em 1.5em;
 }
 }
