@@ -1292,6 +1292,7 @@ body.is-menu-visible #menu {
 .flowing {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 #main section.band {

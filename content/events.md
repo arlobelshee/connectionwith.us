@@ -21,7 +21,7 @@ subtitle = "Come hang out and do things!"
 
 ### --- Day ---
 
-{{% flowing %}}
+{{% flowing css_class="center" %}}
 
 {{< teaser url="img/heather-wine-in-sun.jpg" title="Wine and Connect" description="Swing by for hugs, bubbles, and gossip while we're primping. (girls only)" when="15:00" where="TBD" button="Tell me where!" button-data="wine-and-connect-while-primping">}}
 
@@ -33,7 +33,7 @@ subtitle = "Come hang out and do things!"
 
 ### --- Evening ---
 
-{{% flowing %}}
+{{% flowing css_class="center" %}}
 {{% flow-item bg_image="img/scroll-bg.jpg" css_class="scroll" %}}
 ### The big day...
 
