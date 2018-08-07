@@ -12,6 +12,18 @@
 	height: 350px;
 }
 
+@media screen and (max-width: 330px) {
+#main section .flowing figure.teaser {
+	width: 300px;
+	margin: 1em 0;
+}
+
+#main section .flowing figure.teaser img {
+	width: 300px;
+	height: 300px;
+}
+}
+
 #main section .flowing figure.teaser h3,
 #main section .flowing .scroll h3 {
 	margin: 1em 0 0;
@@ -53,6 +65,23 @@
 
 .scroll {
 	padding: 7em 4.8em 7em 8.2em;
+}
+
+@media screen and (max-width: 330px) {
+
+section#content > .flowing {
+	margin: 10px;
+}
+
+.item-with-bg {
+	width: 300px;
+	margin: 1em 0;
+}
+
+.scroll {
+	padding: 0;
+	background-image: none !important;
+}
 }
 
 /* Colors */
