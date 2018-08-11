@@ -388,3 +388,37 @@ section.band#logistics {
 #logistics .attention-graphic img {
   width: 100%;
 }
+
+/* Journey list page */
+
+#journey {
+	background-color: #655e7a;
+}
+
+#journey .entry {
+	margin: 1em auto;
+	display: flex;
+	opacity: 0.8;
+	transition: all 0.8s ease;
+}
+
+#journey .entry:hover {
+	opacity: 1.0;
+}
+
+#journey .entry .details {
+	background-color: #ffffff;
+	padding: 3em;
+	width: 50%;
+}
+
+#journey .entry a.teaser-image {
+	background: no-repeat center center;
+	background-size: 100%;
+	width: 50%;
+	transition: inherit;
+}
+
+#journey .entry:hover a.teaser-image {
+	background-size: 125%;
+}
