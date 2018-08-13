@@ -459,3 +459,21 @@ section.band#logistics {
 	backface-visibility: visible;
 	transition: inherit;
 }
+
+@media screen and (max-width: 1260px) {
+	#journey .entry.odd,
+	#journey .entry.even {
+		flex-direction: column-reverse;
+	}
+
+#journey .entry .details {
+	width: 100%;
+}
+#journey .entry a.teaser-image {
+	width: 100%;
+	height: 60vh;
+}
+#main article#journey.subpage {
+	padding: 2em 2vw;
+}
+}
