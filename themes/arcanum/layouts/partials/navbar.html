@@ -5,8 +5,8 @@
 			<span>
 				{{- if or .IsHome (not .Site.Params.DynamicTitles) }}
 				{{- .Site.Params.navbarTitle }}
-				{{- else if ne .Section "" }}
-				{{- .CurrentSection.Title }}
+				{{- else if .CurrentSection }}
+				{{- .CurrentSection.Title | default .Title }}
 				{{- else }}
 				{{- .Title }}
 				{{- end -}}
