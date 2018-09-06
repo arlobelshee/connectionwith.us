@@ -6,7 +6,7 @@
 				{{- if or .IsHome (not .Site.Params.DynamicTitles) }}
 				{{- .Site.Params.navbarTitle }}
 				{{- else if ne .Section "" }}
-				{{- .Section }}
+				{{- .CurrentSection.Title }}
 				{{- else }}
 				{{- .Title }}
 				{{- end -}}
