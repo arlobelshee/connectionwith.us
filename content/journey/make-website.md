@@ -4,7 +4,7 @@ id = "journey-make-website"
 header = "Project Managing the Website"
 where = "remote"
 when = "July 2018"
-perspective = "Heather"
+perspective = "Heather's"
 teaser_image = "website-with-error.png"
 +++
 
