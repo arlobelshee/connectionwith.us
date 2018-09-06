@@ -12,5 +12,7 @@
 		</div>
 		<div class="mini-gallery react-mini-gallery" data-tag="ah19-gaming"></div>
 	</div>
-	<a href="{{ .Permalink }}" class="teaser-image" style="background-image: url(/img/labrador-dog.jpg)"></a>
+	{{- .Scratch.Set "path" "permalink" }}
+	{{- partial "img-path" . -}}
+	<a href="{{ .Permalink }}" class="teaser-image" style='background-image: url({{ .Scratch.Get "path" }}{{.Params.teaser_image}})'></a>
 </section>

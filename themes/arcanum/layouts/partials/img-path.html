@@ -10,26 +10,15 @@
      otherwise use the explicit path provided by the user
 -->
 
-{{- $src := $.Scratch.Get "path" }}
-{{- $alt := $.Scratch.Get "featuredalt" }}
-{{- $img := $.Scratch.Get "featured" }}
-{{- $structType := $.Scratch.Get "structType" }}
-{{- if eq $structType "shortcode" }}
-{{- $.Scratch.Set "page" .Page }}
-{{- else }}
-{{- $.Scratch.Set "page" . }}
-{{- end }}
-{{- $page := $.Scratch.Get "page" }}
+{{- $src := .Scratch.Get "path" }}
 
 {{- if eq $src "permalink" }}
 	 {{- $.Scratch.Set "path" "/img" }}
-	 {{- $.Scratch.Add "path" ($page.RelPermalink) }}
+	 {{- $.Scratch.Add "path" .RelPermalink }}
+{{- else if eq $src "date" }}
+	{{- $.Scratch.Set "path" "/img/" }}
+	{{- $.Scratch.Add "path" (.Date.Format "2006/01") }}
+	{{- $.Scratch.Set "path" "/" }}
 {{- else }}
-{{- if eq $src "date" }}
-  {{- $.Scratch.Set "path" "/img/" }}
-    {{- $.Scratch.Add "path" ($page.Date.Format "2006/01") }}
-	 {{- $.Scratch.Set "path" "/" }}
-{{- else }}
-  {{- $.Scratch.Set "path" $src }}
-{{- end }}
+	{{- $.Scratch.Set "path" $src }}
 {{- end -}}

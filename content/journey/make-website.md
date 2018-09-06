@@ -4,6 +4,8 @@ id = "journey-make-website"
 header = "Project Managing the Website"
 where = "remote"
 when = "July 2018"
+perspective = "Heather"
+teaser_image = "website-with-error.png"
 +++
 
 So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...<!--more-->
