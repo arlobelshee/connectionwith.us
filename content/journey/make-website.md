@@ -1,14 +1,12 @@
 +++
 title = "Creating the Website"
 id = "journey-make-website"
-longtitle = "Creating the Website"
+header = "Project Managing the Website"
 where = "remote"
 when = "July 2018"
 +++
 
-# Project Managing the Website
-
-So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...
+So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...<!--more-->
 
 {{< img-post path="permalink" file="editor-window.png" type="left" >}}
 
