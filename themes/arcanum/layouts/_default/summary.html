@@ -10,7 +10,8 @@
 		<div class="read-more">
 			<a href="{{ .Permalink }}">Read more</a>
 		</div>
-		<div class="mini-gallery react-mini-gallery" data-tag="{{ .Params.img_tag }}"></div>
+				<p class="flickr-tag-notice">Flickr tag #<span class="tag">{{ .Params.img_tag }}</span></p>
+		<div class="mini-gallery react-mini-gallery" data-tags="{{ .Params.img_tag }}"></div>
 	</div>
 	<a href="{{ .Permalink }}" class="teaser-image" style='background-image: url({{.Params.teaser_image}})'></a>
 </section>

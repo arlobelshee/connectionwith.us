@@ -5,7 +5,7 @@ header = "The Gaming Focus"
 where = "Seattle"
 perspective = "Heather's"
 teaser_image = "https://farm2.staticflickr.com/1869/42698720900_b6a75b27a6_c.jpg"
-img_tag = "ah19-gaming"
+img_tag = "ah19:gaming"
 date="2018-02-01"
 +++
 

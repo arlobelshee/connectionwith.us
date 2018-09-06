@@ -367,6 +367,25 @@ article#home section#hero p {
 	}
 }
 
+.mini-gallery {
+	height: calc(100px);
+	width: 100%;
+}
+
+p.flickr-tag-notice {
+	margin: 0;
+	text-align: right;
+	color: #e3e3e3;
+}
+
+p.flickr-tag-notice .tag {
+	color: #999;
+}
+
+.mini-gallery .flickr-gallery {
+	background-color: #f0f0f0;
+}
+
 /* Logistics band */
 #logistics .band-content {
 	display: flex;
