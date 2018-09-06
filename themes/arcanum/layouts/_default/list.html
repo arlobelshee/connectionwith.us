@@ -1,25 +1,39 @@
-{{ partial "general-title" . }}
+{{- partial "general-title" . -}}
 
 <!DOCTYPE HTML>
 <!--
     Arcanum by Arlo Belshee
 -->
 <html>
-<head>
-{{ partial "page-head" . }}
-		</head>
-		<body>
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <div id="main">
-        {{ $paginator := .Paginate .Data.Pages }}
-        {{ range .Paginator.Pages }}
-            {{ .Render "content-list" }}
-        {{ end }}
 
-        {{ partial "pagination" . }}
-    </div>
-		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-{{ partial "closing-scripts" . }}
-	</body>
-	</html>
+<head>
+	{{- partial "page-head" . -}}
+</head>
+
+<body>
+	{{- partial "navbar" . -}}
+	<!-- Main -->
+	<div id="main">
+		<article id="{{ .Params.id }}" class="subpage">
+			<section class="intro">
+			{{- .Content -}}
+			</section>
+		<section class="content">
+		{{- range .Paginator.Pages }}
+			{{- $.Scratch.Set "isOdd" (not ($.Scratch.Get "isOdd" | default false)) -}}
+			{{- if $.Scratch.Get "isOdd" }}
+				{{- .Scratch.Set "parity" "odd" }}
+			{{- else }}
+				{{- .Scratch.Set "parity" "even" }}
+			{{- end }}
+			{{- .Render "summary" }}
+		{{- end }}
+		</section>
+		 {{- partial "pagination" . -}}
+		</article>
+	</div>
+	<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+	{{- partial "closing-scripts" . -}}
+</body>
+
+</html>

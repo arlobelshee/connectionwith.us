@@ -10,7 +10,7 @@ import { EventInvitation } from "./EventInvitation.jsx";
 
 const user_data = new UserData();
 
-document.querySelectorAll(".photo-gallery").forEach(domContainer =>
+document.querySelectorAll(".react-mini-gallery").forEach(domContainer =>
 	ReactDOM.render(
 		<div style={{ height: "100%", width: "100%" }}>
 			<FlickrGallery {...domContainer.dataset} />

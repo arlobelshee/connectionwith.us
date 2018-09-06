@@ -247,7 +247,8 @@ dl {
 	margin: 0 0 1.5em 0;
 }
 
-.block, .band {
+.block,
+.band {
 	font-size: 16pt;
 }
 
@@ -713,7 +714,7 @@ input[type="reset"].big,
 input[type="button"].big,
 .button.big,
 button.big {
-	font-size: 0.7em;
+	font-size: 1.2em;
 	padding: 0 3em;
 }
 
@@ -889,7 +890,7 @@ textarea {
 input[type="checkbox"] {
 	display: inline;
 	transform: scale(2);
-	margin-right: 1.0ex;
+	margin-right: 1ex;
 }
 
 input[type="checkbox"] + label {
@@ -1287,6 +1288,182 @@ body.is-menu-visible #menu {
 	}
 }
 
+/* Post images */
+
+.post-image {
+	width: calc(50% - 1em);
+	height: fit-content;
+	margin: 1em;
+}
+.post-image img {
+	width: 100%;
+}
+.post-image.left {
+	float: left;
+	margin-left: 0;
+}
+.post-image.right {
+	float: right;
+	margin-right: 0;
+}
+.subpage section.content p {
+	clear: both;
+}
+
+/* Action button lists */
+
+ul.actions {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.actions li {
+	display: inline-block;
+	padding: 0 1em 0 0;
+	vertical-align: middle;
+}
+
+ul.actions li:last-child {
+	padding-right: 0;
+}
+
+ul.actions.pagination .button {
+	background: white;
+	line-height: 1.5em;
+	height: auto;
+	white-space: normal;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+ul.actions.pagination .next {
+	text-decoration: none;
+}
+
+ul.actions.pagination .next:after {
+	content: "\f054";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: 900;
+	text-transform: none !important;
+}
+
+ul.actions.pagination .previous {
+	text-decoration: none;
+}
+
+ul.actions.pagination .previous:before {
+	content: "\f053";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: 900;
+	text-transform: none !important;
+}
+
+@media screen and (max-width: 980px) {
+	ul.actions.pagination {
+		text-align: center;
+	}
+
+	ul.actions.pagination .next,
+	ul.actions.pagination .previous {
+		min-width: 20em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	ul.actions.pagination .next,
+	ul.actions.pagination .previous {
+		min-width: 18em;
+	}
+}
+
+ul.actions.small li {
+	padding: 0 1em 0 0;
+}
+
+ul.actions.vertical li {
+	display: block;
+	padding: 1.5em 0 0 0;
+}
+
+ul.actions.vertical li:first-child {
+	padding-top: 0;
+}
+
+ul.actions.vertical li > * {
+	margin-bottom: 0;
+}
+
+ul.actions.vertical.small li {
+	padding: 1em 0 0 0;
+}
+
+ul.actions.vertical.small li:first-child {
+	padding-top: 0;
+}
+
+ul.actions.fit {
+	display: table;
+	margin-left: -1em;
+	padding: 0;
+	table-layout: fixed;
+	width: calc(100% + 1em);
+}
+
+ul.actions.fit li {
+	display: table-cell;
+	padding: 0 0 0 1em;
+}
+
+ul.actions.fit li > * {
+	margin-bottom: 0;
+}
+
+ul.actions.fit.small {
+	margin-left: -0.5em;
+	width: calc(100% + 0.5em);
+}
+
+ul.actions.fit.small li {
+	padding: 0 0 0 0.5em;
+}
+
+@media screen and (max-width: 480px) {
+	ul.actions {
+		margin: 0 0 2em 0;
+	}
+
+	ul.actions li {
+		padding: 1em 0 0 0;
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	ul.actions li:first-child {
+		padding-top: 0;
+	}
+
+	ul.actions li > * {
+		width: 100%;
+		margin: 0 !important;
+	}
+
+	ul.actions.small li {
+		padding: 0.5em 0 0 0;
+	}
+
+	ul.actions.small li:first-child {
+		padding-top: 0;
+	}
+}
+
 /* Layout options */
 
 .flowing {
@@ -1305,19 +1482,19 @@ body.is-menu-visible #menu {
 }
 
 @media screen and (max-width: 735px) {
-#main section.band {
-	padding: 6em 1.5em;
-}
+	#main section.band {
+		padding: 6em 1.5em;
+	}
 }
 
 @media screen and (max-width: 330px) {
-#main section.band {
-	padding: 6em 10px;
-	width: 100%;
-}
+	#main section.band {
+		padding: 6em 10px;
+		width: 100%;
+	}
 
-#main section.band .band-contents {
-	width: 300px;
-	margin: 0 auto;
-}
+	#main section.band .band-contents {
+		width: 300px;
+		margin: 0 auto;
+	}
 }
