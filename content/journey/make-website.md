@@ -6,6 +6,7 @@ where = "remote"
 when = "July 2018"
 perspective = "Heather's"
 teaser_image = "website-with-error.png"
+img_tag = "ah19-website"
 +++
 
 So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...<!--more-->

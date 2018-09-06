@@ -10,7 +10,7 @@
 		<div class="read-more">
 			<a href="{{ .Permalink }}">Read more</a>
 		</div>
-		<div class="mini-gallery react-mini-gallery" data-tag="ah19-gaming"></div>
+		<div class="mini-gallery react-mini-gallery" data-tag="{{ .Params.img_tag }}"></div>
 	</div>
 	{{- .Scratch.Set "path" "permalink" }}
 	{{- partial "img-path" . -}}
