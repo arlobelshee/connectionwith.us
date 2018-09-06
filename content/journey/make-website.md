@@ -7,15 +7,14 @@ when = "July 2018"
 perspective = "Heather's"
 teaser_image = "website-with-error.png"
 img_tag = "ah19-website"
+date="2018-07-01"
 +++
 
-So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...<!--more-->
+{{< img-post path="permalink" file="editor-window.png" type="left" >}}So this website is so pretty? Right? OMG. There was an incredible amount of management required. For example, he kept distracting me with questions that really didn't seem to matter and involved showing me things that looked like this ...<!--more-->
 
-{{< img-post path="permalink" file="editor-window.png" type="left" >}}
+{{< end-floats >}}
 
-Meanwhile, all I could see was this ...
-
-{{< img-post path="permalink" file="website-with-error.png" type="left" >}}
+{{< img-post path="permalink" file="website-with-error.png" type="right" >}}Meanwhile, all I could see was this ...
 
 So when I asked for him to start the story of the ceremony and what would happen with pictures and narratives, I thought it would be nice to have a scroll that basically introduced the narrative with something like "let's get this party started!" Simple, right?
 

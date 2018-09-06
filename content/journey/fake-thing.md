@@ -2,6 +2,7 @@
 title = "Our Journey"
 id = "journey-fake-thing"
 longtitle = "Our Journey to Date"
+date="2018-08-03"
 +++
 
 <section class="entry odd">

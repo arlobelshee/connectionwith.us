@@ -1287,6 +1287,28 @@ body.is-menu-visible #menu {
 	}
 }
 
+/* Post images */
+
+.post-image {
+	width: calc(50% - 1em);
+	height: fit-content;
+	margin: 1em;
+}
+.post-image img {
+	width: 100%;
+}
+.post-image.left {
+	float: left;
+	margin-left: 0;
+}
+.post-image.right {
+	float: right;
+	margin-right: 0;
+}
+.subpage section.content p {
+	clear: both;
+}
+
 /* Layout options */
 
 .flowing {

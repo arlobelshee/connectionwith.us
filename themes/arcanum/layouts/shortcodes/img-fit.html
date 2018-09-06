@@ -37,38 +37,38 @@
             date: will use /img/year/month as the path
             /path/to/img: can pass in the explicit path to the image
 -->
-{{ $numOfParams := sub (len .Params) 1 }}
-{{ if and (ge $numOfParams 3) (not (modBool $numOfParams 2)) }}
-    {{ .Page.Scratch.Set "path" (.Get $numOfParams) }}
+{{- $numOfParams := sub (len .Params) 1 }}
+{{- if and (ge $numOfParams 3) (not (modBool $numOfParams 2)) }}
+    {{- .Page.Scratch.Set "path" (.Get $numOfParams) }}
 
-    {{ partial "img-path" .Page }}
-    {{ $path := .Page.Scratch.Get "path" }}
+    {{- partial "img-path" .Page }}
+    {{- $path := .Page.Scratch.Get "path" -}}
 
     <div class="box alt">
         <div class="row uniform">
-        {{ .Scratch.Set "count" 1 }}
-        {{ .Scratch.Set "imgFile" "" }}
-        {{ range first $numOfParams .Params }}
-            {{ if eq (.Scratch.Get "count") 1 }}
-                <div class="{{ . }}">
-            {{ else if eq (.Scratch.Get "count") 2 }}
-                {{ if eq . "" }}
+        {{- .Scratch.Set "count" 1 }}
+        {{- .Scratch.Set "imgFile" "" }}
+        {{- range first $numOfParams .Params }}
+            {{- if eq (.Scratch.Get "count") 1 -}}
+                <div class="{{- . }}">
+            {{- else if eq (.Scratch.Get "count") 2 }}
+                {{- if eq . "" }}
                     </div>
-                    {{ .Scratch.Set "imgFile" "" }}
-                {{ else }}
-                    {{ .Scratch.Set "imgFile" . }}
+                    {{- .Scratch.Set "imgFile" "" }}
+                {{- else }}
+                    {{- .Scratch.Set "imgFile" . -}}
                     <span class="image fit">
-                {{ end }}
-            {{ else }}
-                {{ if ne (.Scratch.Get "imgFile") "" }}
+                {{- end }}
+            {{- else }}
+                {{- if ne (.Scratch.Get "imgFile") "" -}}
                         <img src='{{ $path }}{{ .Scratch.Get "imgFile" }}'
                             alt="{{ . }}">
                     </span></div>
-                {{ end }}
-                {{ .Scratch.Set "count" 0 }}
-            {{ end }}
-            {{ .Scratch.Add "count" 1 }}
-        {{ end }}
+                {{- end }}
+                {{- .Scratch.Set "count" 0 }}
+            {{- end }}
+            {{- .Scratch.Add "count" 1 }}
+        {{- end -}}
         </div>
     </div>
-{{ end }}
+{{- end -}}
