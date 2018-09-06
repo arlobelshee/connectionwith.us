@@ -151,12 +151,6 @@ body {
 	margin: 0.6em 0 1em;
 }
 
-/* picture galleries */
-
-.gallery {
-	height: 350px;
-}
-
 /* special one-offs */
 
 #logistics-icons {
@@ -368,8 +362,12 @@ article#home section#hero p {
 }
 
 .mini-gallery {
-	height: calc(100px);
+	height: 100px;
 	width: 100%;
+}
+
+.large-gallery {
+	height: 350px;
 }
 
 p.flickr-tag-notice {

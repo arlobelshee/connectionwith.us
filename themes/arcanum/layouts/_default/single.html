@@ -18,8 +18,14 @@
 					{{- end -}}
             <section id="content">
                 {{- .Content -}}
-            </section>
-        </article>
+						</section>
+				{{- if .Params.img_tag -}}
+				<aside class="photo-gallery">
+				<h1>Many more examples</h1>
+				<div class="large-gallery react-photo-gallery" data-tags="{{ .Params.img_tag }}"></div>
+				</aside>
+				{{- end -}}
+				</article>
     </div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 {{- partial "closing-scripts" . -}}
