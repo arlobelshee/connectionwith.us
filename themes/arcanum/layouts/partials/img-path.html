@@ -3,25 +3,33 @@
 
      Set the path depending on the value passed through
 
-     if path is title then it will use the LinkTitle from the Page variable
+     if path is permalink then it will use the Permalink from the Page variable
      if path is date then it will format the directory to year/date i.e. 2006/01
      Note: path will be concatenated to the root directory, img
 
      otherwise use the explicit path provided by the user
 -->
 
-{{ $src := $.Scratch.Get "path" }}
-{{ $alt := $.Scratch.Get "featuredalt" }}
-{{ $img := $.Scratch.Get "featured" }}
-{{ $structType := $.Scratch.Get "structType" }}
+{{- $src := $.Scratch.Get "path" }}
+{{- $alt := $.Scratch.Get "featuredalt" }}
+{{- $img := $.Scratch.Get "featured" }}
+{{- $structType := $.Scratch.Get "structType" }}
+{{- if eq $structType "shortcode" }}
+{{- $.Scratch.Set "page" .Page }}
+{{- else }}
+{{- $.Scratch.Set "page" . }}
+{{- end }}
+{{- $page := $.Scratch.Get "page" }}
 
-{{ if eq $src "date" }}
-  {{ $.Scratch.Set "path" "/img/" }}
-  {{ if eq $structType "shortcode" }}
-    {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
-  {{ else }}
-    {{ $.Scratch.Add "path" (.Date.Format "2006/01") }}
-  {{ end }}
-{{ else }}
-  {{ $.Scratch.Set "path" $src }}
-{{ end }}
+{{- if eq $src "permalink" }}
+	 {{- $.Scratch.Set "path" "/img" }}
+	 {{- $.Scratch.Add "path" ($page.RelPermalink) }}
+{{- else }}
+{{- if eq $src "date" }}
+  {{- $.Scratch.Set "path" "/img/" }}
+    {{- $.Scratch.Add "path" ($page.Date.Format "2006/01") }}
+	 {{- $.Scratch.Set "path" "/" }}
+{{- else }}
+  {{- $.Scratch.Set "path" $src }}
+{{- end }}
+{{- end -}}
