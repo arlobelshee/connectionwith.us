@@ -1,15 +1,15 @@
 <!-- Navbar -->
 <header id="header">
 	<h1>
-		<a class="navbar-brand" href='/'>{{ partial "logo.svg" . }}
+		<a class="navbar-brand" href='/'>{{ partial "logo.svg" . -}}
 			<span>
-				{{ if or .IsHome (not .Site.Params.DynamicTitles) }}
-				{{ .Site.Params.navbarTitle }}
-				{{ else if ne .Section "" }}
-				{{ .Section }}
-				{{ else }}
-				{{ .Title }}
-				{{ end }}
+				{{- if or .IsHome (not .Site.Params.DynamicTitles) }}
+				{{- .Site.Params.navbarTitle }}
+				{{- else if ne .Section "" }}
+				{{- .Section }}
+				{{- else }}
+				{{- .Title }}
+				{{- end -}}
 			</span>
 		</a>
 	</h1>
@@ -17,23 +17,23 @@
 	<div class="all-menus">
 		<nav class="links">
 			<ul>
-				{{ range .Site.Menus.main }}
+				{{- range .Site.Menus.main -}}
 				<li>
 					<a href="{{ .URL }}">
-						<i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
+						<i class="{{ .Identifier }}">&nbsp;</i>{{- .Name -}}
 					</a>
 				</li>
-				{{ end }}
+				{{- end -}}
 				<li id="user-profile"></li>
 			</ul>
 		</nav>
 		<nav class="main">
 			<ul>
-				{{ if $.Scratch.Get "shareNav" }}
+				{{- if $.Scratch.Get "shareNav" -}}
 				<li id="share-nav" class="share-menu" style="display:none;">
 					<a class="fas fa-share-alt" href="#share-menu">Share</a>
 				</li>
-				{{ end }}
+				{{- end -}}
 				<li class="search">
 					<a class="fas fa-search" href="#search">Search</a>
 					<form id="search" method="get" action="//google.com/search">
@@ -63,15 +63,15 @@
 	<!-- Links -->
 	<section>
 		<ul class="links">
-			{{ range .Site.Menus.main }}
+			{{- range .Site.Menus.main -}}
 			<li>
 				<a href="{{ .URL }}">
 					<h3>
-						<i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
+						<i class="{{ .Identifier }}">&nbsp;</i>{{- .Name -}}
 					</h3>
 				</a>
 			</li>
-			{{ end }}
+			{{- end -}}
 		</ul>
 	</section>
 
@@ -81,28 +81,28 @@
 			<header>
 				<h3>Recent Posts</h3>
 			</header>
-			{{ $.Scratch.Set "recentPosts" .Site.Pages }}
-			{{ with .Site.Params.postAmount.sidebar }}
-			{{ $.Scratch.Set "postLimit" . }}
-			{{ else }}
-			{{ $.Scratch.Set "postLimit" 5 }}
-			{{ end }}
-			{{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+			{{- $.Scratch.Set "recentPosts" .Site.Pages }}
+			{{- with .Site.Params.postAmount.sidebar }}
+			{{- $.Scratch.Set "postLimit" . }}
+			{{- else }}
+			{{- $.Scratch.Set "postLimit" 5 }}
+			{{- end }}
+			{{- range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") -}}
 			<article class="mini-post">
 				<header>
 					<h3>
 						<a href="{{ .RelPermalink }}">{{ .Title }}</a>
 					</h3>
-					{{ $.Scratch.Set "dateType" .Date }}
+					{{- $.Scratch.Set "dateType" .Date -}}
 					<time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-						{{ ($.Scratch.Get "dateType").Format .Site.Params.date_format }}</time>
+						{{- ($.Scratch.Get "dateType").Format .Site.Params.date_format -}}</time>
 				</header>
-				{{ .Render "featured" }}
+				{{- .Render "featured" -}}
 			</article>
-			{{ end }}
-			{{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-			<a href={{ with .Site.Params.viewMorePostLink }} {{ . }} {{ else }} "/techies" {{ end }} class="button">View more posts</a>
-			{{ end }}
+			{{- end }}
+			{{- if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") -}}
+			<a href={{ with .Site.Params.viewMorePostLink }} {{ . }} {{ else }} "/news" {{ end }} class="button">View more posts</a>
+			{{- end -}}
 		</div>
 	</section>
 </section>
