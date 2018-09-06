@@ -12,7 +12,5 @@
 		</div>
 		<div class="mini-gallery react-mini-gallery" data-tag="{{ .Params.img_tag }}"></div>
 	</div>
-	{{- .Scratch.Set "path" "permalink" }}
-	{{- partial "img-path" . -}}
-	<a href="{{ .Permalink }}" class="teaser-image" style='background-image: url({{ .Scratch.Get "path" }}{{.Params.teaser_image}})'></a>
+	<a href="{{ .Permalink }}" class="teaser-image" style='background-image: url({{.Params.teaser_image}})'></a>
 </section>

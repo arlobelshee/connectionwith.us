@@ -4,7 +4,7 @@ id = "journey-gaming-focus"
 header = "The Gaming Focus"
 where = "Seattle"
 perspective = "Heather's"
-teaser_image = "arlo-playing.png"
+teaser_image = "https://farm2.staticflickr.com/1869/42698720900_b6a75b27a6_c.jpg"
 img_tag = "ah19-gaming"
 date="2018-02-01"
 +++
@@ -34,6 +34,6 @@ _I take off all my clothes and stand there._ Nothing.
 
 This picture, ladies and gentlemen, is taken by me being completely naked.
 
-{{< img-post path="permalink" file="arlo-playing.png" >}}
+{{< img-post path="https://farm2.staticflickr.com/1869/" file="42698720900_b6a75b27a6_c.jpg" >}}
 
 **mike drop**
