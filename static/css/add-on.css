@@ -130,7 +130,7 @@ body {
 
 #main article.subpage {
 	font-size: 14pt;
-	padding: 2em 8em 0;
+	padding: 2em 8em;
 }
 
 /* Events page styles */
@@ -395,10 +395,10 @@ section.band#logistics {
 	background-color: #655e7a;
 }
 
+#journey .intro h2,
 #journey .entry .meta h2 {
 	color: #3b3b3b;
 	font-weight: 600;
-	/* font-family: Body; */
 	font-size: 250%;
 	text-transform: uppercase;
 }
@@ -409,6 +409,12 @@ section.band#logistics {
 	letter-spacing: 0.2ex;
 }
 
+#journey .intro {
+	margin: 0 auto 2em;
+	opacity: 0.8;
+	background-color: #ffffff;
+	padding: 3em;
+}
 #journey .entry {
 	margin: 0 auto 2em;
 	display: flex;
@@ -466,14 +472,14 @@ section.band#logistics {
 		flex-direction: column-reverse;
 	}
 
-#journey .entry .details {
-	width: 100%;
-}
-#journey .entry a.teaser-image {
-	width: 100%;
-	height: 60vh;
-}
-#main article#journey.subpage {
-	padding: 2em 2vw;
-}
+	#journey .entry .details {
+		width: 100%;
+	}
+	#journey .entry a.teaser-image {
+		width: 100%;
+		height: 60vh;
+	}
+	#main article#journey.subpage {
+		padding: 2em 2vw;
+	}
 }
