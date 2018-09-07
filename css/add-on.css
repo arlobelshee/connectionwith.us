@@ -133,6 +133,12 @@ body {
 	padding: 2em 8em;
 }
 
+@media screen and (max-width: 736px) {
+	#main article.subpage {
+		padding: 2em 1.5em;
+	}
+}
+
 /* Events page styles */
 
 #main article.subpage#events {
