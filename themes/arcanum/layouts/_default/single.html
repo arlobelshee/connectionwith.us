@@ -9,25 +9,31 @@
 {{- partial "page-head" . -}}
 		</head>
 		<body>
-    {{- partial "navbar" . -}}
-    <!-- Main -->
-    <div id="main">
-        <article id="{{ .Params.id }}" class="subpage">
+		{{- partial "navbar" . -}}
+		<!-- Main -->
+		<div id="main">
+				<article id="{{ .Params.id }}" class="subpage">
 					{{- if (.Site.Params.includeHeaderOnMarkdownPages | default true) }}
 						<h1>{{ .Params.header }}</h1>
 					{{- end -}}
-            <section id="content">
-                {{- .Content -}}
-						</section>
-				{{- if .Params.img_tag -}}
-				<aside class="photo-gallery">
-				<h1>Many more examples</h1>
-				<div class="large-gallery react-photo-gallery" data-tags="{{ .Params.img_tag }}"></div>
-				</aside>
-				{{- end }}
-				 {{- if ne .Site.DisqusShortname "" }} {{- template "_internal/disqus.html" . }} {{- end -}}
+					<section id="content">
+						{{- .Content -}}
+					</section>
+					<section id="reactions" {{- if .Params.img_tag }} class="with-images" {{- end -}}>
+					{{- if ne .Site.DisqusShortname "" -}}
+					<aside class="comments">
+						{{- template "_internal/disqus.html" . -}}
+					</aside>
+					{{- end -}}
+					{{- if .Params.img_tag -}}
+					<aside class="photo-gallery">
+					<h2>Add with tag #{{ .Params.img_tag }}</h2>
+					<div class="large-gallery react-photo-gallery" data-tags="{{ .Params.img_tag }}"></div>
+					</aside>
+					{{- end }}
+					</section>
 				</article>
-    </div>
+		</div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 {{- partial "closing-scripts" . -}}
 	</body>
