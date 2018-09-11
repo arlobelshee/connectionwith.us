@@ -24,7 +24,8 @@
 				<h1>Many more examples</h1>
 				<div class="large-gallery react-photo-gallery" data-tags="{{ .Params.img_tag }}"></div>
 				</aside>
-				{{- end -}}
+				{{- end }}
+				 {{- if ne .Site.DisqusShortname "" }} {{- template "_internal/disqus.html" . }} {{- end -}}
 				</article>
     </div>
 		<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
