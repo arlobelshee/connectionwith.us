@@ -55,19 +55,20 @@ And if you drink at every opportunity provided, expect to weave yourself out too
 {{% /band %}}
 {{% band bg="light" id="logistics" %}}
 {{% div cssclass="block" %}}
+
 ### Do I need a car?
 
 We will ensure that all events on Friday and Saturday are either walking friendly to access or easy to car pool.
 
 ### Where's the ceremony?
 
-Right downtown Boulder at Rembrandt Yard … it's directly across from the Hotel Boulderado and a block from the popular downtown walking district.
+Right downtown Boulder at Rembrandt Yard ... it's directly across from the Hotel Boulderado and a block from the popular downtown walking district.
 
 ### Where should I stay?
 
 #### Hotel Boulderado
 
-Fantastic place to stay for the history lover and doesn't want to drive at all or walk far to anything!
+Fantastic place to stay for the history lover who doesn't want to drive at all or walk far to anything!
 
 #### St. Julien's Hotel & Spa
 
@@ -81,7 +82,7 @@ The cozy mountain getaway with fireplaces everywhere (including your room) and g
 
 #### Bus
 
-One way ticket into Downtown Boulder Station will run $9 and run approximately 90 minutes - [Westbound Schedule (from DIA to Downtown Boulder Station)](http://www3.rtd-denver.com/schedules/getSchedule.action?runboardId=2591&routeId=AB&routeType=9&&direction=W-Bound&serviceType=3#direction)
+One way ticket into Downtown Boulder Station will run $9 and run approximately 90 minutes --- [Westbound Schedule (from DIA to Downtown Boulder Station)](http://www3.rtd-denver.com/schedules/getSchedule.action?runboardId=2591&routeId=AB&routeType=9&&direction=W-Bound&serviceType=3#direction)
 
 This [mobile app](http://www.rtd-denver.com/mobileticket.shtml) allows you to pre-purchase your tickets for easier travel.
 
@@ -95,7 +96,7 @@ Good option if you just want to slip into town and plan on staying downtown / ci
 
 #### Car Rental
 
-Shuttle service is available to and from car rental lots near airport.
+Shuttle service is available to and from car rental lots near the airport.
 
 Best option if you want to do any driving while visiting Boulder.
 
@@ -105,10 +106,7 @@ If you wish to join us for the Sunday skiing, please confirm your interest on th
 
 ### What kind of fun things should I do?
 
-
-
 ### Boulder is known its food, beer, oxford commas, and marijuana ... help me pick the best options!
-
 
 {{% /div %}}
 <iframe src="https://www.google.com/maps/d/embed?mid=1omg-keO6HgeCS9e2qlLQqTEWM26QOl40&hl=en" width="640" height="480"></iframe>
