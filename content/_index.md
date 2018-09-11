@@ -106,8 +106,6 @@ If you wish to join us for the Sunday skiing, please confirm your interest on th
 
 ### What kind of fun things should I do?
 
-### Boulder is known its food, beer, oxford commas, and marijuana ... help me pick the best options!
-
 {{% /div %}}
 <iframe src="https://www.google.com/maps/d/embed?mid=1omg-keO6HgeCS9e2qlLQqTEWM26QOl40&hl=en" width="640" height="480"></iframe>
 {{% /band %}}
