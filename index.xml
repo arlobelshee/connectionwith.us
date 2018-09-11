@@ -6,7 +6,7 @@
     <description>Recent content on Bringing Together Arlo and Heather</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Aug 2018 14:08:18 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 10 Sep 2018 22:48:53 -0700</lastBuildDate>
     
 	<atom:link href="https://www.connectionwith.us/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,12 +32,12 @@
     </item>
     
     <item>
-      <title>Conversation</title>
-      <link>https://www.connectionwith.us/conversation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Flower Obsession</title>
+      <link>https://www.connectionwith.us/journey/flowers/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.connectionwith.us/conversation/</guid>
-      <description>Lots of comment streams. Totally a forum. The blog-like thing is actually the Journey pages.</description>
+      <guid>https://www.connectionwith.us/journey/flowers/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s not that I obsess over flowers - it&amp;rsquo;s just that I want to smell them, look at them, eat them, and have them around me constantly. So when Arlo said &amp;ldquo;so where should we eat&amp;rdquo;, for some unknown reason he thought the decision rubric was based on food.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,15 +48,6 @@
       <guid>https://www.connectionwith.us/events/</guid>
       <description>Hey, just a quick warning. If you can see this, then there&#39;s a lot of this site you can&#39;t see. Oh, and we also won&#39;t be ableto save anything or notice when you ask to be invited to stuff.Please turn on javascript.
 Hey, just a quick warning. If you can see this, then there&#39;s a lot of this site you can&#39;t see. Oh, and we also won&#39;t be ableto save anything or notice when you ask to be invited to stuff.</description>
-    </item>
-    
-    <item>
-      <title>Logistics</title>
-      <link>https://www.connectionwith.us/logistics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.connectionwith.us/logistics/</guid>
-      <description></description>
     </item>
     
   </channel>
