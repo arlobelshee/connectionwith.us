@@ -19,6 +19,7 @@
 					<section id="content">
 						{{- .Content -}}
 					</section>
+					<hr/>
 					<section id="reactions" {{- if .Params.img_tag }} class="with-images" {{- end -}}>
 					{{- if ne .Site.DisqusShortname "" -}}
 					<aside class="comments">
