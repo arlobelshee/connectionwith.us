@@ -4,8 +4,8 @@ id = "journey-blues"
 header = "Singin' the Blues --- The One-Year Anniversary"
 where = "Atlanta"
 perspective = "Heather's"
-teaser_image = "https://farm2.staticflickr.com/1857/wrong_id_c.jpg"
-img_tag = "ah19:blues"
+teaser_image = "https://farm2.staticflickr.com/1890/29801755637_3d54ba65a1_c.jpg"
+img_tag = "ah19:anniversary"
 date="2016-08-01"
 +++
 
@@ -15,9 +15,9 @@ So it turns out, when you hang all over each other, people assume that it's a sp
 
 It's not entirely clear who got the anniversary thing going (actually I think it was a random local in a restaurant), but many people congratulated us across the different venues until we decided, YES, this is indeed a one-year anniversary of us, just perhaps not their perception of it :)
 
-So … we basked in the literal adoration that Atlanta gave us … our outfits … how we showed up … our snuggles.
+{{< img-post path="https://farm2.staticflickr.com/1867/" file="30868078718_a32db90052_c.jpg" type="right" >}}
 
-{{< img-post path="https://farm2.staticflickr.com/1857/" file="wrong_id_c.jpg" >}}
+So … we basked in the literal adoration that Atlanta gave us … our outfits … how we showed up … our snuggles.
 
 And Arlo got to enjoy what the South assumes is normal … the glorious Blues ….
 

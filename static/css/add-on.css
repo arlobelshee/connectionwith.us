@@ -482,6 +482,7 @@ article.subpage #reactions.with-images {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1em;
+	clear: both;
 }
 
 article.subpage #reactions.with-images h2 {
