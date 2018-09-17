@@ -1,4 +1,5 @@
 <!-- Pagination -->
+{{- if ge .Paginator.TotalPages 2 -}}
 <ul class="actions pagination">
 	{{- if .Paginator.HasPrev -}}
 	<li><a href="{{ .Paginator.Prev.URL }}" class="button big previous">Previous Page</a></li>
@@ -10,3 +11,4 @@
 	<li><a href="#" class="disabled button big next">Next Page</a></li>
 	{{- end -}}
 </ul>
+{{- end -}}
