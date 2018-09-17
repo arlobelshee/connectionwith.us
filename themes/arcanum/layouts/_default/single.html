@@ -14,7 +14,7 @@
 		<div id="main">
 				<article id="{{ .Params.id }}" class="subpage">
 					{{- if (.Site.Params.includeHeaderOnMarkdownPages | default true) }}
-						<h1>{{ .Params.header | markdownify }}</h1>
+						<h1>{{ .Params.header | default .Params.Title | default "" | markdownify }}</h1>
 					{{- end -}}
 					<section id="content">
 						{{- .Content -}}
