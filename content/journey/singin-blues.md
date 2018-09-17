@@ -21,7 +21,7 @@ So … we basked in the literal adoration that Atlanta gave us … our outfits �
 
 And Arlo got to enjoy what the South assumes is normal … the glorious Blues ….
 
-<embed url="blues_video.mp4"></embed>
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/165974599@N03/29801848157/in/dateposted-public/" title="blues"><img src="https://farm2.staticflickr.com/1885/29801848157_bcb54ea826_c.jpg" width="450" height="800" alt="blues"></a>
 
 The real moral of this story is the anniversary situation though. After that one-year incident, it was over for poor Arlo. He had no idea anniversaries meant gifts. He is now educated, although I may need assistance in helping him understand there is a HUGE step up required between "dating" anniversary and "committed" anniversary … we'll see how he handles 12 January 2019 :heart: :smile:
 
