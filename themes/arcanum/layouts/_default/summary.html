@@ -2,7 +2,7 @@
 	<div class="details">
 		<div class="meta">
 			<h3>{{ .Date.Format "January 2006" }} / {{ .Params.where }} / {{ .Params.perspective }} perspective</h3>
-			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			<h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
 		</div>
 		<div class="excerpt">
 			{{- .Summary -}}
