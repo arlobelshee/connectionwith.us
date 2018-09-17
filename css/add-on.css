@@ -335,7 +335,7 @@ article#home section#hero p {
 }
 
 .mini-gallery {
-	height: 100px;
+	height: 190px;
 	width: 100%;
 }
 
@@ -482,8 +482,24 @@ article.subpage #reactions.with-images {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1em;
+	clear: both;
 }
 
 article.subpage #reactions.with-images h2 {
 	text-align: right;
+}
+
+article.subpage section#content:after {
+	content:"";
+	clear:both;
+	display: table;
+}
+
+/* dividers */
+
+hr {
+	color: #aaa;
+	height: 0.5px;
+	width: 35%;
+	margin: 1.6em auto;
 }
