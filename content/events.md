@@ -2,6 +2,7 @@
 title = "Events"
 id = "events"
 longtitle = "What's Happening When"
+includeHeader = false
 subtitle = "Come hang out and do things!"
 description = "All the events for our ceremony weekend. Sign up for things so we know you are coming!"
 +++
