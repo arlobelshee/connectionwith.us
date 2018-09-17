@@ -133,6 +133,12 @@ body {
 	padding: 2em 8em;
 }
 
+@media screen and (max-width: 736px) {
+	#main article.subpage {
+		padding: 2em 1.5em;
+	}
+}
+
 /* Events page styles */
 
 #main article.subpage#events {
@@ -151,52 +157,14 @@ body {
 	margin: 0.6em 0 1em;
 }
 
-/* picture galleries */
-
-.gallery {
-	height: 350px;
-}
-
 /* special one-offs */
-
-#logistics-icons {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0 1.8em;
-	width: fit-content;
-	color: #655e7a;
-	margin: 0 0 0 5em;
-}
-
-#logistics-icons * {
-	font-size: 8em;
-}
-
-#logistics-icons i.dual-icon:hover {
-	font-family: "Font Awesome 5 Brands";
-	font-weight: 400;
-}
-
-#logistics-icons i.fa-bus-alt.dual-icon:hover:before {
-	content: "\f50e";
-}
-
-#logistics-icons i.fa-hotel.dual-icon:hover:before {
-	content: "\f510";
-}
-
-#logistics-icons i.fa-plane.dual-icon:hover:before {
-	content: "\f511";
-}
-
-#logistics-icons i.fa-car.dual-icon:hover:before {
-	content: "\f2b0";
-}
 
 .fa-d-and-d {
 	color: #a0a0a0;
 	font-size: 0.7em;
 }
+
+/* Layouts & Positioning */
 
 footer {
 	display: block;
@@ -206,8 +174,6 @@ footer {
 	text-align: right;
 	padding: 0.6em 1em 0.2em;
 }
-
-/* Layouts & Positioning */
 
 .center {
 	margin: 0 auto;
@@ -360,6 +326,7 @@ article#home section#hero p {
 }
 
 /* Photos */
+
 @media screen and (min-width: 736px) {
 	section.band#photos .band-content {
 		width: 35%;
@@ -368,8 +335,13 @@ article#home section#hero p {
 }
 
 .mini-gallery {
-	height: calc(100px);
+	height: 190px;
 	width: 100%;
+}
+
+.large-gallery {
+	height: calc(100vh - 7em);
+	min-height: 400px;
 }
 
 p.flickr-tag-notice {
@@ -382,11 +354,12 @@ p.flickr-tag-notice .tag {
 	color: #999;
 }
 
-.mini-gallery .flickr-gallery {
-	background-color: #f0f0f0;
+.flickr-gallery {
+	background-color: #f0f0f0 !important;
 }
 
 /* Logistics band */
+
 #logistics .band-content {
 	display: flex;
 	flex-wrap: wrap;
@@ -501,4 +474,32 @@ section.band#logistics {
 	#main article#journey.subpage {
 		padding: 2em 2vw;
 	}
+}
+
+/* Single Journey entry */
+
+article.subpage #reactions.with-images {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+	clear: both;
+}
+
+article.subpage #reactions.with-images h2 {
+	text-align: right;
+}
+
+article.subpage section#content:after {
+	content:"";
+	clear:both;
+	display: table;
+}
+
+/* dividers */
+
+hr {
+	color: #aaa;
+	height: 0.5px;
+	width: 35%;
+	margin: 1.6em auto;
 }

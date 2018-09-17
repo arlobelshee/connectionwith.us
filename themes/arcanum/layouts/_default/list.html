@@ -19,7 +19,7 @@
 			{{- .Content -}}
 			</section>
 		<section class="content">
-		{{- range .Paginator.Pages }}
+		{{- range (.Paginate .Pages.Reverse 25).Pages }}
 			{{- $.Scratch.Set "isOdd" (not ($.Scratch.Get "isOdd" | default false)) -}}
 			{{- if $.Scratch.Get "isOdd" }}
 				{{- .Scratch.Set "parity" "odd" }}

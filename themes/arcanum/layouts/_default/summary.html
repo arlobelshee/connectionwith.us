@@ -2,7 +2,7 @@
 	<div class="details">
 		<div class="meta">
 			<h3>{{ .Date.Format "January 2006" }} / {{ .Params.where }} / {{ .Params.perspective }} perspective</h3>
-			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			<h2><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
 		</div>
 		<div class="excerpt">
 			{{- .Summary -}}
@@ -10,8 +10,10 @@
 		<div class="read-more">
 			<a href="{{ .Permalink }}">Read more</a>
 		</div>
-				<p class="flickr-tag-notice">Flickr tag #<span class="tag">{{ .Params.img_tag }}</span></p>
-		<div class="mini-gallery react-mini-gallery" data-tags="{{ .Params.img_tag }}"></div>
+		{{- if .Params.img_tag -}}
+		<p class="flickr-tag-notice">Flickr tag #<span class="tag">{{ .Params.img_tag }}</span></p>
+		<div class="mini-gallery react-photo-gallery" data-tags="{{ .Params.img_tag }}"></div>
+		{{- end -}}
 	</div>
 	<a href="{{ .Permalink }}" class="teaser-image" style='background-image: url({{.Params.teaser_image}})'></a>
 </section>

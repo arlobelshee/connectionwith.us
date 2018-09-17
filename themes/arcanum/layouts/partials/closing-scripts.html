@@ -11,18 +11,19 @@
     {{- if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) -}}
 			<script src='{{ "js/vendor/jquery-3.2.1.min.js" | relURL }}'></script>
 			<script src='{{ "js/vendor/skel.min.js" | relURL }}'></script>
-      <script src='{{ "js/util.js" | relURL }}'></script>
-			<script src='{{ "js/main.js" | relURL }}'></script>
-			<script src='{{ "js/backToTop.js" | relURL }}'></script>
+      <script async src='{{ "js/util.js" | relURL }}'></script>
+			<script async src='{{ "js/main.js" | relURL }}'></script>
+			<script async src='{{ "js/backToTop.js" | relURL }}'></script>
+			<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
     {{- end -}}
 
 {{- $components := resources.Get "js/index.js" | fingerprint -}}
-<script src="{{ $components.RelPermalink }}" integrity="{{ $components.Data.Integrity }}"></script>
+<script async src="{{ $components.RelPermalink }}" integrity="{{ $components.Data.Integrity }}"></script>
 
     {{- if ne ($.Scratch.Get "jsFiles") false }}
       {{- range $.Scratch.Get "jsFiles" }}
         {{- if ne . "default" }}
-          <script src="{{ . | relURL }}"></script>
+          <script async src="{{ . | relURL }}"></script>
         {{- end }}
       {{- end }}
     {{- end -}}

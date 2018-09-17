@@ -56,22 +56,58 @@ And if you drink at every opportunity provided, expect to weave yourself out too
 {{% band bg="light" id="logistics" %}}
 {{% div cssclass="block" %}}
 
-## Key Logistics
+### Do I need a car?
 
-It'll be at the Rembrandt Yard in Boulder on 12 January 2019.
+We will ensure that all events on Friday and Saturday are either walking friendly to access or easy to car pool.
 
-There will be a hotel with a discount. Our conference will probably not have an official Airline, but there will be good options for getting from airport to Boulder.
+### Where's the ceremony?
 
-Beyond that...please come back in November and find out. Or
-<a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"> subscribe to our feed</a>. We'll totally post about it.
+Right downtown Boulder at Rembrandt Yard ... it's directly across from the Hotel Boulderado and a block from the popular downtown walking district.
+
+### Where should I stay?
+
+#### Hotel Boulderado
+
+Fantastic place to stay for the history lover who doesn't want to drive at all or walk far to anything!
+
+#### St. Julien's Hotel & Spa
+
+The modern spa hotel that is quite nice; easy walking to everything, with no driving required while in town.
+
+#### Alps Boulder Canyon Inn
+
+The cozy mountain getaway with fireplaces everywhere (including your room) and great breakfasts. Must have car to drive the 15m up the mountain highway from downtown Boulder.
+
+### How should I get to Boulder from the airport (DIA)?
+
+#### Bus
+
+One way ticket into Downtown Boulder Station will run $9 and run approximately 90 minutes --- [Westbound Schedule (from DIA to Downtown Boulder Station)](http://www3.rtd-denver.com/schedules/getSchedule.action?runboardId=2591&routeId=AB&routeType=9&&direction=W-Bound&serviceType=3#direction)
+
+This [mobile app](http://www.rtd-denver.com/mobileticket.shtml) allows you to pre-purchase your tickets for easier travel.
+
+Great option if you just want to get here.
+
+#### Shared Car Service
+
+Uber or Lyft will cost approximately 75$ one way and run about 50 minutes. Shared car services run out of Doors 601-608 on either the West or East side.
+
+Good option if you just want to slip into town and plan on staying downtown / city centre.
+
+#### Car Rental
+
+Shuttle service is available to and from car rental lots near the airport.
+
+Best option if you want to do any driving while visiting Boulder.
+
+### Can I join the skiing without a car?
+
+If you wish to join us for the Sunday skiing, please confirm your interest on the website so that we can arrange the best transit options, whether we do a car pooling excursion or rent a larger vehicle.
+
+### What kind of fun things should I do?
 
 {{% /div %}}
-<div id="logistics-icons" class="attention-graphic">
-<i class="fas fa-hotel dual-icon">&nbsp;</i>
-<i class="fas fa-plane dual-icon">&nbsp;</i>
-<i class="fas fa-car dual-icon">&nbsp;</i>
-<i class="fas fa-bus-alt dual-icon">&nbsp;</i>
-</div>
+<iframe src="https://www.google.com/maps/d/embed?mid=1omg-keO6HgeCS9e2qlLQqTEWM26QOl40&hl=en" width="640" height="480"></iframe>
 {{% /band %}}
 
 <footer>

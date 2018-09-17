@@ -1291,7 +1291,8 @@ body.is-menu-visible #menu {
 /* Post images */
 
 .post-image {
-	width: calc(50% - 1em);
+	width: calc(35% - 1em);
+	min-width: 350px;
 	height: fit-content;
 	margin: 1em;
 }
@@ -1306,8 +1307,25 @@ body.is-menu-visible #menu {
 	float: right;
 	margin-right: 0;
 }
-.subpage section.content p {
-	clear: both;
+.post-image.interrupt {
+	display: block;
+	margin: 1em auto;
+	width: 45%;
+}
+
+@media screen and (max-width: 736px) {
+	.post-image {
+		width: 100%;
+		min-width: none;
+		margin: 1em 0;
+	}
+	.post-image.interrupt {
+		width: 100%;
+	}
+	.post-image.left,
+	.post-image.right {
+		float: none;
+	}
 }
 
 /* Action button lists */
